@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" type="collection">
+        <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" reference="x_snc_investor_portfolio" type="reference"/>
+        <index name="index">
+            <element name="portfolio"/>
+        </index>
+    </element>
+</database>

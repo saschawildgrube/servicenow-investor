@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Portfolio" max_length="40" name="x_snc_investor_portfolio" type="collection">
+        <element label="Currency" mandatory="true" max_length="32" name="currency" reference="fx_currency" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="owner"/>
+        </index>
+        <index name="index2">
+            <element name="currency"/>
+        </index>
+    </element>
+</database>
