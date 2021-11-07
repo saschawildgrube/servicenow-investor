@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" type="collection">
+    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="1" type="collection">
+        <element label="Amount" mandatory="true" max_length="40" name="amount" type="integer"/>
+        <element label="Charges" max_length="20" name="charges" type="decimal"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element label="Instrument" mandatory="true" max_length="32" name="instrument" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" reference="x_snc_investor_portfolio" type="reference"/>
+        <element label="Price" mandatory="true" max_length="20" name="price" type="decimal"/>
+        <element choice="3" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Buy" sequence="1" value="buy"/>
+                <element inactive_on_update="false" label="Sell" sequence="2" value="sell"/>
+                <element inactive="true" inactive_on_update="true" label="Watch" sequence="3" value="watch"/>
+                <element inactive="true" inactive_on_update="true" label="Unwatch" sequence="4" value="unwatch"/>
+                <element inactive="true" inactive_on_update="true" label="Keep" sequence="5" value="keep"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="portfolio"/>
+        </index>
+        <index name="index2">
+            <element name="instrument"/>
         </index>
     </element>
 </database>

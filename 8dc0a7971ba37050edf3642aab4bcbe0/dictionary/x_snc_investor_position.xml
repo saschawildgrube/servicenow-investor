@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Position" max_length="40" name="x_snc_investor_position" type="collection">
+        <element label="Amount" mandatory="true" max_length="20" name="amount" type="decimal"/>
+        <element label="Instrument" mandatory="true" max_length="32" name="instrument" reference="x_snc_investor_instrument" type="reference"/>
+        <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" reference="x_snc_investor_portfolio" type="reference"/>
+        <element label="Price" mandatory="true" max_length="20" name="price" type="decimal"/>
+        <index name="index">
+            <element name="portfolio"/>
+        </index>
+        <index name="index2">
+            <element name="instrument"/>
+        </index>
+    </element>
+</database>
