@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="1" type="collection">
+    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="4" type="collection">
         <element label="Amount" mandatory="true" max_length="40" name="amount" type="integer"/>
         <element label="Charges" max_length="20" name="charges" type="decimal"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>

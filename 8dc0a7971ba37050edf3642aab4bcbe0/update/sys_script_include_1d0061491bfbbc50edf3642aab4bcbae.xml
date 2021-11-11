@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculatePositions</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculatePositions</name>
+        <script><![CDATA[function CalculatePositions(strPortfolioSysId)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetKeys = x_snc_devtools.GetKeys;
+	var RenderValue = x_snc_devtools.RenderValue;
+
+	
+	var grPortfolio = GetRecord('x_snc_investor_portfolio',strPortfolioSysId);
+	if (IsValidRecord(grPortfolio) == false)
+	{
+		return false;
+	}
+	
+	var grPosition = new GlideRecord('x_snc_investor_position');
+	grPosition.addQuery('portfolio','=',strPortfolioSysId);
+	grPosition.deleteMultiple();
+	
+	var positions = {};
+	
+	var grTransaction = new GlideRecord('x_snc_investor_transaction');
+	grTransaction.addQuery('portfolio','=',strPortfolioSysId);
+	grTransaction.orderBy('date');
+	grTransaction.query();
+	while (grTransaction.next())
+	{
+		//Debug(RenderValue(grTransaction));
+		var strInstrumentSysId = grTransaction.instrument;
+		var strType = grTransaction.type;
+		var nAmount = grTransaction.amount;
+		var strDate = grTransaction.date;
+		
+		var instrument = GetValue(positions,strInstrumentSysId);
+		if (instrument == null)
+		{
+			positions[strInstrumentSysId] = { amount: 0 };
+		}
+		
+		if (strType == 'buy')
+		{
+			positions[strInstrumentSysId]['amount'] = positions[strInstrumentSysId]['amount'] + nAmount;
+		}
+		if (strType == 'sell')
+		{
+			positions[strInstrumentSysId]['amount'] = positions[strInstrumentSysId]['amount'] - nAmount;
+		}
+	}
+
+	//Debug(RenderValue(positions));
+	
+	var aInstruments = GetKeys(positions);
+	
+	for (var nInstrument = 0; nInstrument < aInstruments.length; nInstrument++)
+	{
+		var strInstrumentSysId = aInstruments[nInstrument];
+		var position = positions[strInstrumentSysId];
+		var nAmount = position.amount;
+		if (nAmount > 0)
+		{
+			var grPosition = new GlideRecord('x_snc_investor_position');
+			grPosition.initialize();
+			grPosition.portfolio = strPortfolioSysId;
+			grPosition.instrument = strInstrumentSysId;
+			grPosition.amount = position.amount;
+			grPosition.insert();
+		}
+	}
+	
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-11 19:05:27</sys_created_on>
+        <sys_id>1d0061491bfbbc50edf3642aab4bcbae</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>CalculatePositions</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_1d0061491bfbbc50edf3642aab4bcbae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-11 19:46:16</sys_updated_on>
+    </sys_script_include>
+</record_update>
