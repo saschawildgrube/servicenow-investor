@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Position" max_length="40" name="x_snc_investor_position" sizeclass="1" type="collection">
+    <element label="Position" max_length="40" name="x_snc_investor_position" sizeclass="4" type="collection">
         <element label="Amount" mandatory="true" max_length="20" name="amount" read_only="true" type="decimal"/>
         <element label="Instrument" mandatory="true" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" read_only="true" reference="x_snc_investor_portfolio" type="reference"/>

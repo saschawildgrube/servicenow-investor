@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.ImportTransactionsFromCsv</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ImportTransactionsFromCsv</name>
+        <script><![CDATA[function ImportTransactionsFromCsv(strPortfolioSysId,strCsv)
+{
+	var GetValue = x_snc_devtools.GetValue;
+	
+	var aTransactions = x_snc_devtools.ParseCsv(strCsv);
+	
+	if (aTransactions == false)
+	{
+		return false;
+	}
+	
+	for (var nTransaction = 0; nTransaction < aTransactions.length; nTransaction++)
+	{
+		var transaction = aTransactions[nTransaction];
+		
+		var strISIN = GetValue(transaction,'ISIN');
+		
+		gs.addInfoMessage('ISIN: '+strISIN);
+	}
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-12 13:13:50</sys_created_on>
+        <sys_id>4e1addd51b3f3090edf3642aab4bcb60</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>ImportTransactionsFromCsv</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_4e1addd51b3f3090edf3642aab4bcb60</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-12 13:31:22</sys_updated_on>
+    </sys_script_include>
+</record_update>
