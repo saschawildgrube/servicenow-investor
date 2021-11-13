@@ -9,10 +9,10 @@
         <comments/>
         <condition/>
         <form_action>true</form_action>
-        <form_button>true</form_button>
+        <form_button>false</form_button>
         <form_button_v2>false</form_button_v2>
         <form_context_menu>false</form_context_menu>
-        <form_link>false</form_link>
+        <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
         <form_style>unstyled</form_style>
         <hint/>
@@ -42,7 +42,7 @@ gs.addInfoMessage('Positions have been re-calculated.');]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f311a14d1bfbbc50edf3642aab4bcbcc</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Re-calculate Positions</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -50,7 +50,7 @@ gs.addInfoMessage('Positions have been re-calculated.');]]></script>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_ui_action_f311a14d1bfbbc50edf3642aab4bcbcc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-11 19:09:45</sys_updated_on>
+        <sys_updated_on>2021-11-12 19:10:31</sys_updated_on>
         <table>x_snc_investor_portfolio</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
