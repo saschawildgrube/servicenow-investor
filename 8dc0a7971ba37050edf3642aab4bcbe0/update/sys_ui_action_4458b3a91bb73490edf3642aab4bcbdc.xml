@@ -2,7 +2,7 @@
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
         <active>true</active>
-        <client>true</client>
+        <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
@@ -14,9 +14,9 @@
         <form_context_menu>false</form_context_menu>
         <form_link>false</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style>unstyled</form_style>
+        <form_style/>
         <hint/>
-        <isolate_script>true</isolate_script>
+        <isolate_script>false</isolate_script>
         <list_action>false</list_action>
         <list_banner_button>false</list_banner_button>
         <list_button>false</list_button>
@@ -26,55 +26,42 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Create Issuer</name>
-        <onclick>onClickCreateIssuer()</onclick>
+        <name>Get Latest Prices</name>
+        <onclick/>
         <order>100</order>
-        <script><![CDATA[function onClickCreateIssuer()
+        <script><![CDATA[var grPosition = new GlideRecord('x_snc_investor_position');
+grPosition.addQuery('portfolio','=',current.sys_id);
+grPosition.query();
+while (grPosition.next())
 {
-	var strIssuerName = prompt('Enter the name of the new issuer:');
-	if (strIssuerName == null)
+	var fPrice = GetPriceForInstrument(grPosition.instrument,current.currency);
+	if (fPrice != false)
 	{
-		return;
+		grPosition.price = fPrice;
+		grPosition.update();
 	}
-	if (strIssuerName == '')
-	{
-		alert('You need to specify a name for the new issuer.');
-		return;
-	}	
-	var ga = new GlideAjax('InvestorClientAPI');
-	ga.addParam('sysparm_name', 'AddIssuer');
-	ga.addParam('sysparm_issuer_name', strIssuerName);
-	ga.getXML(ResponseAddIssuer);
- 
-	function ResponseAddIssuer(response)
-	{
-		  var answer = response.responseXML.documentElement.getAttribute("answer");
-		  alert(answer);
-	}	
-	
-	
 }
-]]></script>
-        <show_insert>true</show_insert>
+x_snc_devtools.RedirectToRecord(current);]]></script>
+        <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-10 15:59:37</sys_created_on>
+        <sys_created_on>2021-11-13 19:28:29</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>e27c27281b7bf850edf3642aab4bcb53</sys_id>
-        <sys_mod_count>11</sys_mod_count>
-        <sys_name>Create Issuer</sys_name>
+        <sys_id>4458b3a91bb73490edf3642aab4bcbdc</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Get Latest Prices</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_ui_action_e27c27281b7bf850edf3642aab4bcb53</sys_update_name>
+        <sys_update_name>sys_ui_action_4458b3a91bb73490edf3642aab4bcbdc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-13 20:25:29</sys_updated_on>
-        <table>x_snc_investor_instrument</table>
+        <sys_updated_on>2021-11-13 19:35:09</sys_updated_on>
+        <table>x_snc_investor_portfolio</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>
