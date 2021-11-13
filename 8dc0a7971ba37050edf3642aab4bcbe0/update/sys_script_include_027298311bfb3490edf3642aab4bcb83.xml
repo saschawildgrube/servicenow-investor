@@ -35,7 +35,8 @@
 				var exchange = aExchanges[nExchange];
 		
 				var strMIC = GetStringValue(GetValue(exchange,'ISO MIC'));
-				if (strMIC != '')
+				var strName = GetStringValue(GetValue(exchange,'Description'));
+				if (strMIC != '' && strName != '')
 				{
 					var strExchangeSysId = '';
 
@@ -45,6 +46,50 @@
 					if (grExchange.next() == false)
 					{
 						var strCountry = GetStringValue(GetValue(exchange,'Country'));
+						
+						if (strCountry == 'USA')
+						{
+							strCountry = 'United States of America';
+						}
+						if (strCountry == 'Syria')
+						{
+							strCountry = 'Syrian Arab Republic';
+						}
+						if (strCountry == 'Vietnam')
+						{
+							strCountry = 'Viet Nam';
+						}
+						if (strCountry == 'Hong Kong')
+						{
+							strCountry = 'China, Hong Kong SAR';
+						}
+						if (strCountry == 'South Korea')
+						{
+							strCountry = 'Republic of Korea';
+						}
+						if (strCountry == 'The Netherlands')
+						{
+							strCountry = 'Netherlands';
+						}
+						if (strCountry == 'Russia')
+						{
+							strCountry = 'Russian Federation';
+						}
+						if (strCountry == 'Taiwan')
+						{
+							strCountry = 'Other non-specified areas';
+						}
+						if (strCountry == '')
+						{
+							strCountry = '';
+						}
+						if (strCountry == '')
+						{
+							strCountry = '';
+						}
+						
+
+						
 						var strCountrySysId = '';
 						var grCountry = new GlideRecord('core_country');
 						grCountry.addQuery('name','=',strCountry);
@@ -56,7 +101,7 @@
 						
 						
 						grExchange.initialize();
-						grExchange.name = GetStringValue(GetValue(exchange,'Description'));
+						grExchange.name = strName;
 						grExchange.bloomberg_exchange_code = GetStringValue(GetValue(exchange,'Bloomberg Exchange Code'));
 						grExchange.iso_mic = strMIC;
 						grExchange.country = strCountrySysId;
@@ -76,13 +121,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-13 21:19:11</sys_created_on>
         <sys_id>027298311bfb3490edf3642aab4bcb83</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>LoadExchanges</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_027298311bfb3490edf3642aab4bcb83</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-13 21:39:50</sys_updated_on>
+        <sys_updated_on>2021-11-13 22:18:25</sys_updated_on>
     </sys_script_include>
 </record_update>
