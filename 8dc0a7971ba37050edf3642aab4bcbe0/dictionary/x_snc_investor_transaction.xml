@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="35" type="collection">
         <element label="Amount" mandatory="true" max_length="40" name="amount" type="integer"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;if (current.type == 'buy')&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return - (current.total_price + current.charges);&#13;&#10;&#9;}&#13;&#10;&#9;if (current.type == 'sell')&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return current.total_price - current.charges;&#13;&#10;&#9;}&#13;&#10;})(current);" label="Cashflow" max_length="20" name="cashflow" type="decimal" virtual="true"/>
         <element label="Charges" max_length="20" name="charges" type="decimal"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
         <element label="Instrument" mandatory="true" max_length="32" name="instrument" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" reference="x_snc_investor_portfolio" type="reference"/>
         <element label="Price" mandatory="true" max_length="20" name="price" type="decimal"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return current.total_price + current.charges;&#13;&#10;&#13;&#10;})(current);" label="Total" max_length="20" name="total" type="decimal" virtual="true"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return current.amount * current.price; &#13;&#10;&#13;&#10;})(current);" label="Total Price" max_length="20" name="total_price" type="decimal" virtual="true"/>
         <element choice="3" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>

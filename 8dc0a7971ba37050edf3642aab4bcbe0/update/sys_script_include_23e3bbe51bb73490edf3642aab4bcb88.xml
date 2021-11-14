@@ -10,54 +10,25 @@
         <script><![CDATA[function GetSymbolsFromISIN(strISIN)
 {
 	var RenderValue = x_snc_devtools.RenderValue;
-	var HttpRequest = x_snc_devtools.HttpRequest;
 
-	function OpenFigiGetSymbolsFromISIN(strISIN)
-	{
-		var strRequestBody = '[ { "idType": "ID_ISIN", "idValue": "'+strISIN+'" } ]';
-		
-		var aHeaders = [
-			{
-				name: 'X-OPENFIGI-APIKEY',
-				value: 'c3c3c1b6-26ea-4f8d-9c76-d381e22edd47'
-			},
-			{
-				name: 'Content-Type',
-				value: 'application/json'
-			}
-		];
-			
-		strResult = HttpRequest(
-			{
-				url: 'https://api.openfigi.com/v3/mapping',
-				requestbody: strRequestBody,
-				headers: aHeaders
-			});
-		
-		Debug('OpenFigiGetSymbolsFromISIN: '+strISIN+': '+RenderValue(strResult));
-		
-		var result = x_snc_devtools.ParseJson(strResult);
-		return result;
-	}
+	var openfigi = new OpenFigiAPI('c3c3c1b6-26ea-4f8d-9c76-d381e22edd47');
+	var symbols = openfigi.GetSymbolsFromISIN(strISIN);
 	
-	var symbols = OpenFigiGetSymbolsFromISIN(strISIN);
-	
-	Debug(x_snc_devtools.RenderValue(symbols));
+	//Debug(x_snc_devtools.RenderValue(symbols));
 	
 	return symbols;
-	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-13 19:19:22</sys_created_on>
         <sys_id>23e3bbe51bb73490edf3642aab4bcb88</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>GetSymbolsFromISIN</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_23e3bbe51bb73490edf3642aab4bcb88</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-13 20:16:53</sys_updated_on>
+        <sys_updated_on>2021-11-14 18:12:53</sys_updated_on>
     </sys_script_include>
 </record_update>

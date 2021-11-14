@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Prices Daily" max_length="40" name="x_snc_investor_price_daily" type="collection">
+        <element label="Close" max_length="20" name="close" type="decimal"/>
+        <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element label="Dividend" max_length="20" name="dividend" type="decimal"/>
+        <element label="High" max_length="20" name="high" type="decimal"/>
+        <element label="Low" max_length="20" name="low" type="decimal"/>
+        <element label="Notation" mandatory="true" max_length="32" name="notation" reference="x_snc_investor_notation" type="reference"/>
+        <element label="Open" max_length="20" name="open" type="decimal"/>
+        <element label="Split" max_length="20" name="split" type="decimal"/>
+        <element label="Volume" max_length="40" name="volume" type="integer"/>
+        <index name="index">
+            <element name="notation"/>
+        </index>
+    </element>
+</database>

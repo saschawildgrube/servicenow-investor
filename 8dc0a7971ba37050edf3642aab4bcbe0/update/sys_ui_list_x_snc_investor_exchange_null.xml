@@ -3,62 +3,92 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">225594b11bfb3490edf3642aab4bcb07</list_id>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-13 21:30:02</sys_created_on>
-            <sys_id>ea5594b11bfb3490edf3642aab4bcb07</sys_id>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>6bbea84e1bbfb490edf3642aab4bcb9b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-13 21:30:02</sys_updated_on>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>country</element>
-            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">225594b11bfb3490edf3642aab4bcb07</list_id>
+            <element>active</element>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-13 21:30:02</sys_created_on>
-            <sys_id>6e5594b11bfb3490edf3642aab4bcb07</sys_id>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>efbea84e1bbfb490edf3642aab4bcb9b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-13 21:30:02</sys_updated_on>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>iso_mic</element>
-            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">225594b11bfb3490edf3642aab4bcb07</list_id>
+            <element>country</element>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-13 21:30:02</sys_created_on>
-            <sys_id>ee5594b11bfb3490edf3642aab4bcb07</sys_id>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>63bea84e1bbfb490edf3642aab4bcb9c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-13 21:30:02</sys_updated_on>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>bloomberg_exchange_code</element>
-            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">225594b11bfb3490edf3642aab4bcb07</list_id>
+            <element>symbol</element>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-13 21:30:02</sys_created_on>
-            <sys_id>625594b11bfb3490edf3642aab4bcb08</sys_id>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>e3bea84e1bbfb490edf3642aab4bcb9c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-13 21:30:02</sys_updated_on>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>iso_mic</element>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>67bea84e1bbfb490edf3642aab4bcb9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>bloomberg_exchange_code</element>
+            <list_id display_value="x_snc_investor_exchange" element="NULL" name="x_snc_investor_exchange" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">abbea84e1bbfb490edf3642aab4bcb9a</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
+            <sys_id>e7bea84e1bbfb490edf3642aab4bcb9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -72,10 +102,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-13 21:30:02</sys_created_on>
+            <sys_created_on>2021-11-14 17:59:27</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>225594b11bfb3490edf3642aab4bcb07</sys_id>
+            <sys_id>abbea84e1bbfb490edf3642aab4bcb9a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_snc_investor_exchange</sys_name>
             <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -83,7 +113,7 @@
             <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
             <sys_update_name>sys_ui_list_x_snc_investor_exchange_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-13 21:30:02</sys_updated_on>
+            <sys_updated_on>2021-11-14 17:59:27</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

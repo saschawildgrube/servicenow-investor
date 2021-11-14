@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.OpenFigiAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>OpenFigiAPI</name>
+        <script><![CDATA[var OpenFigiAPI = Class.create();
+OpenFigiAPI.prototype = {
+	
+	m_strApiKey: '',
+	
+    initialize: function(strApiKey)
+	{
+		this.m_strApiKey = strApiKey;
+    },
+	
+	GetSymbolsFromISIN: function(strISIN)
+	{
+		var HttpRequest = x_snc_devtools.HttpRequest;
+		var RenderValue = x_snc_devtools.RenderValue;
+		var ParseJson = x_snc_devtools.ParseJson;
+		var IsArray = x_snc_devtools.IsArray;
+		var GetValue = x_snc_devtools.GetValue;
+
+		var strRequestBody = '[ { "idType": "ID_ISIN", "idValue": "'+strISIN+'" } ]';
+		
+		var aHeaders = [
+			{
+				name: 'X-OPENFIGI-APIKEY',
+				value: this.m_strApiKey
+			},
+			{
+				name: 'Content-Type',
+				value: 'application/json'
+			}
+		];
+			
+		strResult = HttpRequest(
+			{
+				url: 'https://api.openfigi.com/v3/mapping',
+				requestbody: strRequestBody,
+				headers: aHeaders
+			});
+		
+		//Debug('OpenFigi::GetSymbolsFromISIN: '+strISIN+': '+RenderValue(strResult));
+		
+		var result = ParseJson(strResult);
+		
+		if (IsArray(result) == false)
+		{
+			return false;
+		}
+		if (result.length != 1)
+		{
+			return false;
+		}
+		
+		var aSymbols = GetValue(result[0],'data');
+		if (IsArray(aSymbols) == false)
+		{
+			return false;
+		}
+		
+		return aSymbols;
+	},
+	
+
+    type: 'OpenFigiAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-14 14:22:27</sys_created_on>
+        <sys_id>f0bb77711bf7b490edf3642aab4bcb52</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>OpenFigiAPI</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_f0bb77711bf7b490edf3642aab4bcb52</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-14 14:26:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

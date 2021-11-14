@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.AlphaVantageAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>AlphaVantageAPI</name>
+        <script><![CDATA[var AlphaVantageAPI = Class.create();
+AlphaVantageAPI.prototype = {
+	
+	m_strApiKey: '',
+	
+    initialize: function(strApiKey)
+	{
+		this.m_strApiKey = strApiKey;
+    },
+	
+	GetAdjustedDailyPricesForSymbol: function(strSymbol)
+	{
+		var HttpRequest = x_snc_devtools.HttpRequest;
+		var RenderValue = x_snc_devtools.RenderValue;
+		var ParseJson = x_snc_devtools.ParseJson;
+		var IsArray = x_snc_devtools.IsArray;
+		var GetValue = x_snc_devtools.GetValue;
+		var IsObject= x_snc_devtools.IsObject;
+		var GetKeys = x_snc_devtools.GetKeys;
+
+		strResult = HttpRequest(
+			{
+				url:
+'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol='+strSymbol+'&outputsize=full&apikey='+this.m_strApiKey,
+			});
+		
+	
+		var result = ParseJson(strResult);
+		
+		if (IsObject(result) == false)
+		{
+			return false;
+		}
+		
+		var timeseries = GetValue(result,'Time Series (Daily)');
+		if (IsObject(timeseries) == false)
+		{
+			return false;
+		}
+		
+		var aKeys = GetKeys(timeseries);
+		
+		var aPrices = [];
+		
+		for (var nKey = 0; nKey < aKeys.length; nKey++)
+		{
+			var strKey = aKeys[nKey];
+			var price = {};
+			price['date'] = strKey;
+			price['open'] = GetValue(timeseries,strKey,'1. open');
+			price['high'] = GetValue(timeseries,strKey,'2. high');
+			price['low'] = GetValue(timeseries,strKey,'3. low');
+			price['close'] = GetValue(timeseries,strKey,'4. close');
+			price['close_adjusted'] = GetValue(timeseries,strKey,'5. adjusted close');
+			price['volume'] = GetValue(timeseries,strKey,'6. volume');
+			price['dividend'] = GetValue(timeseries,strKey,'7. dividend amount');
+			price['split'] = GetValue(timeseries,strKey,'8. split coefficient');
+			aPrices.push(price);
+		}
+		
+		return aPrices;
+	},
+	
+
+    type: 'AlphaVantageAPI'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-14 17:30:17</sys_created_on>
+        <sys_id>94182c821bbfb490edf3642aab4bcb47</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>AlphaVantageAPI</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_94182c821bbfb490edf3642aab4bcb47</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-14 18:25:51</sys_updated_on>
+    </sys_script_include>
+</record_update>
