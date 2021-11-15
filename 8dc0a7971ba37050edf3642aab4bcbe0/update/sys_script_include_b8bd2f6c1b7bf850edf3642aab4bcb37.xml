@@ -16,32 +16,37 @@ InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 		return x_snc_investor.IssuerInsert(strIssuerName);
 	},
 	
-	GetInstrumentDetailsLink: function()
+	GetPositionDetailsUrl: function()
 	{
-		var strInstrumentSysId = this.getParameter('sysparm_instrument');
-		var grInstrument = GetInstrumentRecord(strInstrumentSysId);
-		if (grInstrument == false)
+		var strSysId = this.getParameter('sysparm_sysid');
+		var grPosition = GetPositionRecord(strSysId);
+		if (grPosition == false)
 		{
 			return '';
 		}
-		
-		return 'https://www.onvista.de/'+grInstrument.isin;
-		
+		return GetInstrumentDetailsUrl(grPosition.instrument);
 	},
 
+	GetInstrumentDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		return GetInstrumentDetailsUrl(strSysId);
+	},
+
+	
     type: 'InvestorClientAPI'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-10 16:04:23</sys_created_on>
         <sys_id>b8bd2f6c1b7bf850edf3642aab4bcb37</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>InvestorClientAPI</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_b8bd2f6c1b7bf850edf3642aab4bcb37</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-15 09:25:00</sys_updated_on>
+        <sys_updated_on>2021-11-15 18:08:19</sys_updated_on>
     </sys_script_include>
 </record_update>
