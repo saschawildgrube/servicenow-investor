@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.GetInstrumentRecord</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GetInstrumentRecord</name>
+        <script><![CDATA[function GetInstrumentRecord(strSysId)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	return GetRecord('x_snc_investor_instrument',strSysId);
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-15 08:46:43</sys_created_on>
+        <sys_id>fcd9f34adbfb78904647dad1f3961928</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetInstrumentRecord</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_fcd9f34adbfb78904647dad1f3961928</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-15 08:46:43</sys_updated_on>
+    </sys_script_include>
+</record_update>
