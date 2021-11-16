@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Position" max_length="40" name="x_snc_investor_position" sizeclass="19" type="collection">
-        <element label="Amount" mandatory="true" max_length="20" name="amount" read_only="true" type="decimal"/>
+        <element label="Amount" max_length="40" name="amount" read_only="true" type="integer"/>
         <element label="Instrument" mandatory="true" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" read_only="true" reference="x_snc_investor_portfolio" type="reference"/>
-        <element label="Price" mandatory="true" max_length="20" name="price" read_only="true" type="decimal"/>
+        <element label="Price" max_length="40" name="price" read_only="true" type="float"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return '39067bc2dbfb78904647dad1f3961922';&#13;&#10;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" type="glide_action_list" virtual="true"/>
         <index name="index">
             <element name="portfolio"/>
