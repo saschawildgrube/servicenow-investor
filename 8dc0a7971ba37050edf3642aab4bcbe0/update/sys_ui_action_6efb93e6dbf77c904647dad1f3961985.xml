@@ -14,7 +14,7 @@
         <form_context_menu>false</form_context_menu>
         <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
-        <form_style>unstyled</form_style>
+        <form_style>destructive</form_style>
         <hint/>
         <isolate_script>false</isolate_script>
         <list_action>false</list_action>
@@ -26,32 +26,39 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Calculate Positions</name>
+        <name>Load Prices (Daily)</name>
         <onclick/>
         <order>100</order>
-        <script><![CDATA[CalculatePositions(current.sys_id);
-x_snc_devtools.RedirectToRecord(current);
-gs.addInfoMessage('Positions have been re-calculated.');]]></script>
+        <script><![CDATA[var bSuccess = LoadPricesDailyForNotation(current.sys_id);
+if (bSuccess == true)
+{
+	gs.addInfoMessage('Loaded prices successfully.');
+}
+else
+{
+	gs.addErrorMessage('Failed to load prices.');
+}
+x_snc_devtools.RedirectToRecord(current);]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-11 19:06:36</sys_created_on>
+        <sys_created_on>2021-11-16 19:55:28</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>f311a14d1bfbbc50edf3642aab4bcbcc</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Calculate Positions</sys_name>
+        <sys_id>6efb93e6dbf77c904647dad1f3961985</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Load Prices (Daily)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_ui_action_f311a14d1bfbbc50edf3642aab4bcbcc</sys_update_name>
+        <sys_update_name>sys_ui_action_6efb93e6dbf77c904647dad1f3961985</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-16 21:13:24</sys_updated_on>
-        <table>x_snc_investor_portfolio</table>
+        <sys_updated_on>2021-11-16 19:57:55</sys_updated_on>
+        <table>x_snc_investor_notation</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
     </sys_ui_action>

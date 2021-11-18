@@ -3,11 +3,15 @@
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="Bloomberg Exchange Code" max_length="2" name="bloomberg_exchange_code" type="string"/>
         <element label="Country" max_length="32" name="country" reference="core_country" type="reference"/>
+        <element label="Currency" max_length="32" name="currency" reference="fx_currency" type="reference"/>
         <element label="ISO MIC" max_length="10" name="iso_mic" type="string"/>
         <element label="Name" mandatory="true" max_length="200" name="name" type="string"/>
         <element label="Symbol" max_length="5" name="symbol" type="string"/>
         <index name="index">
             <element name="country"/>
+        </index>
+        <index name="index2">
+            <element name="currency"/>
         </index>
     </element>
 </database>

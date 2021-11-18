@@ -3,137 +3,152 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>date</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>ac96f4461b33f490edf3642aab4bcb0c</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>3f7ea7e21bf77c90edf3642aab4bcb18</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>type</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>2496f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>bf7ea7e21bf77c90edf3642aab4bcb18</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>instrument</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>a496f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>337ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>instrument.issuer</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>instrument.type</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>2896f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>b37ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>amount</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>instrument.issuer</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>a896f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>377ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>price</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>amount</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>2c96f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>b77ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>total_price</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>price</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>ac96f4461b33f490edf3642aab4bcb0d</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>3b7ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>charges</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>total_price</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>2096f4461b33f490edf3642aab4bcb0e</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>bb7ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>cashflow</element>
-            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">ec96f4461b33f490edf3642aab4bcb0b</list_id>
+            <element>charges</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
-            <sys_id>a096f4461b33f490edf3642aab4bcb0e</sys_id>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>3f7ea7e21bf77c90edf3642aab4bcb19</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>cashflow</element>
+            <list_id display_value="x_snc_investor_transaction" element="NULL" name="x_snc_investor_transaction" parent="x_snc_investor_portfolio" relationship="NULL" sys_domain="global" view="Default view">737ea7e21bf77c90edf3642aab4bcb18</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
+            <sys_id>bf7ea7e21bf77c90edf3642aab4bcb19</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -147,10 +162,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 18:33:39</sys_created_on>
+            <sys_created_on>2021-11-16 21:14:12</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>ec96f4461b33f490edf3642aab4bcb0b</sys_id>
+            <sys_id>737ea7e21bf77c90edf3642aab4bcb18</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_snc_investor_transaction</sys_name>
             <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -158,7 +173,7 @@
             <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
             <sys_update_name>sys_ui_list_x_snc_investor_transaction_x_snc_investor_portfolio_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 18:33:39</sys_updated_on>
+            <sys_updated_on>2021-11-16 21:14:12</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

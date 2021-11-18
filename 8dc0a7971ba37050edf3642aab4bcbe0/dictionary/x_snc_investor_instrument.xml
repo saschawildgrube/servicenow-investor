@@ -2,7 +2,16 @@
     <element label="Instrument" max_length="40" name="x_snc_investor_instrument" sizeclass="52" type="collection">
         <element display="true" label="ISIN" mandatory="true" max_length="12" name="isin" type="string"/>
         <element label="Issuer" mandatory="true" max_length="32" name="issuer" reference="x_snc_investor_issuer" type="reference"/>
+        <element label="Name" max_length="100" name="name" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return '7519759e1b7f7890edf3642aab4bcb38';  &#13;&#10;&#13;&#10;})(current);" label="Task" max_length="4000" name="task" type="glide_action_list" virtual="true"/>
+        <element choice="1" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Stock" sequence="1" value="stock"/>
+                <element inactive_on_update="false" label="ETF" sequence="2" value="etf"/>
+                <element inactive_on_update="false" label="Bond" sequence="4" value="bond"/>
+                <element inactive_on_update="false" label="Fund" sequence="5" value="fund"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="issuer"/>
         </index>
