@@ -3,6 +3,7 @@
         <element label="Currency" max_length="32" name="currency" reference="fx_currency" type="reference"/>
         <element label="Exchange" mandatory="true" max_length="32" name="exchange" reference="x_snc_investor_exchange" type="reference"/>
         <element label="Instrument" mandatory="true" max_length="32" name="instrument" reference="x_snc_investor_instrument" type="reference"/>
+        <element label="Last Daily Prices Load" max_length="40" name="last_price_daily_load" read_only="true" type="glide_date_time"/>
         <element label="Symbol" max_length="10" name="symbol" type="string"/>
         <index name="index">
             <element name="currency"/>

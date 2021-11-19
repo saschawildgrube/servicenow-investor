@@ -2,39 +2,28 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_snc_investor.LoadBaseData</api_name>
+        <api_name>x_snc_investor.CalculatePortfolios</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
-        <name>LoadBaseData</name>
-        <script><![CDATA[function LoadBaseData()
+        <name>CalculatePortfolios</name>
+        <script><![CDATA[function CalculatePortfolios()
 {
-	function Log(strText)
-	{
-		x_snc_investor.Log('LoadBaseData: '+strText);
-	}
 	
-	Log('Loading Exchanges...');
-	LoadExchanges();
-
-	Log('Loading Notations...');
-	LoadNotations();
-
-	//Log('Loading Prices (Daily)...');
-	//LoadPricesDaily();
 	
+	return true;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-15 08:17:28</sys_created_on>
-        <sys_id>8df2bfc6dbbb78904647dad1f3961940</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>LoadBaseData</sys_name>
+        <sys_created_on>2021-11-18 22:39:28</sys_created_on>
+        <sys_id>f815de571b37f0d0edf3642aab4bcbf8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CalculatePortfolios</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_script_include_8df2bfc6dbbb78904647dad1f3961940</sys_update_name>
+        <sys_update_name>sys_script_include_f815de571b37f0d0edf3642aab4bcbf8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-18 22:49:29</sys_updated_on>
+        <sys_updated_on>2021-11-18 22:39:40</sys_updated_on>
     </sys_script_include>
 </record_update>

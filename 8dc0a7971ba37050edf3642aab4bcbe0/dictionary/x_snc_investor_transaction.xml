@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="38" type="collection">
+    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="44" type="collection">
         <element label="Amount" mandatory="true" max_length="40" name="amount" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;if (current.type == 'buy')&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return - (current.total_price + current.charges);&#13;&#10;&#9;}&#13;&#10;&#9;if (current.type == 'sell')&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return current.total_price - current.charges;&#13;&#10;&#9;}&#13;&#10;&#9;if (current.type == 'dividend')&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return current.total_price - current.charges;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;})(current);" label="Cashflow" max_length="40" name="cashflow" read_only="true" type="float" virtual="true"/>
         <element label="Charges" max_length="40" name="charges" type="float"/>
