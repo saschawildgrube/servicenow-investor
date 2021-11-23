@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculatePortfolio</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculatePortfolio</name>
+        <script><![CDATA[function CalculatePortfolio(strPortfolioSysId)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	
+	var grPortfolio = GetRecord('x_snc_investor_portfolio',strPortfolioSysId);
+	if (IsValidRecord(grPortfolio) == false)
+	{
+		return false;
+	}
+	
+	CalculatePositions(grPortfolio.sys_id);
+		
+	var grPositions = new GlideRecord('x_snc_investor_position');
+	grPositions.addQuery('portfolio','=',grPortfolio.sys_id);
+	grPositions.query();
+	var fValue = 0;
+	while (grPositions.next())
+	{
+		fValue += grPositions.value;
+	}
+	grPortfolio.value = fValue;
+
+	var fCashFlow = 0;
+	var grTransactions = new GlideRecord('x_snc_investor_transaction');
+	grTransactions.addQuery('portfolio','=',grPortfolio.sys_id);
+	grTransactions.query();
+	while (grTransactions.next())
+	{
+		fCashFlow += grTransactions.cashflow;
+	}
+	grPortfolio.cashflow = fCashFlow;
+	
+	grPortfolio.gain = fCashFlow + fValue;
+	grPortfolio.update();
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-20 22:58:24</sys_created_on>
+        <sys_id>962cec801b8c09d0edf3642aab4bcbcd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CalculatePortfolio</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_962cec801b8c09d0edf3642aab4bcbcd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-20 23:02:32</sys_updated_on>
+    </sys_script_include>
+</record_update>

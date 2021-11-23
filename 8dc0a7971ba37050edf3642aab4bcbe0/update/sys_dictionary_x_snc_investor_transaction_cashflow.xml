@@ -24,7 +24,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Cashflow</column_label>
+        <column_label>Cash Flow</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -64,14 +64,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-15 21:03:54</sys_created_on>
         <sys_id>848222561b77b890edf3642aab4bcb84</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Cashflow</sys_name>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Cash Flow</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_investor_transaction_cashflow</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-17 22:52:15</sys_updated_on>
+        <sys_updated_on>2021-11-20 22:53:21</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

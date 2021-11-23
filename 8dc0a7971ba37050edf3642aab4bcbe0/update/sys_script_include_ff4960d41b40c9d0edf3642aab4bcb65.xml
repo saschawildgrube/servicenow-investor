@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.GetBestPriceForInstrument</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GetBestPriceForInstrument</name>
+        <script><![CDATA[function GetBestPriceForInstrument(strInstrumentSysId,strCurrencySysId)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var CurrencyConversion = x_snc_devtools.CurrencyConversion;
+	
+	var bestprice = false;
+
+	// try matching currency first
+	var grNotation = new GlideRecord('x_snc_investor_notation');
+	grNotation.addQuery('instrument','=',strInstrumentSysId);
+	grNotation.addQuery('currency','=',strCurrencySysId);
+	grNotation.addQuery('last_price_daily','!=','');
+	grNotation.orderByDesc('last_price_daily.date');
+	grNotation.query();
+	if (grNotation.next())
+	{
+		var grLastPriceDaily = GetRecord('x_snc_investor_price_daily',grNotation.last_price_daily);
+		if (IsValidRecord(grLastPriceDaily))
+		{
+			bestprice = {};
+			bestprice.price = grLastPriceDaily.close;
+			bestprice.date = grLastPriceDaily.date;
+			bestprice.type = 'close';
+			return bestprice;
+		}
+	}
+
+	// check alternative currencies
+	var grNotation = new GlideRecord('x_snc_investor_notation');
+	grNotation.addQuery('instrument','=',strInstrumentSysId);
+	grNotation.addQuery('currency','!=',strCurrencySysId);
+	grNotation.addQuery('last_price_daily','!=','');
+	grNotation.orderByDesc('last_price_daily.date');
+	grNotation.query();
+	if (grNotation.next())
+	{
+		var grLastPriceDaily = GetRecord('x_snc_investor_price_daily',grNotation.last_price_daily);
+		if (IsValidRecord(grLastPriceDaily))
+		{
+			if (bestprice != false) // we already have a price
+			{
+				if (bestprice.date < grLastPriceDaily.date) // do we have a price that is more recent?
+				{
+					bestprice.price = grLastPriceDaily.close;
+					bestprice.date = grLastPriceDaily.date;
+					bestprice.type = 'close';
+					return bestprice;
+				}
+			}
+			else
+			{
+				bestprice = {};
+				bestprice.price = CurrencyConversion(grNotation.currency,strCurrencySysId,grLastPriceDaily.close);
+				bestprice.date = grLastPriceDaily.date;
+				bestprice.type = 'close';
+				return bestprice;
+				
+			}
+		}
+	}
+	
+	
+	return false;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-21 17:23:03</sys_created_on>
+        <sys_id>ff4960d41b40c9d0edf3642aab4bcb65</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GetBestPriceForInstrument</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_ff4960d41b40c9d0edf3642aab4bcb65</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-21 18:49:56</sys_updated_on>
+    </sys_script_include>
+</record_update>

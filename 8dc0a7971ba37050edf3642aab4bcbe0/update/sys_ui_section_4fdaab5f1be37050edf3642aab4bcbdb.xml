@@ -4,83 +4,125 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>439a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>c2dd28881b8c09d0edf3642aab4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>name</element>
+            <element>owner</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>c39a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>46dd28881b8c09d0edf3642aab4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>c6dd28881b8c09d0edf3642aab4bcbd3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>currency</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>479a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>4add28881b8c09d0edf3642aab4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>c79a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>cadd28881b8c09d0edf3642aab4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>owner</element>
-            <position>4</position>
+            <element>value</element>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>4b9a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>4edd28881b8c09d0edf3642aab4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cashflow</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>cedd28881b8c09d0edf3642aab4bcbd3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>gain</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>42dd28881b8c09d0edf3642aab4bcbd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>5</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-14 21:11:07</sys_created_on>
-            <sys_id>cb9a59421b77f490edf3642aab4bcb3c</sys_id>
+            <sys_created_on>2021-11-20 23:03:23</sys_created_on>
+            <sys_id>c2dd28881b8c09d0edf3642aab4bcbd4</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_portfolio" sys_domain="global" view="Default view">4fdaab5f1be37050edf3642aab4bcbdb</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-14 21:11:07</sys_updated_on>
+            <sys_updated_on>2021-11-20 23:03:23</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
