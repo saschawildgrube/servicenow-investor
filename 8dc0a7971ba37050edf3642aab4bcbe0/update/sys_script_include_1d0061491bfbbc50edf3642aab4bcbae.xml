@@ -28,6 +28,10 @@
 	
 	var positions = {};
 	
+	var fRealizedProfit = 0;
+	var fRealizedLoss = 0;
+	var fRealizedGain = 0;
+	
 	var grTransaction = new GlideRecord('x_snc_investor_transaction');
 	grTransaction.addQuery('portfolio','=',strPortfolioSysId);
 	grTransaction.orderBy('date');
@@ -39,13 +43,15 @@
 		var strType = grTransaction.type;
 		var nAmount = grTransaction.amount;
 		var fPrice = grTransaction.price;
+		var fCharges = grTransaction.charges;
 		var strDate = grTransaction.date;
 		var instrument = GetValue(positions,strInstrumentSysId);
 		if (instrument == null)
 		{
 			positions[strInstrumentSysId] = {
 				amount: 0,
-				price_avg: 0 
+				price_avg: 0,
+				charges: 0
 			};
 		}
 		
@@ -54,6 +60,7 @@
 			var nOldAmount = positions[strInstrumentSysId]['amount'];
 			var nNewAmount = nOldAmount + nAmount;
 			var fOldPriceAvg = positions[strInstrumentSysId]['price_avg'];
+			var fOldCharges = positions[strInstrumentSysId]['charges'];
 			var fNewPriceAvg = 
 				(
 					(fOldPriceAvg * nOldAmount)
@@ -61,18 +68,37 @@
 				) / nNewAmount;
 			positions[strInstrumentSysId]['price_avg'] = fNewPriceAvg;
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
+			positions[strInstrumentSysId]['charges'] = fOldCharges + fCharges;
 		}
 		if (strType == 'sell')
 		{
 			var nNewAmount = positions[strInstrumentSysId]['amount'] - nAmount;
-			var nNewPriceAvg = positions[strInstrumentSysId]['price_avg'];
-			if (nNewAmount < 0)
+			var fPriceAvg = positions[strInstrumentSysId]['price_avg'];
+			var fOldCharges = positions[strInstrumentSysId]['charges'];
+			
+			var fNewCharges = fOldCharges + fCharges;
+					
+			var fRealizedProfitTransaction = (nAmount * (fPrice - fPriceAvg)) - fNewCharges; 
+			
+			fRealizedProfit += fRealizedProfitTransaction;
+			if (fRealizedProfitTransaction > 0)
+			{
+				fRealizedGain += fRealizedProfitTransaction;
+			}
+			else
+			{
+				fRealizedLoss += fRealizedProfitTransaction;
+			}
+				
+			
+			if (nNewAmount <= 0)
 			{
 				nNewAmount = 0;
-				nNewPriceAvg = 0;
+				fPriceAvg = 0;
 			}
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
-			positions[strInstrumentSysId]['price_avg'] = nNewPriceAvg;
+			positions[strInstrumentSysId]['price_avg'] = fPriceAvg;
+			positions[strInstrumentSysId]['charges'] = 0;
 		}
 	}
 
@@ -124,6 +150,10 @@
 		}
 	}
 	
+	grPortfolio.realized_gain = fRealizedGain;
+	grPortfolio.realized_loss = fRealizedLoss;
+	grPortfolio.realized_profit = fRealizedProfit;
+	grPortfolio.update();
 	
 	return true;
 }]]></script>
@@ -131,13 +161,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-11 19:05:27</sys_created_on>
         <sys_id>1d0061491bfbbc50edf3642aab4bcbae</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>CalculatePositions</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1d0061491bfbbc50edf3642aab4bcbae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-24 08:56:58</sys_updated_on>
+        <sys_updated_on>2021-11-27 17:57:16</sys_updated_on>
     </sys_script_include>
 </record_update>
