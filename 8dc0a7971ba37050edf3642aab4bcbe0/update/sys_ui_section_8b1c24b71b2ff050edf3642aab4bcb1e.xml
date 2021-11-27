@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="8b1c24b71b2ff050edf3642aab4bcb1e" sys_domain="global" table="x_snc_investor_instrument" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>issuer</element>
+            <element>name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-16 19:22:38</sys_created_on>
-            <sys_id>2df493ea1b377c90edf3642aab4bcb6f</sys_id>
+            <sys_created_on>2021-11-27 15:08:13</sys_created_on>
+            <sys_id>d2344fca1b84cd10edf3642aab4bcb65</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_instrument" sys_domain="global" view="Default view">8b1c24b71b2ff050edf3642aab4bcb1e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-16 19:22:38</sys_updated_on>
+            <sys_updated_on>2021-11-27 15:08:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>isin</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-16 19:22:38</sys_created_on>
-            <sys_id>a1f493ea1b377c90edf3642aab4bcb70</sys_id>
+            <sys_created_on>2021-11-27 15:08:13</sys_created_on>
+            <sys_id>5a344fca1b84cd10edf3642aab4bcb65</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_instrument" sys_domain="global" view="Default view">8b1c24b71b2ff050edf3642aab4bcb1e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-16 19:22:38</sys_updated_on>
+            <sys_updated_on>2021-11-27 15:08:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,27 +32,27 @@
             <element>type</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-16 20:58:13</sys_created_on>
-            <sys_id>f9dae7221bf77c90edf3642aab4bcb75</sys_id>
+            <sys_created_on>2021-11-27 15:08:13</sys_created_on>
+            <sys_id>da344fca1b84cd10edf3642aab4bcb65</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_instrument" sys_domain="global" view="Default view">8b1c24b71b2ff050edf3642aab4bcb1e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-16 20:58:13</sys_updated_on>
+            <sys_updated_on>2021-11-27 15:08:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>name</element>
+            <element>issuer</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-16 21:01:43</sys_created_on>
-            <sys_id>cdab6b621bf77c90edf3642aab4bcb37</sys_id>
+            <sys_created_on>2021-11-27 15:08:13</sys_created_on>
+            <sys_id>5e344fca1b84cd10edf3642aab4bcb65</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_instrument" sys_domain="global" view="Default view">8b1c24b71b2ff050edf3642aab4bcb1e</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-16 21:01:43</sys_updated_on>
+            <sys_updated_on>2021-11-27 15:08:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

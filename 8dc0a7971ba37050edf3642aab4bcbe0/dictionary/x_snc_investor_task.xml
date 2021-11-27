@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Investor Task" max_length="40" name="x_snc_investor_task" type="collection">
+    <element extends="task" label="Investor Task" max_length="40" name="x_snc_investor_task" sizeclass="31" type="collection">
         <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" max_length="32" name="portfolio" read_only="true" reference="x_snc_investor_portfolio" reference_qual="ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ" reference_qual_condition="ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ" type="reference"/>
+        <element label="Position" max_length="32" name="position" read_only="true" reference="x_snc_investor_position" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return 'de13f6ce1bc0cd10edf3642aab4bcb34,0066677c1b080510edf3642aab4bcb98'; &#13;&#10;&#9;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" read_only="true" type="glide_action_list" virtual="true"/>
         <element choice="1" label="Topic" max_length="40" name="topic" read_only="true" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Loss Warning" value="loss"/>
-                <element inactive_on_update="false" label="Passed Peak" value="peak"/>
+                <element inactive_on_update="false" label="Position Performance" value="position_performance"/>
             </choice>
         </element>
+        <element label="Value" max_length="40" name="value" read_only="true" type="float"/>
     </element>
 </database>

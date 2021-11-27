@@ -7,8 +7,9 @@
         <client_callable>false</client_callable>
         <description/>
         <name>CreateInvestorTask</name>
-        <script><![CDATA[function CreateInvestorTask(strTopic, strUserSysId, strPortfolioSysId, strInstrumentSysId)
+        <script><![CDATA[function CreateInvestorTask(strTopic, fValue, strUserSysId, strPortfolioSysId, strPositionSysId, strInstrumentSysId)
 {
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	
 	var grPortfolio = GetPortfolioRecord(strPortfolioSysId);
@@ -16,12 +17,47 @@
 	
 	
 	strTopic = GetStringValue(strTopic);
-	var strShortDescription = 'xxx'; 
+
 	
-	if (strTopic == 'loss')
+	var query = 		
+		{
+			assigned_to: strUserSysId,
+			portfolio: strPortfolioSysId,
+			instrument: strInstrumentSysId,
+			topic: strTopic,
+			value: fValue
+		};
+	
+	
+	
+	var strShortDescription = ''; 
+	
+	if (strTopic == 'position_performance')
 	{
-		strShortDescription = 'Position performance is below -20%'; 
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+			query['active'] = true;
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
 	}
+	/*
+	if (strTopic == 'position_rebuy')
+	{
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	*/
+	/*
 	else if (strTopic == 'peak')
 	{
 		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" passed a peak'; 
@@ -31,28 +67,31 @@
 		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
 		strTopic = 'unknown';
 	}
+	*/
 
-		
-	var grTask = new GlideRecord('x_snc_investor_task');
-	grTask.initialize();
-	grTask.assigned_to = strUserSysId;
-	grTask.portfolio = strPortfolioSysId;
-	grTask.instrument = strInstrumentSysId;
-	grTask.short_description = strShortDescription;
-	grTask.topic = strTopic;
-	return grTask.insert();
+	
+
+	
+	return RecordQueryOrInsert(
+		'x_snc_investor_task',
+		query,
+		{
+			position: strPositionSysId,
+			short_description: strShortDescription
+		},
+		false);	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-23 20:00:51</sys_created_on>
         <sys_id>a130e3341b080510edf3642aab4bcb12</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>CreateInvestorTask</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_a130e3341b080510edf3642aab4bcb12</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-24 09:04:05</sys_updated_on>
+        <sys_updated_on>2021-11-27 15:10:30</sys_updated_on>
     </sys_script_include>
 </record_update>

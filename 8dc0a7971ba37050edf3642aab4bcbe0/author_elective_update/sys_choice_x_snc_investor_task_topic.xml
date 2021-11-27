@@ -21,7 +21,7 @@
             <element>topic</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Loss Warning</label>
+            <label>Position Performance</label>
             <language>en</language>
             <name>x_snc_investor_task</name>
             <sequence/>
@@ -30,29 +30,10 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>e8616ff41b080510edf3642aab4bcb9d</sys_id>
-            <sys_mod_count>1</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-23 20:03:54</sys_updated_on>
-            <value>loss</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>topic</element>
-            <hint/>
-            <inactive>false</inactive>
-            <label>Passed Peak</label>
-            <language>en</language>
-            <name>x_snc_investor_task</name>
-            <sequence/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-23 20:03:14</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>0f316ff41b080510edf3642aab4bcb9b</sys_id>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-23 20:03:21</sys_updated_on>
-            <value>peak</value>
+            <sys_updated_on>2021-11-26 08:41:22</sys_updated_on>
+            <value>position_performance</value>
         </sys_choice>
     </sys_choice>
 </record_update>
