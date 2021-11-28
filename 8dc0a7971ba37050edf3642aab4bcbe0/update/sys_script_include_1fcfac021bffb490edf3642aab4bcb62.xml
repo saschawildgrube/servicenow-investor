@@ -12,6 +12,7 @@
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var GetRecord = x_snc_devtools.GetRecord;
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 
 	function Log(strText)
 	{
@@ -47,7 +48,25 @@
 		for (var nPrice = 0; nPrice < aPrices.length; nPrice++)
 		{
 			var price = aPrices[nPrice];
+			
+			RecordQueryOrInsert(
+				'x_snc_investor_price_daily',
+				{
+					notation: strNotationSysId,
+					date: price.date
+				},
+				{
+					open: price.open,
+					high: price.high,
+					low: price.low,
+					close: price.close_adjusted,
+					dividend: price.dividend,
+					split: price.split,
+					volume: price.volume
+				},
+				true);			
 
+			/*
 			var grPricesDaily = new GlideRecord('x_snc_investor_price_daily');
 			grPricesDaily.addQuery('notation','=',strNotationSysId);
 			grPricesDaily.addQuery('date','=',price.date);
@@ -77,6 +96,7 @@
 				grPricesDaily.volume = price.volume;
 				grPricesDaily.update();
 			}
+			*/
 		}
 	}
 	
@@ -97,13 +117,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-14 18:12:08</sys_created_on>
         <sys_id>1fcfac021bffb490edf3642aab4bcb62</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>LoadPricesDailyForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1fcfac021bffb490edf3642aab4bcb62</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-20 21:20:53</sys_updated_on>
+        <sys_updated_on>2021-11-28 12:48:00</sys_updated_on>
     </sys_script_include>
 </record_update>
