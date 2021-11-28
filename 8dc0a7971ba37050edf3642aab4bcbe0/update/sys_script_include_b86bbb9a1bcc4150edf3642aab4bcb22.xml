@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculateKeyFiguresForPriceDaily</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculateKeyFiguresForPriceDaily</name>
+        <script><![CDATA[function CalculateKeyFiguresForPriceDaily(strPriceDailySysId)
+{
+	Debug('CalculateKeyFiguresForPriceDaily('+strPriceDailySysId+')');
+	var GetRecord = x_snc_devtools.GetRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+
+	strPriceDailySysId = GetStringValue(strPriceDailySysId);
+	var grPriceDaily = GetRecord('x_snc_investor_price_daily',strPriceDailySysId);
+	if (grPriceDaily == false)
+	{
+		return false;
+	}
+	
+	// SMA 38
+	Debug('SMA 38');
+	grPriceDaily.sma38 = '';
+	var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
+	grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
+	grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
+	grPriceDailyPast.orderByDesc('date');
+	grPriceDailyPast.setLimit(38);
+	grPriceDailyPast.query();
+	if (grPriceDailyPast.getRowCount() == 38)
+	{
+		var aValues = [];
+		while (grPriceDailyPast.next())
+		{
+			aValues.push(GetFloatValue(grPriceDailyPast.close));
+		}
+		if (aValues.length == 38)
+		{
+			Debug('CalculateKeyFigureSimpleMovingAverage we have 38 values!');
+			grPriceDaily.sma38 = CalculateKeyFigureSimpleMovingAverage(aValues);
+		}
+	}
+	
+	
+	// SMA 200
+	Debug('SMA 200');
+	grPriceDaily.sma200 = '';
+	var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
+	grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
+	grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
+	grPriceDailyPast.orderByDesc('date');
+	grPriceDailyPast.setLimit(200);
+	grPriceDailyPast.query();
+	if (grPriceDailyPast.getRowCount() == 200)
+	{
+		var aValues = [];
+		while (grPriceDailyPast.next())
+		{
+			aValues.push(GetFloatValue(grPriceDailyPast.close));
+		}
+		if (aValues.length == 200)
+		{
+			Debug('CalculateKeyFigureSimpleMovingAverage we have 200 values!');
+			grPriceDaily.sma200 = CalculateKeyFigureSimpleMovingAverage(aValues);
+		}
+	}	
+
+	grPriceDaily.update();
+	
+	return true;
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 13:53:57</sys_created_on>
+        <sys_id>b86bbb9a1bcc4150edf3642aab4bcb22</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>CalculateKeyFiguresForPriceDaily</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_b86bbb9a1bcc4150edf3642aab4bcb22</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 14:18:30</sys_updated_on>
+    </sys_script_include>
+</record_update>

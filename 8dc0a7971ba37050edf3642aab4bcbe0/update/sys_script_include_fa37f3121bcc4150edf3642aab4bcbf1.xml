@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculateKeyFigureSimpleMovingAverage</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculateKeyFigureSimpleMovingAverage</name>
+        <script><![CDATA[function CalculateKeyFigureSimpleMovingAverage(aValues)
+{
+	var GetArrayValue = x_snc_devtools.GetArrayValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+
+	aValues = GetArrayValue(aValues);
+	
+	if (aValues.length == 0)
+	{
+		return 0;
+	}
+	
+	var fTotal = 0;
+	for (var nValue = 0; nValue < aValues.length; nValue++)
+	{
+		fTotal += GetFloatValue(aValues[nValue]);
+	}
+	return fTotal / aValues.length;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 13:33:38</sys_created_on>
+        <sys_id>fa37f3121bcc4150edf3642aab4bcbf1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>CalculateKeyFigureSimpleMovingAverage</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_fa37f3121bcc4150edf3642aab4bcbf1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 13:59:04</sys_updated_on>
+    </sys_script_include>
+</record_update>

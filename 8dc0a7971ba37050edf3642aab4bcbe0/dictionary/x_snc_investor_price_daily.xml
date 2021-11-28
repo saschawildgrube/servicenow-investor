@@ -7,6 +7,8 @@
         <element label="Low" max_length="40" name="low" type="float"/>
         <element label="Notation" mandatory="true" max_length="32" name="notation" reference="x_snc_investor_notation" type="reference"/>
         <element label="Open" max_length="40" name="open" type="float"/>
+        <element label="SMA200" max_length="40" name="sma200" read_only="true" type="float"/>
+        <element label="SMA38" max_length="40" name="sma38" read_only="true" type="float"/>
         <element label="Split" max_length="40" name="split" type="float"/>
         <element label="Volume" max_length="40" name="volume" type="integer"/>
         <index name="index">
