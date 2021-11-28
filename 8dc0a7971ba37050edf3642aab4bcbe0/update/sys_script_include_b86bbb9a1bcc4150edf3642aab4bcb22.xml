@@ -21,52 +21,34 @@
 		return false;
 	}
 	
-	// SMA 38
-	Debug('SMA 38');
-	grPriceDaily.sma38 = '';
-	var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
-	grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
-	grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
-	grPriceDailyPast.orderByDesc('date');
-	grPriceDailyPast.setLimit(38);
-	grPriceDailyPast.query();
-	if (grPriceDailyPast.getRowCount() == 38)
+	function CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily, nDays)
 	{
-		var aValues = [];
-		while (grPriceDailyPast.next())
+		var fResult = '';
+		var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
+		grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
+		grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
+		grPriceDailyPast.orderByDesc('date');
+		grPriceDailyPast.setLimit(nDays);
+		grPriceDailyPast.query();
+		if (grPriceDailyPast.getRowCount() == nDays)
 		{
-			aValues.push(GetFloatValue(grPriceDailyPast.close));
+			var aValues = [];
+			while (grPriceDailyPast.next())
+			{
+				aValues.push(GetFloatValue(grPriceDailyPast.close));
+			}
+			if (aValues.length == nDays)
+			{
+				fResult = CalculateKeyFigureSimpleMovingAverage(aValues);
+			}
 		}
-		if (aValues.length == 38)
-		{
-			Debug('CalculateKeyFigureSimpleMovingAverage we have 38 values!');
-			grPriceDaily.sma38 = CalculateKeyFigureSimpleMovingAverage(aValues);
-		}
+		return fResult;
 	}
 	
-	
-	// SMA 200
-	Debug('SMA 200');
-	grPriceDaily.sma200 = '';
-	var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
-	grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
-	grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
-	grPriceDailyPast.orderByDesc('date');
-	grPriceDailyPast.setLimit(200);
-	grPriceDailyPast.query();
-	if (grPriceDailyPast.getRowCount() == 200)
-	{
-		var aValues = [];
-		while (grPriceDailyPast.next())
-		{
-			aValues.push(GetFloatValue(grPriceDailyPast.close));
-		}
-		if (aValues.length == 200)
-		{
-			Debug('CalculateKeyFigureSimpleMovingAverage we have 200 values!');
-			grPriceDaily.sma200 = CalculateKeyFigureSimpleMovingAverage(aValues);
-		}
-	}	
+	grPriceDaily.sma38 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,38);
+	grPriceDaily.sma90 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,90);
+	grPriceDaily.sma200 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,200);
+
 
 	grPriceDaily.update();
 	
@@ -77,13 +59,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-28 13:53:57</sys_created_on>
         <sys_id>b86bbb9a1bcc4150edf3642aab4bcb22</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>CalculateKeyFiguresForPriceDaily</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_b86bbb9a1bcc4150edf3642aab4bcb22</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-28 14:18:30</sys_updated_on>
+        <sys_updated_on>2021-11-28 15:36:56</sys_updated_on>
     </sys_script_include>
 </record_update>
