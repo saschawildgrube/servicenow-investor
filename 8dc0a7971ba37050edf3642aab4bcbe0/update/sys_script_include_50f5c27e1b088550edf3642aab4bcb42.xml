@@ -7,25 +7,33 @@
         <client_callable>false</client_callable>
         <description/>
         <name>CreateInvestorTask</name>
-        <script><![CDATA[function CreateInvestorTask(strTopic, fValue, strUserSysId, strPortfolioSysId, strPositionSysId, strInstrumentSysId)
+        <script><![CDATA[function CreateInvestorTask(strTopic, fValue, strUserSysId, strPortfolioSysId, strPositionSysId, strInstrumentSysId, strSignalSysId)
 {
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+	
+	strTopic = GetStringValue(strTopic);
+	fValue = GetFloatValue(fValue);
+	strUserSysId = GetStringValue(strUserSysId);
+	strPortfolioSysId = GetStringValue(strPortfolioSysId);
+	strPositionSysId = GetStringValue(strPositionSysId);
+	strInstrumentSysId = GetStringValue(strInstrumentSysId);
+	strSignalSysId = GetStringValue(strSignalSysId);
+	
 	
 	var grPortfolio = GetPortfolioRecord(strPortfolioSysId);
 	var grInstrument = GetInstrumentRecord(strInstrumentSysId);
-	
-	
-	strTopic = GetStringValue(strTopic);
 
-	
+
 	var query = 		
 		{
+			topic: strTopic,
+			value: fValue,
 			assigned_to: strUserSysId,
 			portfolio: strPortfolioSysId,
 			instrument: strInstrumentSysId,
-			topic: strTopic,
-			value: fValue
+			signal: strSignalSysId
 		};
 	
 	
@@ -44,6 +52,11 @@
 			strShortDescription = 'Position performance is above '+fValue+'%';
 		}
 	}
+	if (strTopic == 'signal')
+	{
+		strShortDescription = 'Trading signal';
+	}
+	
 	/*
 	if (strTopic == 'position_rebuy')
 	{
@@ -83,15 +96,15 @@
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-23 20:00:51</sys_created_on>
-        <sys_id>a130e3341b080510edf3642aab4bcb12</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_created_on>2021-11-29 18:31:33</sys_created_on>
+        <sys_id>50f5c27e1b088550edf3642aab4bcb42</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>CreateInvestorTask</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_script_include_a130e3341b080510edf3642aab4bcb12</sys_update_name>
+        <sys_update_name>sys_script_include_50f5c27e1b088550edf3642aab4bcb42</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-27 15:10:30</sys_updated_on>
+        <sys_updated_on>2021-11-29 18:31:33</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.InvestorClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>InvestorClientAPI</name>
+        <script><![CDATA[var InvestorClientAPI = Class.create();
+InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	AddIssuer: function()
+	{
+		var strIssuerName = this.getParameter('sysparm_issuer_name');
+		return x_snc_investor.IssuerInsert(strIssuerName);
+	},
+	
+	GetDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var strTable = this.getParameter('sysparm_table');
+		
+		if (strTable.indexOf('.') != -1)
+		{
+			var aTable = strTable.split('.');
+			if (aTable.length == 3)
+			{
+				strTable = aTable[1];
+			}
+		}
+
+		var grRecord = x_snc_devtools.GetRecord(strTable,strSysId);
+		if (grRecord == false)
+		{
+			return '';
+		}
+		if (strTable == 'x_snc_investor_instrument')
+		{
+			return GetInstrumentDetailsUrl(grRecord.sys_id);
+		}
+		if (strTable == 'x_snc_investor_signal')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_position')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_task')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}		
+
+		return '';
+	},	
+	
+	GetPositionDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var grPosition = GetPositionRecord(strSysId);
+		if (grPosition == false)
+		{
+			return '';
+		}
+		return GetInstrumentDetailsUrl(grPosition.instrument);
+	},
+
+
+    type: 'InvestorClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 18:34:53</sys_created_on>
+        <sys_id>931d70261b0c8150edf3642aab4bcb84</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>InvestorClientAPI</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_931d70261b0c8150edf3642aab4bcb84</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 18:34:53</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_script_include_931d70261b0c8150edf3642aab4bcb84</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_investor.InvestorClientAPI&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;InvestorClientAPI&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var InvestorClientAPI = Class.create();
+InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	AddIssuer: function()
+	{
+		var strIssuerName = this.getParameter('sysparm_issuer_name');
+		return x_snc_investor.IssuerInsert(strIssuerName);
+	},
+	
+	GetDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var strTable = this.getParameter('sysparm_table');
+		
+		if (strTable.indexOf('.') != -1)
+		{
+			var aTable = strTable.split('.');
+			if (aTable.length == 3)
+			{
+				strTable = aTable[1];
+			}
+		}
+
+		var grRecord = x_snc_devtools.GetRecord(strTable,strSysId);
+		if (grRecord == false)
+		{
+			return '';
+		}
+		if (strTable == 'x_snc_investor_instrument')
+		{
+			return GetInstrumentDetailsUrl(grRecord.sys_id);
+		}
+		if (strTable == 'x_snc_investor_signal')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_position')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_task')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}		
+
+		return '';
+	},	
+	
+	GetPositionDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var grPosition = GetPositionRecord(strSysId);
+		if (grPosition == false)
+		{
+			return '';
+		}
+		return GetInstrumentDetailsUrl(grPosition.instrument);
+	},
+
+
+    type: 'InvestorClientAPI'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-11-28 18:34:53&lt;/sys_created_on&gt;&lt;sys_id&gt;931d70261b0c8150edf3642aab4bcb84&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;InvestorClientAPI&lt;/sys_name&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_931d70261b0c8150edf3642aab4bcb84&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-11-28 18:34:53&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-230915701</payload_hash>
+        <record_name>InvestorClientAPI</record_name>
+        <reverted_from/>
+        <source>5bd1ff121b8c4150edf3642aab4bcbe6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 18:34:53</sys_created_on>
+        <sys_id>5f1d70261b0c8150edf3642aab4bcb87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17d67d41bd70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 18:34:53</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>971d7026160c815014f758faf9a9a587</update_guid>
+        <update_guid_history>971d7026160c815014f758faf9a9a587:-230915701</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 18:35:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>001fde0c9015498d8000bb1cd942c939</sys_id>
+        <sys_metadata>931d70261b0c8150edf3642aab4bcb84</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>InvestorClientAPI</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_script_include_931d70261b0c8150edf3642aab4bcb84</sys_update_name>
+        <sys_update_version display_value="sys_script_include_931d70261b0c8150edf3642aab4bcb84">5f1d70261b0c8150edf3642aab4bcb87</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 18:35:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

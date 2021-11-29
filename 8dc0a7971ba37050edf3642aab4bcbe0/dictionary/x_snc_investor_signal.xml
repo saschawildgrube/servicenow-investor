@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Signal" max_length="40" name="x_snc_investor_signal" sizeclass="14411" type="collection">
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element choice="1" label="Signal" max_length="40" name="signal" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Buy" value="buy"/>
+                <element inactive_on_update="false" label="Sell" value="sell"/>
+            </choice>
+        </element>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#13;&#10;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" read_only="true" type="glide_action_list" virtual="true"/>
+        <index name="index">
+            <element name="instrument"/>
+        </index>
+    </element>
+</database>

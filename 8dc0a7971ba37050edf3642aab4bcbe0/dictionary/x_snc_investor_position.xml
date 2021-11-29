@@ -9,7 +9,7 @@
         <element label="Average Price" max_length="40" name="price_avg" read_only="true" type="float"/>
         <element label="Best Price" max_length="40" name="price_best" read_only="true" type="float"/>
         <element label="Best Price Date" max_length="40" name="price_best_date" read_only="true" type="glide_date"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return '39067bc2dbfb78904647dad1f3961922';&#13;&#10;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" type="glide_action_list" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';&#13;&#10;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" type="glide_action_list" virtual="true"/>
         <element label="Value" max_length="40" name="value" read_only="true" type="float"/>
         <index name="index">
             <element name="portfolio"/>

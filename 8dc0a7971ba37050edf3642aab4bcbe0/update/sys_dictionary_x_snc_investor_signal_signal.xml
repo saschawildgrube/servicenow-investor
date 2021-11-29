@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="tasks" table="x_snc_investor_position">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="signal" table="x_snc_investor_signal">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
@@ -7,13 +7,14 @@
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
 
-	return 'bdb4f4621bc88150edf3642aab4bcb87';
+	// Add your code here
+	return '';  // return the calculated value
 
 })(current);]]></calculation>
-        <choice/>
+        <choice>1</choice>
         <choice_field/>
         <choice_table/>
-        <column_label>Tasks</column_label>
+        <column_label>Signal</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,15 +27,15 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>tasks</element>
+        <element>signal</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="">glide_action_list</internal_type>
+        <internal_type display_value="Choice">choice</internal_type>
         <mandatory>false</mandatory>
-        <max_length>4000</max_length>
-        <name>x_snc_investor_position</name>
+        <max_length>40</max_length>
+        <name>x_snc_investor_signal</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,23 +52,23 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-15 09:23:39</sys_created_on>
-        <sys_id>d5228c16db7f78904647dad1f39619ab</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Tasks</sys_name>
+        <sys_created_on>2021-11-28 17:26:04</sys_created_on>
+        <sys_id>374dec261b488150edf3642aab4bcb66</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Signal</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_dictionary_x_snc_investor_position_tasks</sys_update_name>
+        <sys_update_name>sys_dictionary_x_snc_investor_signal_signal</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-28 18:13:14</sys_updated_on>
+        <sys_updated_on>2021-11-28 17:26:04</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>true</virtual>
+        <virtual>false</virtual>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>

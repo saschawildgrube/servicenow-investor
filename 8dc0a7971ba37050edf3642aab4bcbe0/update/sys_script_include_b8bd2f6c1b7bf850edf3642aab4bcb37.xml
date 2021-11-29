@@ -16,6 +16,45 @@ InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 		return x_snc_investor.IssuerInsert(strIssuerName);
 	},
 	
+	GetDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var strTable = this.getParameter('sysparm_table');
+
+		if (strTable.indexOf('.') != -1)
+		{
+			var aTable = strTable.split('.');
+			if (aTable.length == 3)
+			{
+				strTable = aTable[1];
+			}
+		}	
+		
+		var grRecord = x_snc_devtools.GetRecord(strTable,strSysId);
+		if (grRecord == false)
+		{
+			return '';
+		}
+		if (strTable == 'x_snc_investor_instrument')
+		{
+			return GetInstrumentDetailsUrl(grRecord.sys_id);
+		}
+		if (strTable == 'x_snc_investor_signal')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_position')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_task')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}		
+
+		return '';
+	},	
+	
 	GetPositionDetailsUrl: function()
 	{
 		var strSysId = this.getParameter('sysparm_sysid');
@@ -27,38 +66,20 @@ InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 		return GetInstrumentDetailsUrl(grPosition.instrument);
 	},
 
-	GetInstrumentDetailsUrl: function()
-	{
-		var strSysId = this.getParameter('sysparm_sysid');
-		return GetInstrumentDetailsUrl(strSysId);
-	},
 
-	GetTaskDetailsUrl: function()
-	{
-		var GetRecord = x_snc_devtools.GetRecord;
-		var strSysId = this.getParameter('sysparm_sysid');
-		var grTask = GetRecord('x_snc_investor_task',strSysId);
-		if (grTask == false)
-		{
-			return '';
-		}
-		Debug('GetTaskDetailsUrl: '+x_snc_devtools.RenderValue(grTask));
-		return GetInstrumentDetailsUrl(grTask.instrument.sys_id);
-	},
-	
     type: 'InvestorClientAPI'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-10 16:04:23</sys_created_on>
         <sys_id>b8bd2f6c1b7bf850edf3642aab4bcb37</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>InvestorClientAPI</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_b8bd2f6c1b7bf850edf3642aab4bcb37</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-27 14:08:09</sys_updated_on>
+        <sys_updated_on>2021-11-28 18:35:44</sys_updated_on>
     </sys_script_include>
 </record_update>
