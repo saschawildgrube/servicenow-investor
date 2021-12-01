@@ -2,12 +2,12 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_snc_investor.GetPriceForInstrument</api_name>
+        <api_name>x_snc_investor.GetPriceFrameForInstrument</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description>Tries to retrieve a price for the given instrument, in the given currency, quality and point in time. </description>
-        <name>GetPriceForInstrument</name>
-        <script><![CDATA[function GetPriceForInstrument(strInstrumentSysId,strCurrencySysId,strDateTime)
+        <description>Tries to retrieve open, high,low, close prices for the given instrument, in the given currency, quality and given start and end date. </description>
+        <name>GetPriceFrameForInstrument</name>
+        <script><![CDATA[function GetPriceFrameForInstrument(strInstrumentSysId,strCurrencySysId,strDateStart,strDateEnd)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetRecord = x_snc_devtools.GetRecord;
@@ -15,38 +15,32 @@
 	var grInstrument = GetInstrumentRecord(strInstrumentSysId);
 	if (IsValidRecord(grInstrument) == false)
 	{
-		Debug('GetPriceForInstrument called with invalid sys_id.');
 		return false;
 	}
 
-	var grNotation = GetNotationForInstrument(strInstrumentSysId,strCurrencySysId);
-	
-	if (IsValidRecord(grNotation) == false)
-	{
-
-		var symbols = GetSymbolsFromISIN(grInstrument.isin);
-
-	//Debug(x_snc_devtools.RenderValue(symbols));
-	
-	}
+	var priceframe = {
+		start_date: '',
+		end_date: '',
+		open: 0,
+		high: 0,
+		low: 0,
+		close: 0
+	};
 	
 	
-	Debug(x_snc_devtools.RenderValue(timeseries));
-	
-	
-	return false;
+	return priceframe;
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-13 18:05:58</sys_created_on>
         <sys_id>c92663ed1b373490edf3642aab4bcbf9</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>GetPriceForInstrument</sys_name>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>GetPriceFrameForInstrument</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_c92663ed1b373490edf3642aab4bcbf9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-14 18:05:36</sys_updated_on>
+        <sys_updated_on>2021-12-01 21:39:39</sys_updated_on>
     </sys_script_include>
 </record_update>

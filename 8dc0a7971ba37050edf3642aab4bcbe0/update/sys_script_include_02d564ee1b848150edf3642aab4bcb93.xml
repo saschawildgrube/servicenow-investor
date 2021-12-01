@@ -2,24 +2,44 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_snc_investor.GenerateSignalForNotation</api_name>
+        <api_name>x_snc_investor.GenerateSignalsForNotation</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
-        <name>GenerateSignalForNotation</name>
-        <script><![CDATA[function GenerateSignalForNotation(strNotationSysId, strDateBegin, strDateEnd)
+        <name>GenerateSignalsForNotation</name>
+        <script><![CDATA[function GenerateSignalsForNotation(strNotationSysId, strDateBegin, strDateEnd)
 {
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 
+	
 	var grNotation = GetNotationRecord(strNotationSysId);
 	if (grNotation == false)
 	{
 		return false;
 	}
+
+	Debug('GenerateSignalsForNotation: '+x_snc_devtools.RenderRecordSummary(grNotation));
+
 	
 	strDateBegin = GetStringValue(strDateBegin);
 	strDateEnd = GetStringValue(strDateEnd);
+
+	/*
+	if (strDateEnd == '')
+	{
+		strDateEnd = GetDateNow();
+	}
+	*/
+	
+	
+	if (strDateBegin == '')
+	{
+		var gdt = new GlideDateTime();
+		gdt.subtract(1000 * 60 * 60 * 24 * 15);
+		strDateBegin = GetStringValue(gdt.getDate());	
+	}
+
 	
 
 	
@@ -168,13 +188,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-28 16:55:54</sys_created_on>
         <sys_id>02d564ee1b848150edf3642aab4bcb93</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>GenerateSignalForNotation</sys_name>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>GenerateSignalsForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_02d564ee1b848150edf3642aab4bcb93</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-29 18:49:19</sys_updated_on>
+        <sys_updated_on>2021-12-01 21:04:01</sys_updated_on>
     </sys_script_include>
 </record_update>

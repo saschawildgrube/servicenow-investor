@@ -49,19 +49,21 @@
 		var nAmount = grTransaction.amount;
 		var fPrice = grTransaction.price;
 		var fCharges = grTransaction.charges;
-		var strDate = grTransaction.date;
+		var strDate = GetStringValue(grTransaction.date);
 		var instrument = GetValue(positions,strInstrumentSysId);
 		if (instrument == null)
 		{
 			positions[strInstrumentSysId] = {
 				amount: 0,
 				price_avg: 0,
-				charges: 0
+				charges: 0,
+				start_date: ''
 			};
 		}
 		
 		if (strType == 'buy')
 		{
+			var strStartDate = positions[strInstrumentSysId]['start_date'];
 			var nOldAmount = positions[strInstrumentSysId]['amount'];
 			var nNewAmount = nOldAmount + nAmount;
 			var fOldPriceAvg = positions[strInstrumentSysId]['price_avg'];
@@ -71,9 +73,14 @@
 					(fOldPriceAvg * nOldAmount)
 					+ (nAmount * fPrice)
 				) / nNewAmount;
+			if (nOldAmount == 0)
+			{
+				strStartDate = strDate;
+			}
 			positions[strInstrumentSysId]['price_avg'] = fNewPriceAvg;
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
 			positions[strInstrumentSysId]['charges'] = fOldCharges + fCharges;
+			positions[strInstrumentSysId]['start_date'] = strStartDate;
 		}
 		if (strType == 'sell')
 		{
@@ -100,6 +107,7 @@
 			{
 				nNewAmount = 0;
 				fPriceAvg = 0;
+				positions[strInstrumentSysId]['start_date'] = '';
 			}
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
 			positions[strInstrumentSysId]['price_avg'] = fPriceAvg;
@@ -139,7 +147,9 @@
 			var strBestPriceDate = '';
 			var fCostbase = position.amount * position.price_avg
 			var bestprice = GetBestPriceForInstrument(strInstrumentSysId,grPortfolio.currency);
-	Debug(RenderValue(bestprice));
+
+			//var historicalprice = GetHistoricalPriceForInstrument(strInstrumentSysId,grPortfolio.currency,);
+
 			
 			if (bestprice != false)
 			{
@@ -168,6 +178,7 @@
 					instrument: strInstrumentSysId
 				},
 				{
+					start_date: position.start_date,
 					amount: position.amount,
 					price_avg: position.price_avg,
 					costbase: fCostbase,
@@ -178,42 +189,7 @@
 					price_best_date: strBestPriceDate
 				},
 				true);
-			/*
-			var grPosition = new GlideRecord('x_snc_investor_position');
-			grPosition.initialize();
-			grPosition.portfolio = strPortfolioSysId;
-			grPosition.instrument = strInstrumentSysId;
-			grPosition.amount = position.amount;
-			grPosition.price_avg = position.price_avg;
-			grPosition.costbase = grPosition.amount * grPosition.price_avg;  
 
-			var fBestPrice = 0;
-			var strDateBestPrice = '';
-			var bestprice = GetBestPriceForInstrument(strInstrumentSysId,grPortfolio.currency);
-			if (bestprice != false)
-			{
-				fBestPrice = bestprice.price;
-				strBestPriceDate = bestprice.date;
-			}
-			
-			if (fBestPrice == 0)
-			{
-				grPosition.price_best = grPosition.price_avg;
-				grPosition.price_best_date = '';
-				grPosition.value = grPosition.costbase;
-			}
-			else
-			{
-				grPosition.price_best = fBestPrice;
-				grPosition.price_best_date = strBestPriceDate;
-				grPosition.value = fBestPrice * grPosition.amount;
-			}
-			
-			grPosition.performance = ((grPosition.value / grPosition.costbase) * 100) - 100;
-			grPosition.gain = grPosition.value - grPosition.costbase;
-			
-			grPosition.insert();
-			*/
 		}
 		else
 		{
@@ -237,13 +213,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-11 19:05:27</sys_created_on>
         <sys_id>1d0061491bfbbc50edf3642aab4bcbae</sys_id>
-        <sys_mod_count>51</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>CalculatePositions</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1d0061491bfbbc50edf3642aab4bcbae</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-30 06:08:42</sys_updated_on>
+        <sys_updated_on>2021-12-01 21:26:39</sys_updated_on>
     </sys_script_include>
 </record_update>
