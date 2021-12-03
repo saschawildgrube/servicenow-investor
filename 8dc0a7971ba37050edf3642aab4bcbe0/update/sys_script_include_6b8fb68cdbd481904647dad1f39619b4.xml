@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.InstrumentUpdateName</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>InstrumentUpdateName</name>
+        <script><![CDATA[function InstrumentUpdateName(grInstrument,bForceUpdate)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
+	var GetRecord = x_snc_devtools.GetRecord;
+
+	if (IsValidRecord(grInstrument) == false)
+	{
+		return;
+	}
+	bForceUpdate = GetBoolValue(bForceUpdate);
+	
+	var strType = GetStringValue(grInstrument.type);
+	var strName = GetStringValue(grInstrument.name);
+
+	var bUpdate = bForceUpdate;
+
+	if (strName == '')
+	{
+		bUpdate = true;
+	}
+	
+	if (bUpdate)
+	{
+		var grIssuer = GetRecord('x_snc_investor_issuer',grInstrument.issuer);
+		if (IsValidRecord(grIssuer))
+		{
+			if (strType == 'stock')
+			{
+				strName = grIssuer.name + ' Shares';
+			}
+			else if (strType == 'bond')
+			{
+				strName = grIssuer.name + ' Bond';
+			}
+			else if (strType == 'etf')
+			{
+				strName = 'ETF '+ grIssuer.name + ' ' + grInstrument.isin;
+			}
+			else
+			{
+				strName = grIssuer.name + ' ' + grInstrument.isin + ' ' + strType;
+			}
+		}
+		else
+		{
+			strName = grIssuer.isin + ' ' + strType;
+		}
+	}
+	grInstrument.name = strName;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-03 20:09:39</sys_created_on>
+        <sys_id>6b8fb68cdbd481904647dad1f39619b4</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>InstrumentUpdateName</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_6b8fb68cdbd481904647dad1f39619b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-03 20:15:44</sys_updated_on>
+    </sys_script_include>
+</record_update>

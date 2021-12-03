@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Instrument" max_length="40" name="x_snc_investor_instrument" sizeclass="62" type="collection">
+    <element label="Instrument" max_length="40" name="x_snc_investor_instrument" sizeclass="64" type="collection">
         <element label="ISIN" mandatory="true" max_length="12" name="isin" type="string"/>
         <element label="Issuer" mandatory="true" max_length="32" name="issuer" reference="x_snc_investor_issuer" type="reference"/>
         <element display="true" label="Name" max_length="100" name="name" type="string"/>
