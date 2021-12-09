@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="DELETE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_snc_investor_manual.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div style="padding-left: 20px;">
+<span style="visibility: hidden;">_CUT_HERE_</span>
+	<g2:no_escape>$[
+		var docapi = new DocumentationAPI('d689f6901bd38450a89720a8ec4bcbfd');
+		docapi.RenderHeader();
+	]</g2:no_escape>
+	
+	<p>Welcome to TODO: Enter the name of the app here! - created and maintained by&#160;<a href="mailto:john.doe@example.com">TODO: Enter the name of the maintainer here</a>.</p>
+
+	<h2>Features</h2> 
+	<p>TODO: Document the features of the app here...</p>
+
+	<h2>Disclaimer</h2>
+	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
+	
+	<h2>System Requirements</h2>
+	<ul>
+		<g2:no_escape>$[
+			docapi.RenderSystemRequirements(
+				'Quebec,Rome',
+				true,
+				AppGetDependencies());
+		]</g2:no_escape>	
+	</ul>
+	
+	<h2>Installation</h2>
+	<ol>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'DevTools',
+				'https://github.com/saschawildgrube/servicenow-devtools');
+		]</g2:no_escape>
+		<li>TODO: Add further steps required for installation...</li>
+	</ol>
+	
+	<h2>Reference</h2>
+
+	<h3>Configuration Options</h3>
+	<g2:no_escape>$[docapi.RenderProperties()]</g2:no_escape>
+
+	<h3>UI Actions</h3>
+	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
+	
+	<h3>Script Includes</h3>
+	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
+	
+	<h3>UI Scripts</h3>
+	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
+	
+	<h3>Test step configurations</h3>
+	<p>DevTools contains the following customized test step configurations:</p>
+	<g2:no_escape>$[docapi.RenderTestStepConfigurations()]</g2:no_escape>
+	
+	<h3>Extension Points</h3>
+	<g2:no_escape>$[docapi.RenderExtensionPoints()]</g2:no_escape>		
+
+	<h3>Business Rules</h3>
+	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
+	
+	<h2>License</h2>
+	<g2:no_escape>$[docapi.RenderCopyright(2022,'TODO: Add name of copyright holder')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
+	
+	<h2>Release Notes</h2>
+
+	<h3>1.1.0 - 2022-TODO</h3>
+	<ol>
+		<li>TODO: document changes here</li>
+	</ol>
+
+	<h3>1.0.0 - 2022-TODO</h3>
+	<p>First baselined version</p>
+
+<span style="visibility: hidden;">_CUT_HERE_</span>
+</div>
+</j:jelly>]]></html>
+        <name>manual</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-06 15:11:38</sys_created_on>
+        <sys_id>fb4b59011b984d90edf3642aab4bcbdf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>manual</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_page_fb4b59011b984d90edf3642aab4bcbdf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-06 15:11:38</sys_updated_on>
+    </sys_ui_page>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_ui_page_fb4b59011b984d90edf3642aab4bcbdf</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_page"&gt;&lt;sys_ui_page action="INSERT_OR_UPDATE"&gt;&lt;category&gt;general&lt;/category&gt;&lt;client_script/&gt;&lt;description/&gt;&lt;direct&gt;false&lt;/direct&gt;&lt;endpoint&gt;x_snc_investor_manual.do&lt;/endpoint&gt;&lt;html&gt;&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"&gt;
+&lt;div style="padding-left: 20px;"&gt;
+&lt;span style="visibility: hidden;"&gt;_CUT_HERE_&lt;/span&gt;
+	&lt;g2:no_escape&gt;$[
+		var docapi = new DocumentationAPI('d689f6901bd38450a89720a8ec4bcbfd');
+		docapi.RenderHeader();
+	]&lt;/g2:no_escape&gt;
+	
+	&lt;p&gt;Welcome to TODO: Enter the name of the app here! - created and maintained by&amp;#160;&lt;a href="mailto:john.doe@example.com"&gt;TODO: Enter the name of the maintainer here&lt;/a&gt;.&lt;/p&gt;
+
+	&lt;h2&gt;Features&lt;/h2&gt; 
+	&lt;p&gt;TODO: Document the features of the app here...&lt;/p&gt;
+
+	&lt;h2&gt;Disclaimer&lt;/h2&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderDisclaimer()]&lt;/g2:no_escape&gt;	
+	
+	&lt;h2&gt;System Requirements&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;g2:no_escape&gt;$[
+			docapi.RenderSystemRequirements(
+				'Quebec,Rome',
+				true,
+				AppGetDependencies());
+		]&lt;/g2:no_escape&gt;	
+	&lt;/ul&gt;
+	
+	&lt;h2&gt;Installation&lt;/h2&gt;
+	&lt;ol&gt;
+		&lt;g2:no_escape&gt;$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'DevTools',
+				'https://github.com/saschawildgrube/servicenow-devtools');
+		]&lt;/g2:no_escape&gt;
+		&lt;li&gt;TODO: Add further steps required for installation...&lt;/li&gt;
+	&lt;/ol&gt;
+	
+	&lt;h2&gt;Reference&lt;/h2&gt;
+
+	&lt;h3&gt;Configuration Options&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderProperties()]&lt;/g2:no_escape&gt;
+
+	&lt;h3&gt;UI Actions&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderUIActions()]&lt;/g2:no_escape&gt;		
+	
+	&lt;h3&gt;Script Includes&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderScriptIncludes()]&lt;/g2:no_escape&gt;
+	
+	&lt;h3&gt;UI Scripts&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderUIScripts()]&lt;/g2:no_escape&gt;	
+	
+	&lt;h3&gt;Test step configurations&lt;/h3&gt;
+	&lt;p&gt;DevTools contains the following customized test step configurations:&lt;/p&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderTestStepConfigurations()]&lt;/g2:no_escape&gt;
+	
+	&lt;h3&gt;Extension Points&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderExtensionPoints()]&lt;/g2:no_escape&gt;		
+
+	&lt;h3&gt;Business Rules&lt;/h3&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderBusinessRules()]&lt;/g2:no_escape&gt;	
+	
+	&lt;h2&gt;License&lt;/h2&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderCopyright(2022,'TODO: Add name of copyright holder')]&lt;/g2:no_escape&gt;
+	&lt;g2:no_escape&gt;$[docapi.RenderLicense()]&lt;/g2:no_escape&gt;
+	
+	&lt;h2&gt;Release Notes&lt;/h2&gt;
+
+	&lt;h3&gt;1.1.0 - 2022-TODO&lt;/h3&gt;
+	&lt;ol&gt;
+		&lt;li&gt;TODO: document changes here&lt;/li&gt;
+	&lt;/ol&gt;
+
+	&lt;h3&gt;1.0.0 - 2022-TODO&lt;/h3&gt;
+	&lt;p&gt;First baselined version&lt;/p&gt;
+
+&lt;span style="visibility: hidden;"&gt;_CUT_HERE_&lt;/span&gt;
+&lt;/div&gt;
+&lt;/j:jelly&gt;]]&gt;&lt;/html&gt;&lt;name&gt;manual&lt;/name&gt;&lt;processing_script/&gt;&lt;sys_class_name&gt;sys_ui_page&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-12-06 15:11:38&lt;/sys_created_on&gt;&lt;sys_id&gt;fb4b59011b984d90edf3642aab4bcbdf&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;manual&lt;/sys_name&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_page_fb4b59011b984d90edf3642aab4bcbdf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-12-06 15:11:38&lt;/sys_updated_on&gt;&lt;/sys_ui_page&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1187392442</payload_hash>
+        <record_name>manual</record_name>
+        <reverted_from/>
+        <source>20f4c384db5881904647dad1f3961958</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-06 15:11:38</sys_created_on>
+        <sys_id>b74b59011b984d90edf3642aab4bcbe2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17d904ce51b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-06 15:11:38</sys_updated_on>
+        <type>UI Page</type>
+        <update_guid>3f4b590114984d90878902024086fae1</update_guid>
+        <update_guid_history>3f4b590114984d90878902024086fae1:-1187392442</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-06 15:12:52</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_page">sys_ui_page</sys_db_object>
+        <sys_id>0ff992746a2a44e0827a4a1ae92cae09</sys_id>
+        <sys_metadata>fb4b59011b984d90edf3642aab4bcbdf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>manual</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_ui_page_fb4b59011b984d90edf3642aab4bcbdf</sys_update_name>
+        <sys_update_version display_value="sys_ui_page_fb4b59011b984d90edf3642aab4bcbdf">b74b59011b984d90edf3642aab4bcbe2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-06 15:12:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

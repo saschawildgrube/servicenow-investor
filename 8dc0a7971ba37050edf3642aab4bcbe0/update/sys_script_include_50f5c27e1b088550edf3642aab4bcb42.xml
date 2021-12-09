@@ -52,11 +52,19 @@
 			strShortDescription = 'Position performance is above '+fValue+'%';
 		}
 	}
-	if (strTopic == 'signal')
+	else if (strTopic == 'signal')
 	{
 		strShortDescription = 'Trading signal';
 	}
-	
+	else if (strTopic == 'position_performance_since_high')
+	{
+		strShortDescription = 'Position performance after high is BELOW '+fValue+'%';
+		query['active'] = true;
+	}
+	else
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
+	}	
 	/*
 	if (strTopic == 'position_rebuy')
 	{
@@ -70,18 +78,6 @@
 		}
 	}
 	*/
-	/*
-	else if (strTopic == 'peak')
-	{
-		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" passed a peak'; 
-	}
-	else
-	{
-		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
-		strTopic = 'unknown';
-	}
-	*/
-
 	
 
 	
@@ -98,13 +94,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-29 18:31:33</sys_created_on>
         <sys_id>50f5c27e1b088550edf3642aab4bcb42</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CreateInvestorTask</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_50f5c27e1b088550edf3642aab4bcb42</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-29 18:31:33</sys_updated_on>
+        <sys_updated_on>2021-12-04 12:35:31</sys_updated_on>
     </sys_script_include>
 </record_update>

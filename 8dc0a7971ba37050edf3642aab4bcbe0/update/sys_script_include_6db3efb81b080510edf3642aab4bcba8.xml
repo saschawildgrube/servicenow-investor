@@ -9,121 +9,37 @@
         <name>CreateInvestorTasks</name>
         <script><![CDATA[function CreateInvestorTasks()
 {
-	var RenderValue = x_snc_devtools.RenderValue;
 	var GetStringValue = x_snc_devtools.GetStringValue;
-	var GetFloatValue = x_snc_devtools.GetFloatValue;
-	var GetDateNow = x_snc_devtools.GetDateNow;
 	
-	var strDateToday = GetDateNow();
-	
-	var grPortfolios = new GlideRecord('x_snc_investor_portfolio');
-	grPortfolios.query();
-	while (grPortfolios.next())
+	var grRole = new GlideRecord('sys_user_role');
+	grRole.addQuery('name','=','x_snc_investor.user');
+	grRole.query();
+	if (grRole.next() == false)
 	{
-		var aInstruments = [];
-		
-		var grPositions = new GlideRecord('x_snc_investor_position');
-		grPositions.addQuery('portfolio','=',grPortfolios.sys_id);
-		grPositions.query();
-		while (grPositions.next())
-		{
-			aInstruments.push(GetStringValue(grPositions.instrument));
-			
-			var fPerformance = GetFloatValue(grPositions.performance);
-
-			// Position performance: Loss Warning
-			if (fPerformance < -30)
-			{
-				CreateInvestorTask('position_performance',-30,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			else if (fPerformance < -20)
-			{
-				CreateInvestorTask('position_performance',-20,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			else if (fPerformance < -10)
-			{
-				CreateInvestorTask('position_performance',-10,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-
-			// Position Performance: Growth Notification
-			if (fPerformance > 100)
-			{
-				CreateInvestorTask('position_performance',100,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			else if (fPerformance > 50)
-			{
-				CreateInvestorTask('position_performance',50,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			else if (fPerformance > 25)
-			{
-				CreateInvestorTask('position_performance',25,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			else if (fPerformance > 10)
-			{
-				CreateInvestorTask('position_performance',10,grPortfolios.owner,grPortfolios.sys_id,grPositions.sys_id,grPositions.instrument);
-			}
-			
-			
-			// Trading Signals: Position sell
-			var grSignals = new GlideRecord('x_snc_investor_signal');
-			grSignals.addQuery('instrument','=',grPositions.instrument);
-			grSignals.addQuery('signal','=','sell');
-			grSignals.addQuery('date','=',strDateToday);
-			grSignals.query();
-			while (grSignals.next())
-			{
-				CreateInvestorTask(
-					'signal',
-					0,
-					grPortfolios.owner,
-					grPortfolios.sys_id,
-					grPositions.sys_id,
-					grPositions.instrument,
-					grSignals.sys_id);
-			}
-		}
-
-		Debug(x_snc_devtools.RenderValue(aInstruments));
-		
-		
-		// Trading Signals: Buy signals for instruments NOT in the user's portfolio
-		var grBuySignals = new GlideRecord('x_snc_investor_signal');
-		for (var nInstrument = 0; nInstrument < aInstruments.length; nInstrument++)
-		{
-			grBuySignals.addQuery('instrument','!=',aInstruments[nInstrument]);
-		}
-		grBuySignals.addQuery('signal','=','buy');
-		grBuySignals.addQuery('date','=',strDateToday);
-		grBuySignals.query();
-		while (grBuySignals.next())
-		{
-			Debug(x_snc_devtools.RenderValue(grBuySignals));
-			CreateInvestorTask(
-				'signal',
-				0,
-				grPortfolios.owner,
-				null,
-				null,
-				grBuySignals.instrument,
-				grBuySignals.sys_id);
-		}			
-		
-	
-		
+		return false;
 	}
-	Debug('CreateInvestorTasks END');
+	
+	var strRoleSysId = GetStringValue(grRole.sys_id);
+	
+	var grUserHasRole = new GlideRecord('sys_user_has_role');
+	grUserHasRole.addQuery('role','=',strRoleSysId);
+	grUserHasRole.query();
+	while (grUserHasRole.next())
+	{
+		CreateInvestorTasksForUser(grUserHasRole.user);
+	}
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-23 20:18:36</sys_created_on>
         <sys_id>6db3efb81b080510edf3642aab4bcba8</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>CreateInvestorTasks</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_6db3efb81b080510edf3642aab4bcba8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-01 21:32:09</sys_updated_on>
+        <sys_updated_on>2021-12-08 20:06:04</sys_updated_on>
     </sys_script_include>
 </record_update>

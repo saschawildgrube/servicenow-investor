@@ -5,10 +5,11 @@
         <api_name>x_snc_investor.GetPriceFrameForInstrument</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
-        <description>Tries to retrieve open, high,low, close prices for the given instrument, in the given currency, quality and given start and end date. </description>
+        <description>Tries to retrieve open, high,low, close prices for the given instrument, in the given currency, given start and end date. </description>
         <name>GetPriceFrameForInstrument</name>
         <script><![CDATA[function GetPriceFrameForInstrument(strInstrumentSysId,strCurrencySysId,strDateStart,strDateEnd)
 {
+	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetRecord = x_snc_devtools.GetRecord;
 	
@@ -17,16 +18,33 @@
 	{
 		return false;
 	}
-
-	var priceframe = {
-		start_date: '',
-		end_date: '',
-		open: 0,
-		high: 0,
-		low: 0,
-		close: 0
-	};
 	
+	strCurrencySysId = GetStringValue(strCurrencySysId);
+	strDateStart = GetStringValue(strDateStart);
+	strDateEnd = GetStringValue(strDateEnd);
+	
+	var priceframe = false;
+	
+	var grNotations = new GlideRecord('x_snc_investor_notation');
+	grNotations.addQuery('instrument','=',grInstrument.sys_id);
+	grNotations.query();
+	while (grNotations.next())
+	{
+		var priceframeNew = GetPriceFrameForNotation(grNotations.sys_id,strCurrencySysId,strDateStart,strDateEnd);
+		if (priceframe == false)
+		{
+			priceframe = priceframeNew;
+		}
+		else
+		{
+			if (   priceframeNew.open_date <= priceframe.open_date
+				&& priceframeNew.close_date >= priceframe.close_date)
+			{
+				priceframe = priceframeNew;
+			}
+		}
+		
+	}
 	
 	return priceframe;
 }]]></script>
@@ -34,13 +52,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-13 18:05:58</sys_created_on>
         <sys_id>c92663ed1b373490edf3642aab4bcbf9</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>GetPriceFrameForInstrument</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_c92663ed1b373490edf3642aab4bcbf9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-01 21:39:39</sys_updated_on>
+        <sys_updated_on>2021-12-04 12:19:17</sys_updated_on>
     </sys_script_include>
 </record_update>

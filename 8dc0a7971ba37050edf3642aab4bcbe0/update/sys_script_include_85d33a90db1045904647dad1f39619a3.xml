@@ -25,12 +25,6 @@
 		return false;
 	}
 	
-	/*
-	var grPosition = new GlideRecord('x_snc_investor_position');
-	grPosition.addQuery('portfolio','=',strPortfolioSysId);
-	grPosition.deleteMultiple();
-	*/
-	
 	var positions = {};
 	
 	var fRealizedProfit = 0;
@@ -73,11 +67,13 @@
 					(fOldPriceAvg * nOldAmount)
 					+ (nAmount * fPrice)
 				) / nNewAmount;
+			var strPriceAvgDate = strDate;
 			if (nOldAmount == 0)
 			{
 				strStartDate = strDate;
 			}
 			positions[strInstrumentSysId]['price_avg'] = fNewPriceAvg;
+			positions[strInstrumentSysId]['price_avg_date'] = strPriceAvgDate;
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
 			positions[strInstrumentSysId]['charges'] = fOldCharges + fCharges;
 			positions[strInstrumentSysId]['start_date'] = strStartDate;
@@ -108,6 +104,7 @@
 				nNewAmount = 0;
 				fPriceAvg = 0;
 				positions[strInstrumentSysId]['start_date'] = '';
+				positions[strInstrumentSysId]['price_avg_date'] = '';
 			}
 			positions[strInstrumentSysId]['amount'] = nNewAmount;
 			positions[strInstrumentSysId]['price_avg'] = fPriceAvg;
@@ -147,9 +144,6 @@
 			var strBestPriceDate = '';
 			var fCostbase = position.amount * position.price_avg
 			var bestprice = GetBestPriceForInstrument(strInstrumentSysId,grPortfolio.currency);
-
-			//var historicalprice = GetHistoricalPriceForInstrument(strInstrumentSysId,grPortfolio.currency,);
-
 			
 			if (bestprice != false)
 			{
@@ -181,6 +175,7 @@
 					start_date: position.start_date,
 					amount: position.amount,
 					price_avg: position.price_avg,
+					price_avg_date: position.price_avg_date,
 					costbase: fCostbase,
 					value: fValue,
 					gain: fGain,
@@ -211,15 +206,15 @@
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-11 19:05:27</sys_created_on>
-        <sys_id>1d0061491bfbbc50edf3642aab4bcbae</sys_id>
-        <sys_mod_count>53</sys_mod_count>
+        <sys_created_on>2021-12-04 13:42:56</sys_created_on>
+        <sys_id>85d33a90db1045904647dad1f39619a3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>CalculatePositions</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_script_include_1d0061491bfbbc50edf3642aab4bcbae</sys_update_name>
+        <sys_update_name>sys_script_include_85d33a90db1045904647dad1f39619a3</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-01 21:26:39</sys_updated_on>
+        <sys_updated_on>2021-12-04 13:43:32</sys_updated_on>
     </sys_script_include>
 </record_update>
