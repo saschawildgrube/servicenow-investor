@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Instrument" max_length="40" name="x_snc_investor_instrument" sizeclass="71" type="collection">
+    <element label="Instrument" max_length="40" name="x_snc_investor_instrument" type="collection">
         <element label="ISIN" mandatory="true" max_length="12" name="isin" type="string"/>
         <element label="Issuer" mandatory="true" max_length="32" name="issuer" reference="x_snc_investor_issuer" type="reference"/>
         <element display="true" label="Name" max_length="100" name="name" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#13;&#10;&#13;&#10;})(current);" label="Task" max_length="4000" name="task" type="glide_action_list" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#10;&#10;})(current);" label="Task" max_length="4000" name="task" type="glide_action_list" virtual="true"/>
         <element choice="1" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Stock" sequence="1" value="stock"/>

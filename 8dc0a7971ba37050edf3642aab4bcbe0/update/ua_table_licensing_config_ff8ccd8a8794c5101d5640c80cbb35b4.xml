@@ -4,22 +4,22 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_snc_investor_signal</name>
+        <name>x_snc_investor_notation</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-28 16:36:14</sys_created_on>
-        <sys_id>49f164221b848150edf3642aab4bcba1</sys_id>
+        <sys_created_on>2021-11-13 18:17:43</sys_created_on>
+        <sys_id>ff8ccd8a8794c5101d5640c80cbb35b4</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_snc_investor_signal</sys_name>
+        <sys_name>x_snc_investor_notation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>ua_table_licensing_config_49f164221b848150edf3642aab4bcba1</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_ff8ccd8a8794c5101d5640c80cbb35b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-28 16:36:14</sys_updated_on>
+        <sys_updated_on>2021-11-13 18:17:43</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>

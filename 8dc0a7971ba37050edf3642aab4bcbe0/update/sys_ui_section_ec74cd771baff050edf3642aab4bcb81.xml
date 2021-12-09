@@ -8,7 +8,7 @@
             <sys_id>2c74cd771baff050edf3642aab4bcb82</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_issuer" sys_domain="global" view="451471521b223010edf3642aab4bcbbe">ec74cd771baff050edf3642aab4bcb81</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_issuer" sys_domain="global" view="acb5d34387000110d5900fa90cbb3547">ec74cd771baff050edf3642aab4bcb81</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2021-11-07 19:47:57</sys_updated_on>
             <sys_user/>
@@ -36,7 +36,7 @@
             <sys_updated_on>2021-11-07 19:47:57</sys_updated_on>
             <sys_user/>
             <title>false</title>
-            <view display_value="Reference List" name="sys_ref_list">451471521b223010edf3642aab4bcbbe</view>
+            <view display_value="Reference List" name="sys_ref_list">acb5d34387000110d5900fa90cbb3547</view>
             <view_name/>
         </sys_ui_section>
     </sys_ui_section>

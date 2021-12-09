@@ -66,7 +66,7 @@
         <update_guid_history>f315f4a3b5844d50220ceb74e8baf5a7:-1103375136</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Test Suite">4285f427db844d504647dad1f3961968</sys_audit_delete>
+        <sys_audit_delete display_value="">4285f427db844d504647dad1f3961968</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-01 20:35:41</sys_created_on>

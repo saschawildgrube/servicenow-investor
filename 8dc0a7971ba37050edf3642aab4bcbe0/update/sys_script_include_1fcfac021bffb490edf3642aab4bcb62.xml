@@ -66,39 +66,6 @@
 					volume: price.volume
 				},
 				true);			
-
-				
-			/*
-			var grPricesDaily = new GlideRecord('x_snc_investor_price_daily');
-			grPricesDaily.addQuery('notation','=',strNotationSysId);
-			grPricesDaily.addQuery('date','=',price.date);
-			grPricesDaily.query();
-			if (grPricesDaily.next() == false)
-			{
-				grPricesDaily.initialize();
-				grPricesDaily.notation = strNotationSysId;
-				grPricesDaily.date = price.date;
-				grPricesDaily.open = price.open;
-				grPricesDaily.high = price.high;
-				grPricesDaily.low = price.low;
-				grPricesDaily.close = price.close_adjusted;
-				grPricesDaily.dividend = price.dividend;
-				grPricesDaily.split = price.split;
-				grPricesDaily.volume = price.volume;
-				grPricesDaily.insert();
-			}
-			else
-			{
-				grPricesDaily.open = price.open;
-				grPricesDaily.high = price.high;
-				grPricesDaily.low = price.low;
-				grPricesDaily.close = price.close_adjusted;
-				grPricesDaily.dividend = price.dividend;
-				grPricesDaily.split = price.split;
-				grPricesDaily.volume = price.volume;
-				grPricesDaily.update();
-			}
-			*/
 		}
 	}
 	
@@ -113,9 +80,6 @@
 		grNotation.update();
 	}
 	
-	
-	CalculateKeyFiguresForNotation(strNotationSysId);
-	
 
 	return bSuccess;
 }]]></script>
@@ -123,13 +87,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-14 18:12:08</sys_created_on>
         <sys_id>1fcfac021bffb490edf3642aab4bcb62</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>35</sys_mod_count>
         <sys_name>LoadPricesDailyForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1fcfac021bffb490edf3642aab4bcb62</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-01 21:09:58</sys_updated_on>
+        <sys_updated_on>2021-12-09 21:42:34</sys_updated_on>
     </sys_script_include>
 </record_update>

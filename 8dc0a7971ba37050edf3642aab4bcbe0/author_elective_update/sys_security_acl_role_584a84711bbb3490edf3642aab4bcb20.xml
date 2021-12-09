@@ -42,7 +42,7 @@
         <update_guid_history>1c4a087129bb349021129e44d5f6bbdb:858434679</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="x_snc_investor_stockexchange.x_snc_investor.user">409a00f11bbb3490edf3642aab4bcbb0</sys_audit_delete>
+        <sys_audit_delete display_value="">409a00f11bbb3490edf3642aab4bcbb0</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-13 20:42:54</sys_created_on>

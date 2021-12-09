@@ -6,7 +6,7 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-23 20:03:14</sys_created_on>
-            <sys_id>2861e7381b080510edf3642aab4bcbda</sys_id>
+            <sys_id>e5ac05ca8794c5101d5640c80cbb3568</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>topic</sys_name>
             <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -25,6 +25,7 @@
             <language>en</language>
             <name>x_snc_investor_task</name>
             <sequence/>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-23 20:03:50</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -44,6 +45,7 @@
             <language>en</language>
             <name>x_snc_investor_task</name>
             <sequence/>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-29 17:59:45</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -63,6 +65,7 @@
             <language>en</language>
             <name>x_snc_investor_task</name>
             <sequence/>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-29 17:59:31</sys_created_on>
             <sys_domain>global</sys_domain>

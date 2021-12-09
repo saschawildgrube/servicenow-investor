@@ -52,7 +52,7 @@
         <update_guid_history>6da1113f13eff050ec6186ef934f64c9:617797784</update_guid_history>
     </sys_update_version>
     <sys_metadata_delete action="INSERT_OR_UPDATE">
-        <sys_audit_delete display_value="Investor">01d1d13f1beff050edf3642aab4bcb3a</sys_audit_delete>
+        <sys_audit_delete display_value="">01d1d13f1beff050edf3642aab4bcb3a</sys_audit_delete>
         <sys_class_name>sys_metadata_delete</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-07 20:46:25</sys_created_on>

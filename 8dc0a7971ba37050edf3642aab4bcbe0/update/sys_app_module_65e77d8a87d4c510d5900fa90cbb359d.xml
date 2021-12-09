@@ -19,14 +19,14 @@
         <override_menu_roles>false</override_menu_roles>
         <query>&amp;view_forced=true</query>
         <report/>
-        <roles/>
+        <roles>x_snc_investor.admin</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-09 19:52:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>65e77d8a87d4c510d5900fa90cbb359d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Scheduled Jobs</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -34,7 +34,7 @@
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_app_module_65e77d8a87d4c510d5900fa90cbb359d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-09 19:54:14</sys_updated_on>
+        <sys_updated_on>2021-12-09 20:58:25</sys_updated_on>
         <timeline_page/>
         <title>Scheduled Jobs</title>
         <uncancelable>false</uncancelable>

@@ -6,7 +6,7 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:30:41</sys_created_on>
-            <sys_id>b10528371bebf050edf3642aab4bcb13</sys_id>
+            <sys_id>ce8c8d8a8794c5101d5640c80cbb3592</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>type</sys_name>
             <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -25,6 +25,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>1</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:30:41</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -44,6 +45,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>2</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:31:36</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -63,6 +65,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>3</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-17 22:42:23</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -82,6 +85,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>4</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:31:46</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -101,6 +105,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>5</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:51:33</sys_created_on>
             <sys_domain>global</sys_domain>
@@ -120,6 +125,7 @@
             <language>en</language>
             <name>x_snc_investor_transaction</name>
             <sequence>6</sequence>
+            <synonyms/>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2021-11-07 17:51:45</sys_created_on>
             <sys_domain>global</sys_domain>
