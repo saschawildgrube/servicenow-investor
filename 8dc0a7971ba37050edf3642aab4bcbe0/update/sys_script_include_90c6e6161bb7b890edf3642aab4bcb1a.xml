@@ -2,36 +2,30 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_snc_investor.LoadPricesDaily</api_name>
+        <api_name>x_snc_investor.UpdateNotations</api_name>
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
-        <name>LoadPricesDaily</name>
-        <script><![CDATA[function LoadPricesDaily()
+        <name>UpdateNotations</name>
+        <script><![CDATA[function UpdateNotations()
 {
 	var RecordBulkProcessor = x_snc_devtools.RecordBulkProcessor;
 
 	function Log(strText)
 	{
-		x_snc_investor.Log('LoadPricesDaily: '+strText);
+		x_snc_investor.Log('UpdateNotations: '+strText);
 	}
 	
 
 	function CallbackRecordProcessor(record)
 	{
 		var bSuccess = LoadPricesDailyForNotation(record.sys_id);
-
-		/*
-		Log('LoadPricesDailyForNotation: '
-			+record.instrument.issuer.name+' / '
-			+record.instrument.isin+' / '
-			+record.exchange.name+' / '
-			+record.symbol+': '
-			+bSuccess);	
-		*/
+		if (bSuccess == true)
+		{
+			GenerateSignalsForNotation(record.sys_id);
+		}
 		return bSuccess; 
 	}
-	
 
 	var grNotations = new GlideRecord('x_snc_investor_notation');
 	RecordBulkProcessor(
@@ -50,13 +44,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-15 21:23:53</sys_created_on>
         <sys_id>90c6e6161bb7b890edf3642aab4bcb1a</sys_id>
-        <sys_mod_count>10</sys_mod_count>
-        <sys_name>LoadPricesDaily</sys_name>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>UpdateNotations</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_90c6e6161bb7b890edf3642aab4bcb1a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-01 20:53:18</sys_updated_on>
+        <sys_updated_on>2021-12-09 19:56:04</sys_updated_on>
     </sys_script_include>
 </record_update>
