@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="DELETE">
+        <grid_canvas display_value="PA Investor - New Tab">96f56d92871c09101d5640c80cbb3562</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 2021-12-10 14:14:36">e4e6e5d2871c09101d5640c80cbb357e</portal_widget>
+        <posx>0</posx>
+        <posy>10</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:14:36</sys_created_on>
+        <sys_id>e8e6e5d2871c09101d5640c80cbb357f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>96f56d92871c09101d5640c80cbb3562</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_e8e6e5d2871c09101d5640c80cbb357f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:17:07</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>sys_grid_canvas_pane_e8e6e5d2871c09101d5640c80cbb357f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane"><sys_grid_canvas_pane action="INSERT_OR_UPDATE"><grid_canvas display_value="PA Investor - New Tab">96f56d92871c09101d5640c80cbb3562</grid_canvas><height>10</height><portal_widget display_value="Created 2021-12-10 14:14:36">e4e6e5d2871c09101d5640c80cbb357e</portal_widget><posx>0</posx><posy>10</posy><sys_class_name>sys_grid_canvas_pane</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-12-10 13:14:36</sys_created_on><sys_id>e8e6e5d2871c09101d5640c80cbb357f</sys_id><sys_mod_count>3</sys_mod_count><sys_name>96f56d92871c09101d5640c80cbb3562</sys_name><sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package><sys_policy/><sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope><sys_update_name>sys_grid_canvas_pane_e8e6e5d2871c09101d5640c80cbb357f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-12-10 13:17:07</sys_updated_on><width>12</width></sys_grid_canvas_pane></record_update>]]></payload>
+        <payload_hash>-159523113</payload_hash>
+        <record_name>96f56d92871c09101d5640c80cbb3562</record_name>
+        <reverted_from/>
+        <source>3fae858e8794c5101d5640c80cbb3583</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:17:07</sys_created_on>
+        <sys_id>61772516871c09101d5640c80cbb353d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17da47d7ed40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:17:07</sys_updated_on>
+        <type>Grid Canvas Pane</type>
+        <update_guid>a9772516731c0910fd293906fb73dd3c</update_guid>
+        <update_guid_history>a9772516731c0910fd293906fb73dd3c:-159523113,1a57a116711c09103330b09d643e2ab4:1066142680,b3f66dd26b1c0910e9347e3b2b8b6b4e:-159523113,e8e6e9d2ea1c0910a9ccc965ed85a995:42251924</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:17:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_grid_canvas_pane">sys_grid_canvas_pane</sys_db_object>
+        <sys_id>4b34faa0a87b4956ac36c44c22f61831</sys_id>
+        <sys_metadata>e8e6e5d2871c09101d5640c80cbb357f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>96f56d92871c09101d5640c80cbb3562</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_grid_canvas_pane_e8e6e5d2871c09101d5640c80cbb357f</sys_update_name>
+        <sys_update_version display_value="sys_grid_canvas_pane_e8e6e5d2871c09101d5640c80cbb357f">61772516871c09101d5640c80cbb353d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:17:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
