@@ -16,16 +16,7 @@
 	var StringPadStart = x_snc_devtools.StringPadStart;
 	var RenderDate = x_snc_devtools.RenderDate;
 
-	
-	function TimeAddDays(nTime, nDays)
-	{
-		var GetIntegerValue = x_snc_devtools.GetIntegerValue;
-		nTime = GetIntegerValue(nTime);
-		nDays = x_snc_devtools.GetIntegerValue(nDays);
-		nTime += nDays * 1000 * 60 * 60 * 24;
-		return nTime;
-	}
-	
+
 	var strUserSysId = GetStringValue(strUserSysId);
 
 	var aInstruments = [];
@@ -166,13 +157,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-08 17:36:06</sys_created_on>
         <sys_id>ab8f0071db5cc1d04647dad1f3961934</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CreateInvestorTasksForUser</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_ab8f0071db5cc1d04647dad1f3961934</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-08 17:41:09</sys_updated_on>
+        <sys_updated_on>2021-12-12 20:30:44</sys_updated_on>
     </sys_script_include>
 </record_update>
