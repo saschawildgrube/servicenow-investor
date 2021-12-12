@@ -40,9 +40,7 @@
 				symbols[strExchCode] = aSymbols[nSymbol];
 			}
 		}
-		
-		//Debug(RenderValue(aSymbols));
-		//Debug(RenderValue(symbols));
+
 	
 		var grExchanges = new GlideRecord('x_snc_investor_exchange');
 		grExchanges.addQuery('active','=','true');
@@ -55,7 +53,6 @@
 
 			if (ArrayValueExists(GetKeys(symbols),strExchangeCode))
 			{
-				Log(grInstrument.isin+' is traded at '+grExchanges.name+'!');
 				var grNotation = new GlideRecord('x_snc_investor_notation');
 				grNotation.addQuery('exchange','=',grExchanges.sys_id);
 				grNotation.addQuery('currency','=',grExchanges.currency);
@@ -74,8 +71,8 @@
 					grNotation.instrument = grInstrument.sys_id;
 					grNotation.symbol = strSymbol;
 					grNotation.insert();
-					Log('Adding notation!');
 
+					Log(grInstrument.name+' is traded at '+grExchanges.name+': Adding notation '+strSymbol+'.');
 				}
 			}
 		}
@@ -88,30 +85,26 @@
 	grNotations.query();
 	if (grNotations.getRowCount() < 1)
 	{
+		Log('No notations found for instrument "'+grInstrument.name+'"!');
 		bSuccess = false;;
 	}
 	else
 	{
 		bSuccess = true;
 	}
-
-	Log(grInstrument.issuer.name+' / '+grInstrument.isin+': '+bSuccess);
-
-	
 	return bSuccess;
-	
 }]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-16 17:39:43</sys_created_on>
         <sys_id>940d36ee1b337c90edf3642aab4bcbf5</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>LoadNotationsForInstrument</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_940d36ee1b337c90edf3642aab4bcbf5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-18 23:07:08</sys_updated_on>
+        <sys_updated_on>2021-12-12 18:06:43</sys_updated_on>
     </sys_script_include>
 </record_update>
