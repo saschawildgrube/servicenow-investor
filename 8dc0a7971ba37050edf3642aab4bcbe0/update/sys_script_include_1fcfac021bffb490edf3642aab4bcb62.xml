@@ -7,10 +7,11 @@
         <client_callable>false</client_callable>
         <description/>
         <name>LoadPricesDailyForNotation</name>
-        <script><![CDATA[function LoadPricesDailyForNotation(strNotationSysId)
+        <script><![CDATA[function LoadPricesDailyForNotation(grNotation)
 {
 	var IsValidRecord = x_snc_devtools.IsValidRecord;
 	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
 	var GetRecord = x_snc_devtools.GetRecord;
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 
@@ -19,9 +20,6 @@
 		x_snc_investor.Log('LoadPricesDailyForNotation: '+strText);
 	}
 
-	strNotationSysId = GetStringValue(strNotationSysId);
-	
-	var grNotation = GetNotationRecord(strNotationSysId);
 	if (IsValidRecord(grNotation) == false)
 	{
 		return false;
@@ -40,6 +38,24 @@
 	var bSuccess = false;
 	
 	var strSymbol = GetStringValue(grNotation.symbol);
+	
+	var grExchange = GetExchangeRecord(grNotation.exchange);
+	if (grExchange == false)
+	{
+		return false;
+	}
+	
+	if (GetBoolValue(grExchange.active) == false)
+	{
+		return false;
+	}
+	
+	var strExchangeSymbol = GetStringValue(grExchange.symbol);
+	if (strExchangeSymbol != '')
+	{
+		strSymbol += '.' + strExchangeSymbol;
+	}
+
 	var alphavantage = new AlphaVantageAPI(AppGetProperty('api.alphavantage.apikey'));
 	var aPrices = alphavantage.GetAdjustedDailyPricesForSymbol(strSymbol); 
 	if (aPrices != false)
@@ -53,7 +69,7 @@
 			RecordQueryOrInsert(
 				'x_snc_investor_price_daily',
 				{
-					notation: strNotationSysId,
+					notation: grNotation.sys_id,
 					date: price.date
 				},
 				{
@@ -69,7 +85,7 @@
 		}
 	}
 	
-	NotationSetLatestDailyPrice(strNotationSysId);
+	NotationSetLatestDailyPrice(grNotation);
 
 	return bSuccess;
 }]]></script>
@@ -77,13 +93,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-14 18:12:08</sys_created_on>
         <sys_id>1fcfac021bffb490edf3642aab4bcb62</sys_id>
-        <sys_mod_count>38</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>LoadPricesDailyForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1fcfac021bffb490edf3642aab4bcb62</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-10 14:12:28</sys_updated_on>
+        <sys_updated_on>2021-12-13 21:37:05</sys_updated_on>
     </sys_script_include>
 </record_update>
