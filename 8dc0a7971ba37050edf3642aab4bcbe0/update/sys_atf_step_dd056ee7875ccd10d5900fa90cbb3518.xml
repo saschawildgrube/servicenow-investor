@@ -14,14 +14,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-14 15:00:20</sys_created_on>
         <sys_id>dd056ee7875ccd10d5900fa90cbb3518</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Run Server Side Script</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_atf_step_dd056ee7875ccd10d5900fa90cbb3518</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-14 15:49:23</sys_updated_on>
+        <sys_updated_on>2021-12-14 17:12:35</sys_updated_on>
         <table/>
         <test display_value="Investor - GetBestPriceForInstrument">dae4aae7875ccd10d5900fa90cbb35d4</test>
         <timeout/>
@@ -50,9 +50,9 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-14 15:00:20</sys_created_on>
         <sys_id>a475e22b875ccd10d5900fa90cbb351e</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-14 15:49:23</sys_updated_on>
+        <sys_updated_on>2021-12-14 17:12:35</sys_updated_on>
         <value>(function(outputs, steps, stepResult, assertEqual)&#13;
 {&#13;
 	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
@@ -147,13 +147,24 @@
 	grPriceDaily.close = 100;&#13;
 	var strPriceDailyEUR1_2SysId = grPriceDaily.insert();&#13;
 	RecordSetValue('x_snc_investor_notation',strNotationEUR1SysId,'last_price_daily',strPriceDailyEUR1_2SysId);&#13;
+&#13;
+	&#13;
+	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');&#13;
+	grPriceDaily.initialize();&#13;
+	grPriceDaily.notation = strNotationEUR2SysId;&#13;
+	grPriceDaily.date = '1500-01-02';&#13;
+	grPriceDaily.close = 101; // the 2nd EUR price is slightly higher&#13;
+	var strPriceDailyEUR2_2SysId = grPriceDaily.insert();&#13;
+	RecordSetValue('x_snc_investor_notation',strNotationEUR2SysId,'last_price_daily',strPriceDailyEUR2_2SysId);&#13;
+	&#13;
+	&#13;
 	&#13;
 	&#13;
 	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');&#13;
 	grPriceDaily.initialize();&#13;
 	grPriceDaily.notation = strNotationUSD1SysId;&#13;
 	grPriceDaily.date = '1500-01-02';&#13;
-	grPriceDaily.close = CurrencyConversion('EUR','USD',100,grPriceDaily.date);&#13;
+	grPriceDaily.close = CurrencyConversion('EUR','USD',103,grPriceDaily.date); // the USD price is significantly higher&#13;
 	var strPriceDailyUSD1_2SysId = grPriceDaily.insert();&#13;
 	RecordSetValue('x_snc_investor_notation',strNotationUSD1SysId,'last_price_daily',strPriceDailyUSD1_2SysId);&#13;
 	&#13;
@@ -165,9 +176,11 @@
 	test.Log(RenderValue(GetNotationRecord(strNotationEUR2SysId)));&#13;
 	test.Log(RenderValue(GetNotationRecord(strNotationUSD1SysId)));&#13;
 &#13;
+	/*&#13;
 	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyEUR1_1SysId)));&#13;
 	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyEUR1_2SysId)));&#13;
 	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyUSD1_2SysId)));&#13;
+	*/&#13;
 	&#13;
 	TestCase_GetBestPriceForInstrument(strInstrumentSysId,null,false);&#13;
 	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'EUR',&#13;
