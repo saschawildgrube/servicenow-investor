@@ -26,18 +26,18 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Load Prices (Daily)</name>
+        <name>Set Latest Price (Daily)</name>
         <onclick/>
-        <order>1000</order>
-        <script><![CDATA[var bSuccess = LoadPricesDailyForNotation(current);
+        <order>1001</order>
+        <script><![CDATA[var bSuccess = NotationSetLatestDailyPrice(current);
 if (bSuccess == true)
 {
 	current.update();
-	gs.addInfoMessage('Loaded prices successfully.');
+	gs.addInfoMessage('Updated latest price successfully.');
 }
 else
 {
-	gs.addErrorMessage('Failed to load prices.');
+	gs.addErrorMessage('Failed to set latest price.');
 }
 x_snc_devtools.RedirectToRecord(current);]]></script>
         <show_insert>false</show_insert>
@@ -46,19 +46,19 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <show_update>true</show_update>
         <sys_class_name>sys_ui_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-16 19:55:28</sys_created_on>
+        <sys_created_on>2021-12-13 23:16:02</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>6efb93e6dbf77c904647dad1f3961985</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>Load Prices (Daily)</sys_name>
+        <sys_id>405d475f87188d10d5900fa90cbb3542</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Latest Price (Daily)</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
-        <sys_update_name>sys_ui_action_6efb93e6dbf77c904647dad1f3961985</sys_update_name>
+        <sys_update_name>sys_ui_action_405d475f87188d10d5900fa90cbb3542</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-13 23:15:06</sys_updated_on>
+        <sys_updated_on>2021-12-13 23:16:02</sys_updated_on>
         <table>x_snc_investor_notation</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

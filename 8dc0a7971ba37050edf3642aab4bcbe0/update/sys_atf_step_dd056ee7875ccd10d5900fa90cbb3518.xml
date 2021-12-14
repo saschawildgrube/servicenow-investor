@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Run Server Side Validation Script</description>
+        <display_name>Run Server Side Script</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>1</order>
+        <snapshot/>
+        <step_config display_value="Run Server Side Script">41de4a935332120028bc29cac2dc349a</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-14 15:00:20</sys_created_on>
+        <sys_id>dd056ee7875ccd10d5900fa90cbb3518</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Run Server Side Script</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_atf_step_dd056ee7875ccd10d5900fa90cbb3518</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-14 15:49:23</sys_updated_on>
+        <table/>
+        <test display_value="Investor - GetBestPriceForInstrument">dae4aae7875ccd10d5900fa90cbb35d4</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=dd056ee7875ccd10d5900fa90cbb3518"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>dd056ee7875ccd10d5900fa90cbb3518</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-14 15:00:20</sys_created_on>
+        <sys_id>60752ee7875ccd10d5900fa90cbb35b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-14 15:00:20</sys_updated_on>
+        <value>3.1</value>
+        <variable display_value="Jasmine version">42f2564b73031300440211d8faf6a777</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>dd056ee7875ccd10d5900fa90cbb3518</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-14 15:00:20</sys_created_on>
+        <sys_id>a475e22b875ccd10d5900fa90cbb351e</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-14 15:49:23</sys_updated_on>
+        <value>(function(outputs, steps, stepResult, assertEqual)&#13;
+{&#13;
+	var test = new x_snc_devtools.TestAPI(outputs, steps, stepResult, assertEqual);&#13;
+	var RenderValue = x_snc_devtools.RenderValue;&#13;
+	var GetRecord = x_snc_devtools.GetRecord;&#13;
+	var RecordSetValue = x_snc_devtools.RecordSetValue;&#13;
+	var CurrencyConversion = x_snc_devtools.CurrencyConversion;&#13;
+&#13;
+	&#13;
+	test.SetResult(true);&#13;
+&#13;
+&#13;
+	function TestCase_GetBestPriceForInstrument(strInstrumentSysId, strCurrencySysId, vExpected)&#13;
+	{&#13;
+		function TestCase_GetBestPriceForInstrument_CheckResult(vInput,vExpected,vResult)&#13;
+		{&#13;
+			return x_snc_devtools.IsEqual(vExpected,vResult);&#13;
+		}&#13;
+&#13;
+		test.TestCase(&#13;
+			'Function GetBestPriceForInstrument()',&#13;
+			GetBestPriceForInstrument,&#13;
+			{&#13;
+				'Instrument': strInstrumentSysId,&#13;
+				'Currency': strCurrencySysId,&#13;
+			},&#13;
+			vExpected,&#13;
+			TestCase_GetBestPriceForInstrument_CheckResult);&#13;
+	}&#13;
+&#13;
+&#13;
+	TestCase_GetBestPriceForInstrument(null,null,false);&#13;
+	TestCase_GetBestPriceForInstrument(null,'EUR',false);&#13;
+	TestCase_GetBestPriceForInstrument(null,'USD',false);&#13;
+	&#13;
+	&#13;
+	var grIssuer = new GlideRecord('x_snc_investor_issuer');&#13;
+	grIssuer.initialize();&#13;
+	grIssuer.name = '_ATF_INVESTOR_TEST';&#13;
+	var strIssuerSysId = grIssuer.insert();&#13;
+	&#13;
+	var grInstrument = new GlideRecord('x_snc_investor_instrument');&#13;
+	grInstrument.initialize();&#13;
+	grInstrument.name = '_ATF_INVESTOR_TEST';&#13;
+	grInstrument.type= 'stock';&#13;
+	grInstrument.issuer = strIssuerSysId;&#13;
+	var strInstrumentSysId = grInstrument.insert();&#13;
+	&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,null,false);&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'EUR',false);&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'USD',false);&#13;
+&#13;
+	&#13;
+	var grNotation = new GlideRecord('x_snc_investor_notation');&#13;
+	grNotation.initialize();&#13;
+	grNotation.instrument = strInstrumentSysId;&#13;
+	grNotation.currency = 'EUR';&#13;
+	grNotation.symbol = 'TEST_EUR_1';&#13;
+	var strNotationEUR1SysId = grNotation.insert();&#13;
+&#13;
+	var grNotation = new GlideRecord('x_snc_investor_notation');&#13;
+	grNotation.initialize();&#13;
+	grNotation.instrument = strInstrumentSysId;&#13;
+	grNotation.currency = 'EUR';&#13;
+	grNotation.symbol = 'TEST_EUR_2';&#13;
+	var strNotationEUR2SysId = grNotation.insert();&#13;
+	&#13;
+	var grNotation = new GlideRecord('x_snc_investor_notation');&#13;
+	grNotation.initialize();&#13;
+	grNotation.instrument = strInstrumentSysId;&#13;
+	grNotation.currency = 'USD';&#13;
+	grNotation.symbol = 'TEST_USD';&#13;
+	var strNotationUSD1SysId = grNotation.insert();	&#13;
+	&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,null,false);&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'EUR',false);&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'USD',false);&#13;
+&#13;
+	&#13;
+	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');&#13;
+	grPriceDaily.initialize();&#13;
+	grPriceDaily.notation = strNotationEUR1SysId;&#13;
+	grPriceDaily.date = '1500-01-01';&#13;
+	grPriceDaily.close = 80;&#13;
+	var strPriceDailyEUR1_1SysId = grPriceDaily.insert();&#13;
+	RecordSetValue('x_snc_investor_notation',strNotationEUR1SysId,'last_price_daily',strPriceDailyEUR1_1SysId);&#13;
+&#13;
+	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');&#13;
+	grPriceDaily.initialize();&#13;
+	grPriceDaily.notation = strNotationEUR1SysId;&#13;
+	grPriceDaily.date = '1500-01-02';&#13;
+	grPriceDaily.close = 100;&#13;
+	var strPriceDailyEUR1_2SysId = grPriceDaily.insert();&#13;
+	RecordSetValue('x_snc_investor_notation',strNotationEUR1SysId,'last_price_daily',strPriceDailyEUR1_2SysId);&#13;
+	&#13;
+	&#13;
+	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');&#13;
+	grPriceDaily.initialize();&#13;
+	grPriceDaily.notation = strNotationUSD1SysId;&#13;
+	grPriceDaily.date = '1500-01-02';&#13;
+	grPriceDaily.close = CurrencyConversion('EUR','USD',100,grPriceDaily.date);&#13;
+	var strPriceDailyUSD1_2SysId = grPriceDaily.insert();&#13;
+	RecordSetValue('x_snc_investor_notation',strNotationUSD1SysId,'last_price_daily',strPriceDailyUSD1_2SysId);&#13;
+	&#13;
+	&#13;
+	&#13;
+	test.Log(RenderValue(GetIssuerRecord(strIssuerSysId)));&#13;
+	test.Log(RenderValue(GetInstrumentRecord(strInstrumentSysId)));&#13;
+	test.Log(RenderValue(GetNotationRecord(strNotationEUR1SysId)));&#13;
+	test.Log(RenderValue(GetNotationRecord(strNotationEUR2SysId)));&#13;
+	test.Log(RenderValue(GetNotationRecord(strNotationUSD1SysId)));&#13;
+&#13;
+	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyEUR1_1SysId)));&#13;
+	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyEUR1_2SysId)));&#13;
+	test.Log(RenderValue(GetRecord('x_snc_investor_price_daily',strPriceDailyUSD1_2SysId)));&#13;
+	&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,null,false);&#13;
+	TestCase_GetBestPriceForInstrument(strInstrumentSysId,'EUR',&#13;
+		{&#13;
+			date: '1500-01-02',&#13;
+			price: 100,&#13;
+			type: 'close'&#13;
+		});&#13;
+	&#13;
+	return test.GetResult();&#13;
+	&#13;
+})(outputs, steps, stepResult, assertEqual);</value>
+        <variable display_value="Test script">989d9e235324220002c6435723dc3484</variable>
+    </sys_variable_value>
+</record_update>
