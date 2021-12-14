@@ -37,16 +37,7 @@
 	grNotation.query();
 	while (grNotation.next())
 	{
-		//Debug(x_snc_devtools.RenderValue(grNotation));
-		
-		var bActive = true;
-		var grExchange = GetExchangeRecord(grNotation.exchange);
-		if (grExchange != false)
-		{
-			bActive = GetBoolValue(grExchange.active);
-		}
-		
-		if (bActive == true)
+		if (IsNotationActive(grNotation) == true)
 		{
 			var grLastPriceDaily = GetRecord('x_snc_investor_price_daily',grNotation.last_price_daily);
 			if (IsValidRecord(grLastPriceDaily))
@@ -85,13 +76,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-21 17:23:03</sys_created_on>
         <sys_id>ff4960d41b40c9d0edf3642aab4bcb65</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>GetBestPriceForInstrument</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_ff4960d41b40c9d0edf3642aab4bcb65</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-14 17:11:33</sys_updated_on>
+        <sys_updated_on>2021-12-14 20:26:16</sys_updated_on>
     </sys_script_include>
 </record_update>
