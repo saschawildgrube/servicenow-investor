@@ -14,6 +14,7 @@
 	var CurrencyConversion = x_snc_devtools.CurrencyConversion;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var IsValidSysId = x_snc_devtools.IsValidSysId;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
 	
 	strInstrumentSysId = GetStringValue(strInstrumentSysId);
 	strCurrencySysId = GetStringValue(strCurrencySysId);
@@ -36,26 +37,37 @@
 	grNotation.query();
 	while (grNotation.next())
 	{
-		Debug(x_snc_devtools.RenderValue(grNotation));
-		var grLastPriceDaily = GetRecord('x_snc_investor_price_daily',grNotation.last_price_daily);
-		if (IsValidRecord(grLastPriceDaily))
+		//Debug(x_snc_devtools.RenderValue(grNotation));
+		
+		var bActive = true;
+		var grExchange = GetExchangeRecord(grNotation.exchange);
+		if (grExchange != false)
 		{
-			Debug(x_snc_devtools.RenderValue(grLastPriceDaily));
-			if (bestprice != false) // we already have a price
+			bActive = GetBoolValue(grExchange.active);
+		}
+		
+		if (bActive == true)
+		{
+			var grLastPriceDaily = GetRecord('x_snc_investor_price_daily',grNotation.last_price_daily);
+			if (IsValidRecord(grLastPriceDaily))
 			{
-				if (GetStringValue(bestprice.date) < GetStringValue(grLastPriceDaily.date)) // do we have a price that is more recent?
+				//Debug(x_snc_devtools.RenderValue(grLastPriceDaily));
+				if (bestprice != false) // we already have a price
 				{
+					if (GetStringValue(bestprice.date) < GetStringValue(grLastPriceDaily.date)) // do we have a price that is more recent?
+					{
+						bestprice.price = CurrencyConversion(grNotation.currency,strCurrencySysId,grLastPriceDaily.close,grLastPriceDaily.date);
+						bestprice.date = GetStringValue(grLastPriceDaily.date);
+						bestprice.type = 'close';
+					}
+				}
+				else
+				{
+					bestprice = {};
 					bestprice.price = CurrencyConversion(grNotation.currency,strCurrencySysId,grLastPriceDaily.close,grLastPriceDaily.date);
 					bestprice.date = GetStringValue(grLastPriceDaily.date);
 					bestprice.type = 'close';
 				}
-			}
-			else
-			{
-				bestprice = {};
-				bestprice.price = CurrencyConversion(grNotation.currency,strCurrencySysId,grLastPriceDaily.close,grLastPriceDaily.date);
-				bestprice.date = GetStringValue(grLastPriceDaily.date);
-				bestprice.type = 'close';
 			}
 		}
 	}
@@ -65,13 +77,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-21 17:23:03</sys_created_on>
         <sys_id>ff4960d41b40c9d0edf3642aab4bcb65</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>GetBestPriceForInstrument</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_ff4960d41b40c9d0edf3642aab4bcb65</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-14 16:21:03</sys_updated_on>
+        <sys_updated_on>2021-12-14 16:50:32</sys_updated_on>
     </sys_script_include>
 </record_update>
