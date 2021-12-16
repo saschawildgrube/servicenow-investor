@@ -18,7 +18,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Prices Daily - Format Prices</name>
+        <name>Prices Daily - NumberFormat</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,7 +29,6 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	//current.close = 100.999;
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -38,15 +37,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1e5436a31bbb74d0edf3642aab4bcb0a</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>Prices Daily - Format Prices</sys_name>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Prices Daily - NumberFormat</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_1e5436a31bbb74d0edf3642aab4bcb0a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-19 20:02:05</sys_updated_on>
+        <sys_updated_on>2021-12-16 21:53:14</sys_updated_on>
         <template/>
         <when>before_display</when>
     </sys_script>
