@@ -4,239 +4,239 @@
             <element>.begin_split</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>f405e6de1b77b890edf3642aab4bcb85</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>9eedb0d987e00d50d5900fa90cbb35ac</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>notation.instrument.isin</element>
+            <element>notation.instrument</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7c05e6de1b77b890edf3642aab4bcb85</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>16edb0d987e00d50d5900fa90cbb35ad</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>notation</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>9aedb0d987e00d50d5900fa90cbb35ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>date</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>fc05e6de1b77b890edf3642aab4bcb85</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>12edb0d987e00d50d5900fa90cbb35ae</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>open</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7005e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>96edb0d987e00d50d5900fa90cbb35ae</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>high</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>f005e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>1eedb0d987e00d50d5900fa90cbb35ae</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>low</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7405e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>92edb0d987e00d50d5900fa90cbb35af</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>close</element>
-            <position>6</position>
+            <position>7</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>f405e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>1aedb0d987e00d50d5900fa90cbb35af</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>7</position>
+            <position>8</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7805e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>9eedb0d987e00d50d5900fa90cbb35af</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>notation.symbol</element>
-            <position>8</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>f805e6de1b77b890edf3642aab4bcb86</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>volume</element>
+            <element>close_adjusted</element>
             <position>9</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7c05e6de1b77b890edf3642aab4bcb86</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>16edb0d987e00d50d5900fa90cbb35b0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>dividend</element>
-            <position>10</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>fc05e6de1b77b890edf3642aab4bcb86</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>split</element>
-            <position>11</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>7005e6de1b77b890edf3642aab4bcb87</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.end_split</element>
-            <position>12</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-15 21:14:39</sys_created_on>
-            <sys_id>f005e6de1b77b890edf3642aab4bcb87</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-15 21:14:39</sys_updated_on>
-            <sys_user/>
-            <type>.end_split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>close2</element>
-            <position>13</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-19 19:53:09</sys_created_on>
-            <sys_id>35b8b2671bbb74d0edf3642aab4bcbfe</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-19 19:53:09</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>sma38</element>
-            <position>14</position>
+            <position>10</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-28 13:55:11</sys_created_on>
-            <sys_id>8e1d371e1bcc4150edf3642aab4bcb4e</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>9aedb0d987e00d50d5900fa90cbb35b0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-28 13:55:11</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>sma200</element>
-            <position>15</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-28 13:55:44</sys_created_on>
-            <sys_id>5e3db71e1bcc4150edf3642aab4bcb32</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-28 13:55:44</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>sma90</element>
-            <position>16</position>
+            <position>11</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-11-28 15:35:23</sys_created_on>
-            <sys_id>7d0498ae1bc08150edf3642aab4bcb93</sys_id>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>12edb0d987e00d50d5900fa90cbb35b1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-11-28 15:35:23</sys_updated_on>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
             <sys_user/>
             <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sma200</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>96edb0d987e00d50d5900fa90cbb35b1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>volume</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>1eedb0d987e00d50d5900fa90cbb35b1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>dividend</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>92edb0d987e00d50d5900fa90cbb35b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>split</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>1aedb0d987e00d50d5900fa90cbb35b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-12-19 17:57:21</sys_created_on>
+            <sys_id>9eedb0d987e00d50d5900fa90cbb35b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_investor_price_daily" sys_domain="global" view="Default view">4c7959021b77f490edf3642aab4bcb23</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-12-19 17:57:21</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>

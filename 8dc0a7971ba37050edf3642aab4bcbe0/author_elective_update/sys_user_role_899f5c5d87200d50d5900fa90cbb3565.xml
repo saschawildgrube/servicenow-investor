@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_snc_investor.event_user</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>event_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-19 15:44:50</sys_created_on>
+        <sys_id>899f5c5d87200d50d5900fa90cbb3565</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.event_user</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_user_role_899f5c5d87200d50d5900fa90cbb3565</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-19 15:44:50</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>sys_user_role_899f5c5d87200d50d5900fa90cbb3565</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_snc_investor.event_user</name><requires_subscription>-1</requires_subscription><scoped_admin>false</scoped_admin><suffix>event_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-12-19 15:44:50</sys_created_on><sys_id>899f5c5d87200d50d5900fa90cbb3565</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_investor.event_user</sys_name><sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package><sys_policy/><sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope><sys_update_name>sys_user_role_899f5c5d87200d50d5900fa90cbb3565</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-12-19 15:44:50</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>841471154</payload_hash>
+        <record_name>x_snc_investor.event_user</record_name>
+        <reverted_from/>
+        <source>066e5a7b879c4150d5900fa90cbb353b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-19 15:44:50</sys_created_on>
+        <sys_id>059f5c5d87200d50d5900fa90cbb356b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17dd35df80e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-19 15:44:50</sys_updated_on>
+        <type>Role</type>
+        <update_guid>4d9f5c5de5200d5092092d2f781e606a</update_guid>
+        <update_guid_history>4d9f5c5de5200d5092092d2f781e606a:841471154</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_snc_investor.event_user">21f7f41587e00d50d5900fa90cbb3541</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-19 17:31:22</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>ad9292a5d96d46789d37ab93e25be264</sys_id>
+        <sys_metadata>899f5c5d87200d50d5900fa90cbb3565</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.event_user</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_user_role_899f5c5d87200d50d5900fa90cbb3565</sys_update_name>
+        <sys_update_version display_value="sys_user_role_899f5c5d87200d50d5900fa90cbb3565">059f5c5d87200d50d5900fa90cbb356b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-19 17:31:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -11,6 +11,12 @@
 {
 	var strTable = grRecord.getRecordClassName();
 
+	var performance =
+		{
+			decimals: 2,
+			postfix: ' %'
+		};
+	
 	if (strTable == 'x_snc_investor_portfolio')
 	{
 		
@@ -20,10 +26,7 @@
 			};
 	
 		var formatconfig = {
-			performance: {
-				decimals: 2,
-				postfix: ' %'
-			},
+			performance: performance,
 			value: currency,
 			gain: currency,
 			cashflow: currency,
@@ -43,10 +46,7 @@
 			};
 	
 		var formatconfig = {
-			performance: {
-				decimals: 2,
-				postfix: ' %'
-			},
+			performance: performance,
 			amount: { decimals: 0 },
 			value: currency,
 			gain: currency,
@@ -68,12 +68,48 @@
 	
 		var formatconfig = {
 			total_price: currency,
-			cashflow: currency
+			cashflow: currency,
+			price: currency,
+			charges: currency
 			};
 		
 		return formatconfig;
 	}
+
+	if (strTable == 'x_snc_investor_event')
+	{	
+		var formatconfig = {};
+		if (grRecord.event == 'performance')
+		{
+			formatconfig['value'] = performance;
+		}
 		
+		return formatconfig;
+	}	
+	
+	if (strTable == 'x_snc_investor_price_daily')
+	{
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.notation.currency
+			};
+	
+		var formatconfig = {
+			open: currency,
+			high: currency,
+			low: currency,
+			close: currency,
+			close_adjusted: currency,
+			sma38: currency,
+			sma90: currency,
+			sma200: currency,
+			dividend: currency,
+			volume: { decimals: 0 },
+			split: { decimals: 4 }
+			};
+		
+		return formatconfig;
+	}	
 
 	return false;
 }]]></script>
@@ -81,13 +117,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-17 19:26:08</sys_created_on>
         <sys_id>d70fb6288728c550d5900fa90cbb3523</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>DevToolsGetFormatConfig</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_d70fb6288728c550d5900fa90cbb3523</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-17 19:34:24</sys_updated_on>
+        <sys_updated_on>2021-12-19 17:47:52</sys_updated_on>
     </sys_script_include>
 </record_update>

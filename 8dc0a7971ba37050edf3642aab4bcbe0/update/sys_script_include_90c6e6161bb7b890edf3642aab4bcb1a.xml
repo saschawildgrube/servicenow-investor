@@ -25,6 +25,10 @@
 		{
 			CalculateKeyFiguresForNotation(record.sys_id,false);
 			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': CalculateKeyFiguresForNotation COMPLETED');
+
+			CreateEventsForNotation(record.sys_id);
+			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': CreateEventsForNotation COMPLETED');
+
 			GenerateSignalsForNotation(record.sys_id);
 			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': GenerateSignalsForNotation COMPLETED');
 
@@ -39,7 +43,7 @@
 		CallbackRecordProcessor, // callback function to work on a single record
 		'last_price_daily_load', // the name of the field that stores that date/time of the last processing
 		5, // maximum number of records to be processed
-		240, // maximum number of seconds to run
+		290, // maximum number of seconds to run
 		CallbackLog, // Callback function used for logging
 		1, // Produce a status log output every n records
 		false // do NOT use ghost mode
@@ -50,13 +54,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-15 21:23:53</sys_created_on>
         <sys_id>90c6e6161bb7b890edf3642aab4bcb1a</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>28</sys_mod_count>
         <sys_name>UpdateNotations</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_90c6e6161bb7b890edf3642aab4bcb1a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-13 21:35:30</sys_updated_on>
+        <sys_updated_on>2021-12-19 18:43:15</sys_updated_on>
     </sys_script_include>
 </record_update>

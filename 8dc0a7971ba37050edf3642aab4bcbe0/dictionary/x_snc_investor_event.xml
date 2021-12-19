@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Event" max_length="40" name="x_snc_investor_event" type="collection">
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element choice="1" display="true" label="Event" max_length="40" name="event" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Close above SMA200" value="close_above_sma200"/>
+                <element inactive_on_update="false" label="Close below SMA38" value="close_below_sma38"/>
+                <element inactive_on_update="false" label="Daily Performance" value="performance"/>
+                <element inactive_on_update="false" label="New all time high" value="high"/>
+                <element inactive_on_update="false" label="SMA38 above SMA200 (Golden Cross)" value="sma38_above_sma200"/>
+                <element inactive_on_update="false" label="SMA38 below SMA200 (Death Cross)" value="sma38_below_sma200"/>
+                <element inactive_on_update="false" label="Split" value="split"/>
+            </choice>
+        </element>
+        <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
+        <element label="Notation" max_length="32" name="notation" read_only="true" reference="x_snc_investor_notation" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#13;&#10;&#13;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" read_only="true" type="glide_action_list" virtual="true"/>
+        <element label="Value" max_length="40" name="value" read_only="true" type="float"/>
+        <index name="index">
+            <element name="notation"/>
+        </index>
+        <index name="index2">
+            <element name="instrument"/>
+        </index>
+    </element>
+</database>
