@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Signal" max_length="40" name="x_snc_investor_signal" type="collection">
+    <element label="Signal" max_length="40" name="x_snc_investor_signal" sizeclass="391" type="collection">
         <element label="Date" max_length="40" name="date" type="glide_date"/>
         <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Name" max_length="40" name="name" type="string"/>
         <element choice="1" label="Signal" max_length="40" name="signal" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Buy" value="buy"/>
-                <element inactive_on_update="false" label="Neutral" value="neutral"/>
                 <element inactive_on_update="false" label="Sell" value="sell"/>
             </choice>
         </element>

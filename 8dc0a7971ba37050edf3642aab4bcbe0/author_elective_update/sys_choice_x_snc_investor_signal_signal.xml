@@ -41,26 +41,6 @@
             <element>signal</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Neutral</label>
-            <language>en</language>
-            <name>x_snc_investor_signal</name>
-            <sequence/>
-            <synonyms/>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2021-12-08 20:13:39</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>659330f5db1405d04647dad1f3961975</sys_id>
-            <sys_mod_count>1</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2021-12-08 20:13:44</sys_updated_on>
-            <value>neutral</value>
-        </sys_choice>
-        <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
-            <element>signal</element>
-            <hint/>
-            <inactive>false</inactive>
             <label>Sell</label>
             <language>en</language>
             <name>x_snc_investor_signal</name>
