@@ -83,7 +83,10 @@
 		{
 			formatconfig['value'] = performance;
 		}
-		
+		else if (grRecord.event == 'split')
+		{
+			formatconfig['value'] = { decimals: 3 };
+		}	
 		return formatconfig;
 	}	
 	
@@ -132,13 +135,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-17 19:26:08</sys_created_on>
         <sys_id>d70fb6288728c550d5900fa90cbb3523</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>DevToolsGetFormatConfig</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_d70fb6288728c550d5900fa90cbb3523</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-20 16:02:37</sys_updated_on>
+        <sys_updated_on>2021-12-22 18:23:21</sys_updated_on>
     </sys_script_include>
 </record_update>

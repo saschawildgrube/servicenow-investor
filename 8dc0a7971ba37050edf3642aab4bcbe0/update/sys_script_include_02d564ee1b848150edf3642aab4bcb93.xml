@@ -9,6 +9,8 @@
         <name>CreateSignalsForNotation</name>
         <script><![CDATA[function CreateSignalsForNotation(strNotationSysId, strDateBegin, strDateEnd)
 {
+	// TODO: use events to generate trading signals!!!
+	
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 
@@ -248,13 +250,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-28 16:55:54</sys_created_on>
         <sys_id>02d564ee1b848150edf3642aab4bcb93</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>CreateSignalsForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_02d564ee1b848150edf3642aab4bcb93</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-21 17:23:43</sys_updated_on>
+        <sys_updated_on>2021-12-23 17:42:05</sys_updated_on>
     </sys_script_include>
 </record_update>

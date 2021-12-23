@@ -61,7 +61,9 @@
 	var bSuccess = false;
 	
 	var alphavantage = new AlphaVantageAPI(AppGetProperty('api.alphavantage.apikey'));
-	var aPrices = alphavantage.GetAdjustedDailyPricesForSymbol(strSymbol,nFrames); 
+	//var aPrices = alphavantage.GetAdjustedDailyPricesForSymbol(strSymbol,nFrames); 
+	var aPrices = alphavantage.GetDailyPricesForSymbol(strSymbol,nFrames); 
+
 	if (aPrices != false)
 	{
 		bSuccess = true;
@@ -81,9 +83,9 @@
 					high: price.high,
 					low: price.low,
 					close: price.close,
-					close_adjusted: price.close_adjusted,
-					dividend: price.dividend,
-					split: price.split,
+					//close_adjusted: price.close_adjusted,
+					//dividend: price.dividend,
+					//split: price.split,
 					volume: price.volume
 				},
 				true);			
@@ -98,13 +100,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-14 18:12:08</sys_created_on>
         <sys_id>1fcfac021bffb490edf3642aab4bcb62</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>LoadPricesDailyForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_1fcfac021bffb490edf3642aab4bcb62</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-19 17:22:15</sys_updated_on>
+        <sys_updated_on>2021-12-23 17:21:36</sys_updated_on>
     </sys_script_include>
 </record_update>

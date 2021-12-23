@@ -46,7 +46,7 @@ AlphaVantageAPI.prototype = {
 			+'&outputsize='+strOutputSize
 			+'&apikey='+this.m_strApiKey;
 		
-		//Debug('AlphaVantageAPI: '+strUrl);
+		Debug('AlphaVantageAPI: '+strUrl);
 		
 		var strResult = HttpRequest(
 			{
@@ -59,7 +59,7 @@ AlphaVantageAPI.prototype = {
 		
 		if (IsObject(result) == false)
 		{
-			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed. Unable to parse API response.');
+			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed. Unable to parse API response.\nUrl: '+strUrl);
 			return false;
 		}
 		
@@ -80,7 +80,7 @@ AlphaVantageAPI.prototype = {
 					strErrorMessage = ' API returned: "'+strMessage+'"';
 				}
 			}
-			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed.'+strErrorMessage);
+			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed.'+strErrorMessage+'\nUrl: '+strUrl);
 			return false;
 		}
 		
@@ -103,7 +103,6 @@ AlphaVantageAPI.prototype = {
 			price['high'] = GetValue(timeseries,strKey,'2. high');
 			price['low'] = GetValue(timeseries,strKey,'3. low');
 			price['close'] = GetValue(timeseries,strKey,'4. close');
-			price['close_adjusted'] = GetValue(timeseries,strKey,'5. adjusted close');
 			price['volume'] = GetValue(timeseries,strKey,'6. volume');
 			price['dividend'] = GetValue(timeseries,strKey,'7. dividend amount');
 			price['split'] = GetValue(timeseries,strKey,'8. split coefficient');
@@ -112,6 +111,101 @@ AlphaVantageAPI.prototype = {
 		
 		return aPrices;
 	},
+
+	GetDailyPricesForSymbol: function(strSymbol,nFrames)
+	{
+		var HttpRequest = x_snc_devtools.HttpRequest;
+		var RenderValue = x_snc_devtools.RenderValue;
+		var ParseJson = x_snc_devtools.ParseJson;
+		var IsArray = x_snc_devtools.IsArray;
+		var GetValue = x_snc_devtools.GetValue;
+		var IsObject= x_snc_devtools.IsObject;
+		var GetKeys = x_snc_devtools.GetKeys;
+		var GetStringValue = x_snc_devtools.GetStringValue;
+		var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+
+		strSymbol = GetStringValue(strSymbol);
+		nFrames = GetIntegerValue(nFrames);
+		
+		var strOutputSize = 'full';
+		if (nFrames != 0)
+		{
+			if (nFrames <= 100)
+			{
+				strOutputSize = 'compact';
+			}
+		}
+		
+		var strUrl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY'
+			+'&symbol='+strSymbol
+			+'&outputsize='+strOutputSize
+			+'&apikey='+this.m_strApiKey;
+		
+		//Debug('AlphaVantageAPI: '+strUrl);
+		
+		var strResult = HttpRequest(
+			{
+				url: strUrl,
+			});
+		
+		//Debug('AlphaVantageAPI: '+strSymbol+':\nUrl: '+strUrl+'\n'+strResult);
+	
+		var result = ParseJson(strResult);
+		
+		if (IsObject(result) == false)
+		{
+			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed. Unable to parse API response.\nUrl: '+strUrl);
+			return false;
+		}
+		
+		var timeseries = GetValue(result,'Time Series (Daily)');
+		if (IsObject(timeseries) == false)
+		{
+			var strErrorMessage = '';
+			var strMessage = GetValue(result,'Note');
+			if (strMessage != null)
+			{
+				strErrorMessage = ' API returned: "'+strMessage+'"';
+			}
+			else
+			{
+				var strMessage = GetValue(result,'Error Message');
+				if (strMessage != false)
+				{
+					strErrorMessage = ' API returned: "'+strMessage+'"';
+				}
+			}
+			Log('AlphaVantage: Loading prices for "'+strSymbol+'" failed.'+strErrorMessage+'\nUrl: '+strUrl);
+			return false;
+		}
+		
+		var aKeys = GetKeys(timeseries);
+		
+		var nMaxKeys = aKeys.length;
+		if (nFrames != 0)
+		{
+			nMaxKeys = Math.min(nMaxKeys,nFrames);
+		}
+		
+		var aPrices = [];
+		
+		for (var nKey = 0; nKey < nMaxKeys; nKey++)
+		{
+			var strKey = aKeys[nKey];
+			var price = {};
+			price['date'] = strKey;
+			price['open'] = GetValue(timeseries,strKey,'1. open');
+			price['high'] = GetValue(timeseries,strKey,'2. high');
+			price['low'] = GetValue(timeseries,strKey,'3. low');
+			price['close'] = GetValue(timeseries,strKey,'4. close');
+			price['volume'] = GetValue(timeseries,strKey,'5. volume');		
+			aPrices.push(price);
+		}
+		
+		return aPrices;
+	},
+	
+	
 	
 	SymbolSearch: function(strKeyword)
 	{
@@ -136,13 +230,13 @@ AlphaVantageAPI.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-14 17:30:17</sys_created_on>
         <sys_id>94182c821bbfb490edf3642aab4bcb47</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>30</sys_mod_count>
         <sys_name>AlphaVantageAPI</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_94182c821bbfb490edf3642aab4bcb47</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-15 20:06:34</sys_updated_on>
+        <sys_updated_on>2021-12-23 17:26:31</sys_updated_on>
     </sys_script_include>
 </record_update>

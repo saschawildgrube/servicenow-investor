@@ -9,6 +9,9 @@
         <name>CreateEventsForNotation</name>
         <script><![CDATA[function CreateEventsForNotation(strNotationSysId, strDateBegin, strDateEnd)
 {
+	// TODO: various events have been commented out because adjusted prices are no longer available!!!!!
+	
+	
 	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
 	var GetStringValue = x_snc_devtools.GetStringValue;
 	var GetFloatValue = x_snc_devtools.GetFloatValue;
@@ -50,6 +53,34 @@
 	while (grPriceDaily.next())
 	{
 		
+		// New all time high
+		/*
+		var priceframe = GetPriceFrameForNotation(strNotationSysId,grNotation.currency,'2000-01-01',strDateEnd);
+		if (priceframe.high_date == strDateEnd)
+		if (grPriceDaily.sma38 < grPriceDaily.sma200)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.sma38 > grPriceDaily.sma200)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'sma38_below_sma200',
+						'');
+				}
+			}
+		}
+		*/
+	
+		
+/*		
 		// Death Cross: SMA38 cross below SMA200
 		if (grPriceDaily.sma38 < grPriceDaily.sma200)
 		{
@@ -139,7 +170,7 @@
 				}
 			}
 		}
-		
+	*/	
 		
 		// Perforamnce: Daily performance above or below threshold
 		var fDailyPerformance = CalculatePerformance(grPriceDaily.open,grPriceDaily.close)
@@ -153,6 +184,7 @@
 				fDailyPerformance);		
 		}
 		
+/*		
 		// Split
 		var fSplit = GetFloatValue(grPriceDaily.split);
 		if (fSplit != 1)
@@ -163,6 +195,7 @@
 				'split',
 				fSplit);				
 		}
+*/
 		
 	}
 		
@@ -174,13 +207,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-19 15:42:37</sys_created_on>
         <sys_id>a41fd45d87200d50d5900fa90cbb35f6</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>CreateEventsForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_a41fd45d87200d50d5900fa90cbb35f6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-19 17:34:45</sys_updated_on>
+        <sys_updated_on>2021-12-23 17:41:33</sys_updated_on>
     </sys_script_include>
 </record_update>
