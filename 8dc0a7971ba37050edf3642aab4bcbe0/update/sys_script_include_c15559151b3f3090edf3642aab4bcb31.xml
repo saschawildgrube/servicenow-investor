@@ -9,9 +9,11 @@
         <name>AppInstall</name>
         <script><![CDATA[function AppInstall()
 {
-	var installer = new InstallerAPI();
+	var installer = new x_snc_devtools.InstallerAPI();
 	
 	//LoadExchanges();
+	
+	installer.SetProperty('x_snc_devtools.ui.formatting','true');
 	
 	return installer.Finish();
 }
@@ -20,13 +22,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-12 12:52:35</sys_created_on>
         <sys_id>c15559151b3f3090edf3642aab4bcb31</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>AppInstall</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_c15559151b3f3090edf3642aab4bcb31</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-09 19:43:53</sys_updated_on>
+        <sys_updated_on>2022-01-12 09:14:30</sys_updated_on>
     </sys_script_include>
 </record_update>
