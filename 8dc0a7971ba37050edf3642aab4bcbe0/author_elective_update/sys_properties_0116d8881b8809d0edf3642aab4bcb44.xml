@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="DELETE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_snc_investor.api.openfigi.apikey</name>
+        <read_roles>x_snc_investor.admin</read_roles>
+        <suffix>api.openfigi.apikey</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-20 21:19:33</sys_created_on>
+        <sys_id>0116d8881b8809d0edf3642aab4bcb44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.api.openfigi.apikey</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_properties_0116d8881b8809d0edf3642aab4bcb44</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-20 21:19:33</sys_updated_on>
+        <type>string</type>
+        <value>c3c3c1b6-26ea-4f8d-9c76-d381e22edd47</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="DELETE" query="documentkey=0116d8881b8809d0edf3642aab4bcb44"/>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>sys_properties_0116d8881b8809d0edf3642aab4bcb44</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_snc_investor.api.openfigi.apikey</name>
+        <read_roles>x_snc_investor.admin</read_roles>
+        <suffix>api.openfigi.apikey</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-20 21:19:33</sys_created_on>
+        <sys_id>0116d8881b8809d0edf3642aab4bcb44</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.api.openfigi.apikey</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_properties_0116d8881b8809d0edf3642aab4bcb44</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-20 21:19:33</sys_updated_on>
+        <type>string</type>
+        <value>c3c3c1b6-26ea-4f8d-9c76-d381e22edd47</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=0116d8881b8809d0edf3642aab4bcb44"/>
+</record_update>]]></payload>
+        <payload_hash>-426344535</payload_hash>
+        <record_name>x_snc_investor.api.openfigi.apikey</record_name>
+        <reverted_from/>
+        <source>9eac05ca8794c5101d5640c80cbb35a5</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-09 16:42:05</sys_created_on>
+        <sys_id>16cc4dca8794c5101d5640c80cbb35f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17da012ca880000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-09 16:42:05</sys_updated_on>
+        <type>System Property</type>
+        <update_guid>d2cc4dca5794c510610a840bfc2487f1</update_guid>
+        <update_guid_history>d2cc4dca5794c510610a840bfc2487f1:-426344535</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-01-19 21:56:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_properties">sys_properties</sys_db_object>
+        <sys_id>12ebdfd11eb6413682bd5aae8698a801</sys_id>
+        <sys_metadata>0116d8881b8809d0edf3642aab4bcb44</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.api.openfigi.apikey</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_properties_0116d8881b8809d0edf3642aab4bcb44</sys_update_name>
+        <sys_update_version display_value="sys_properties_0116d8881b8809d0edf3642aab4bcb44">16cc4dca8794c5101d5640c80cbb35f1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-01-19 21:56:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

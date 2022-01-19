@@ -17,9 +17,10 @@
 	<p>Welcome to Investor - created and maintained by&#160;<a href="mailto:sascha@wildgrube.com">Sascha Wildgrube</a>.</p>
 
 	<h2>Features</h2> 
-	<p>Users can manage their investment portfolios.</p>
-	<p>TODO: signals, tasks, price load.</p>
-
+	<p>The Investor app enables users to manage their investment portfolios.</p>
+	<p>Prices can be loaded using the market data API provided by Alphavantage. Based on these market prices, the current value and performance of user portfolios are displayed.</p>
+	<p>Special events (like the death cross, golden cross, or significant daily performances) are identified. A limited number of trading signals are derived from such events.</p>
+	<p>Tasks are generated for users on a daily basis which should encourage users to review specific positions in their portfolios.</p>	
 	
 	<h2>Disclaimer</h2>
 	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
@@ -33,6 +34,15 @@
 				AppGetDependencies());
 		]</g2:no_escape>	
 	</ul>
+
+	<h2>Prerequisites</h2>
+	<p>In order to operate the Investor app the following prerequisites are required:</p>
+	<ul>
+		<li>An API key from&#160;<a href="https://www.alphavatage.com" target="_blank">alphavantage</a>&#160;(to load prices)</li>
+		<li>An API key from&#160;<a href="https://www.openfigi.com" target="_blank">openfigi</a>(to identify notations at an exchange)</li>
+	</ul>
+		
+
 	
 	<h2>Installation</h2>
 	<ol>
@@ -46,8 +56,10 @@
 				'Investor',
 				'https://github.com/saschawildgrube/servicenow-investor');
 		]</g2:no_escape>	
-		<li>TODO: Configure API keys</li>
-		<li>TODO: Configure Exchanges</li>
+		<li>Read access to the fx_currency table must be granted to users with the x_snc_investor.user role</li>
+		<li>The alphavantage api key must be stored in the global system property "investor.marketdata.api.alphavantage.apikey".</li>
+		<li>The openfigi api key must be stored in the global system property "investor.marketdata.api.openfigi.apikey".</li>
+		<li>To enable the Investor app to load prices for an instrument, at least one exchanges at which these instruments are traded must be manually activated. To do this the exchange must be set to active AND the symbol code must be entered.</li>
 	</ol>
 	
 	<h2>Reference</h2>
@@ -100,13 +112,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-06 15:14:49</sys_created_on>
         <sys_id>660cd1411b984d90edf3642aab4bcb88</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_ui_page_660cd1411b984d90edf3642aab4bcb88</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-09 19:13:39</sys_updated_on>
+        <sys_updated_on>2022-01-19 21:58:10</sys_updated_on>
     </sys_ui_page>
 </record_update>
