@@ -32,8 +32,8 @@
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Integer">integer</internal_type>
-        <mandatory>true</mandatory>
+        <internal_type display_value="">float</internal_type>
+        <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>x_snc_investor_transaction</name>
         <next_element/>
@@ -52,8 +52,8 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2021-11-07 17:53:47</sys_created_on>
-        <sys_id>aa3a6cbf1bebf050edf3642aab4bcb28</sys_id>
+        <sys_created_on>2022-01-19 21:31:14</sys_created_on>
+        <sys_id>4918919b87c14910d5900fa90cbb3502</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Amount</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -61,7 +61,7 @@
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_dictionary_x_snc_investor_transaction_amount</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-07 17:53:47</sys_updated_on>
+        <sys_updated_on>2022-01-19 21:31:14</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

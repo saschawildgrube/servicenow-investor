@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="DELETE">
+        <cleared>true</cleared>
+        <disabled>true</disabled>
+        <field>amount</field>
+        <mandatory>false</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-17 22:48:34</sys_created_on>
+        <sys_id>738dc9831bb730d0edf3642aab4bcb9c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>amount</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_policy_action_738dc9831bb730d0edf3642aab4bcb9c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-17 23:01:03</sys_updated_on>
+        <table>x_snc_investor_transaction</table>
+        <ui_policy display_value="Dividend">8a5d0d431bb730d0edf3642aab4bcb71</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>sys_ui_policy_action_738dc9831bb730d0edf3642aab4bcb9c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>true</cleared>
+        <disabled>true</disabled>
+        <field>amount</field>
+        <mandatory>false</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-17 22:48:34</sys_created_on>
+        <sys_id>738dc9831bb730d0edf3642aab4bcb9c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>amount</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_policy_action_738dc9831bb730d0edf3642aab4bcb9c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-17 23:01:03</sys_updated_on>
+        <table>x_snc_investor_transaction</table>
+        <ui_policy display_value="Dividend">8a5d0d431bb730d0edf3642aab4bcb71</ui_policy>
+        <visible>false</visible>
+    </sys_ui_policy_action>
+</record_update>]]></payload>
+        <payload_hash>1566138295</payload_hash>
+        <record_name>amount</record_name>
+        <reverted_from/>
+        <source>9eac05ca8794c5101d5640c80cbb35a5</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-09 16:42:22</sys_created_on>
+        <sys_id>5adc810e8794c5101d5640c80cbb35a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17da0130a370000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-09 16:42:22</sys_updated_on>
+        <type>UI Policy Action</type>
+        <update_guid>1adc810e9394c51080bf3356c9fdb0a9</update_guid>
+        <update_guid_history>1adc810e9394c51080bf3356c9fdb0a9:1566138295</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-01-19 21:30:47</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_policy_action">sys_ui_policy_action</sys_db_object>
+        <sys_id>0f5276ea98e948b4813ff34e0ed37610</sys_id>
+        <sys_metadata>738dc9831bb730d0edf3642aab4bcb9c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>amount</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent display_value="Transaction - Dividend">8a5d0d431bb730d0edf3642aab4bcb71</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_ui_policy_action_738dc9831bb730d0edf3642aab4bcb9c</sys_update_name>
+        <sys_update_version display_value="sys_ui_policy_action_738dc9831bb730d0edf3642aab4bcb9c">5adc810e8794c5101d5640c80cbb35a9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-01-19 21:30:47</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
