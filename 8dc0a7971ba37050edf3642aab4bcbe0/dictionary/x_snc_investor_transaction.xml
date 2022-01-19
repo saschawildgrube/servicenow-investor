@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="100" type="collection">
+    <element label="Transaction" max_length="40" name="x_snc_investor_transaction" sizeclass="111" type="collection">
         <element label="Amount" mandatory="true" max_length="40" name="amount" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;if (current.type == 'buy')&#10;&#9;{&#10;&#9;&#9;return - (current.total_price + current.charges);&#10;&#9;}&#10;&#9;if (current.type == 'sell')&#10;&#9;{&#10;&#9;&#9;return current.total_price - current.charges;&#10;&#9;}&#10;&#9;if (current.type == 'dividend')&#10;&#9;{&#10;&#9;&#9;return current.total_price - current.charges;&#10;&#9;}&#10;&#10;})(current);" label="Cash Flow" max_length="40" name="cashflow" read_only="true" type="float" virtual="true"/>
         <element label="Charges" max_length="40" name="charges" type="float"/>
@@ -7,6 +7,7 @@
         <element display="true" label="Instrument" mandatory="true" max_length="32" name="instrument" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" reference="x_snc_investor_portfolio" type="reference"/>
         <element label="Price" mandatory="true" max_length="40" name="price" type="float"/>
+        <element label="Reason" max_length="4000" name="reason" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;if (current.type == 'dividend')&#10;&#9;{&#10;&#9;&#9;return current.price;&#10;&#9;}&#10;&#9;return current.amount * current.price; &#10;&#10;})(current);" label="Total Price" max_length="40" name="total_price" read_only="true" type="float" virtual="true"/>
         <element choice="3" label="Type" mandatory="true" max_length="40" name="type" type="choice">
             <choice>
