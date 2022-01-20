@@ -9,26 +9,20 @@
         <name>AppSetProperty</name>
         <script><![CDATA[function AppSetProperty(strSuffix,vValue)
 {
-	var strName = 'x_snc_investor.'+strSuffix;
-	if (IsProperty(strName) == false)
-	{
-		return false;
-	}
-	gs.setProperty(strName,vValue);
-	return true;
+	return x_snc_devtools.SetProperty('x_snc_investor.'+strSuffix,vValue);
 }
 ]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-06 18:17:01</sys_created_on>
         <sys_id>3a0667931be37050edf3642aab4bcbca</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>AppSetProperty</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_3a0667931be37050edf3642aab4bcbca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-06 18:17:01</sys_updated_on>
+        <sys_updated_on>2022-01-20 19:01:05</sys_updated_on>
     </sys_script_include>
 </record_update>
