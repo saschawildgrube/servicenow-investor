@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
-        <active>true</active>
+        <active>false</active>
         <client>false</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
@@ -62,7 +62,7 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>38c59d151b3f3090edf3642aab4bcb9b</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Import Transactions</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -70,7 +70,7 @@ x_snc_devtools.RedirectToRecord(current);]]></script>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_ui_action_38c59d151b3f3090edf3642aab4bcb9b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-12 13:08:04</sys_updated_on>
+        <sys_updated_on>2022-01-20 18:15:55</sys_updated_on>
         <table>x_snc_investor_portfolio</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
