@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CreateInvestorTask</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CreateInvestorTask</name>
+        <script><![CDATA[function CreateInvestorTask(strTopic, fValue, strUserSysId, strPortfolioSysId, strPositionSysId, strInstrumentSysId, strSignalSysId)
+{
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+	
+	strTopic = GetStringValue(strTopic);
+	fValue = GetFloatValue(fValue);
+	strUserSysId = GetStringValue(strUserSysId);
+	strPortfolioSysId = GetStringValue(strPortfolioSysId);
+	strPositionSysId = GetStringValue(strPositionSysId);
+	strInstrumentSysId = GetStringValue(strInstrumentSysId);
+	strSignalSysId = GetStringValue(strSignalSysId);
+	
+	
+	var grPortfolio = GetPortfolioRecord(strPortfolioSysId);
+	var grInstrument = GetInstrumentRecord(strInstrumentSysId);
+
+
+	var query = 		
+		{
+			topic: strTopic,
+			value: fValue,
+			assigned_to: strUserSysId,
+			portfolio: strPortfolioSysId,
+			instrument: strInstrumentSysId,
+			signal: strSignalSysId
+		};
+	
+	
+	
+	var strShortDescription = ''; 
+	
+	if (strTopic == 'position_performance')
+	{
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+			query['active'] = true;
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	if (strTopic == 'signal_sell')
+	{
+		strShortDescription = 'Sell signal';
+	}
+	if (strTopic == 'signal_buy')
+	{
+		strShortDescription = 'Buy signal';
+	}
+	
+	/*
+	if (strTopic == 'position_rebuy')
+	{
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	*/
+	/*
+	else if (strTopic == 'peak')
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" passed a peak'; 
+	}
+	else
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
+		strTopic = 'unknown';
+	}
+	*/
+
+	
+
+	
+	return RecordQueryOrInsert(
+		'x_snc_investor_task',
+		query,
+		{
+			position: strPositionSysId,
+			short_description: strShortDescription
+		},
+		false);	
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-23 20:00:51</sys_created_on>
+        <sys_id>a130e3341b080510edf3642aab4bcb12</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>CreateInvestorTask</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_a130e3341b080510edf3642aab4bcb12</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-29 18:27:52</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_script_include_a130e3341b080510edf3642aab4bcb12</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_investor.CreateInvestorTask&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;CreateInvestorTask&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function CreateInvestorTask(strTopic, fValue, strUserSysId, strPortfolioSysId, strPositionSysId, strInstrumentSysId, strSignalSysId)
+{
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+	
+	strTopic = GetStringValue(strTopic);
+	fValue = GetFloatValue(fValue);
+	strUserSysId = GetStringValue(strUserSysId);
+	strPortfolioSysId = GetStringValue(strPortfolioSysId);
+	strPositionSysId = GetStringValue(strPositionSysId);
+	strInstrumentSysId = GetStringValue(strInstrumentSysId);
+	strSignalSysId = GetStringValue(strSignalSysId);
+	
+	
+	var grPortfolio = GetPortfolioRecord(strPortfolioSysId);
+	var grInstrument = GetInstrumentRecord(strInstrumentSysId);
+
+
+	var query = 		
+		{
+			topic: strTopic,
+			value: fValue,
+			assigned_to: strUserSysId,
+			portfolio: strPortfolioSysId,
+			instrument: strInstrumentSysId,
+			signal: strSignalSysId
+		};
+	
+	
+	
+	var strShortDescription = ''; 
+	
+	if (strTopic == 'position_performance')
+	{
+		if (fValue &lt; 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+			query['active'] = true;
+		}
+		if (fValue &gt; 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	if (strTopic == 'signal_sell')
+	{
+		strShortDescription = 'Sell signal';
+	}
+	if (strTopic == 'signal_buy')
+	{
+		strShortDescription = 'Buy signal';
+	}
+	
+	/*
+	if (strTopic == 'position_rebuy')
+	{
+		if (fValue &lt; 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+		}
+		if (fValue &gt; 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	*/
+	/*
+	else if (strTopic == 'peak')
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" passed a peak'; 
+	}
+	else
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
+		strTopic = 'unknown';
+	}
+	*/
+
+	
+
+	
+	return RecordQueryOrInsert(
+		'x_snc_investor_task',
+		query,
+		{
+			position: strPositionSysId,
+			short_description: strShortDescription
+		},
+		false);	
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-11-23 20:00:51&lt;/sys_created_on&gt;&lt;sys_id&gt;a130e3341b080510edf3642aab4bcb12&lt;/sys_id&gt;&lt;sys_mod_count&gt;14&lt;/sys_mod_count&gt;&lt;sys_name&gt;CreateInvestorTask&lt;/sys_name&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_a130e3341b080510edf3642aab4bcb12&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-11-29 18:27:52&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>30996105</payload_hash>
+        <record_name>CreateInvestorTask</record_name>
+        <reverted_from/>
+        <source>5bd1ff121b8c4150edf3642aab4bcbe6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-29 18:27:52</sys_created_on>
+        <sys_id>8e15c2fa1b088550edf3642aab4bcb73</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17d6cf409de0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-29 18:27:52</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>8615c2fa050885502377108265d21073</update_guid>
+        <update_guid_history>8615c2fa050885502377108265d21073:30996105,a25246b2ad088550ac26ee41bcc75ca2:1423372425,30def5fe03c4855093bc9f04b9503bb4:1395763810,537e35fe62c48550d3ff4751ebc957d2:216282543,33b4cf0eb784cd10eaad7defafc9f6e3:1981294621,fec46cb5ef4cc910da73f0aedc344a12:-354034693,337024bdf60cc9104af21f906f83e0e5:1590594669,da50a03ddb0cc9109ff598c4f1ab5ae1:-1271956775,1e04cee9ce048910e3c024b0c84a7299:352084399,bb27851dd084c510afa84dfaf159c8c7:833807730,4314d6c1914c45105c136ecedaf61fc6:-912141632,bee4aff88e0805100e2e7ef1dcfbd2be:-620170073,6753afb81a08051064d029cc9726f0f8:1266483723,cb43e7b85d080510009527e45f674871:568284865,3dd06fb405080510fc1343fec6a8d204:1050659624</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-29 18:32:00</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>52157b6877ed45e0b11610669cb98044</sys_id>
+        <sys_metadata>a130e3341b080510edf3642aab4bcb12</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CreateInvestorTask</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_script_include_a130e3341b080510edf3642aab4bcb12</sys_update_name>
+        <sys_update_version display_value="sys_script_include_a130e3341b080510edf3642aab4bcb12">8e15c2fa1b088550edf3642aab4bcb73</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-29 18:32:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

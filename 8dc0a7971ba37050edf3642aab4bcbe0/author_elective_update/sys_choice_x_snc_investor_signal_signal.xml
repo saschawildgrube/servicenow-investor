@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="signal" table="x_snc_investor_signal" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>signal</element>
+            <name>x_snc_investor_signal</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-28 17:26:12</sys_created_on>
+            <sys_id>929c01ca8794c5101d5640c80cbb35f2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>signal</sys_name>
+            <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+            <sys_update_name>sys_choice_x_snc_investor_signal_signal</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-28 17:26:12</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>signal</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Buy</label>
+            <language>en</language>
+            <name>x_snc_investor_signal</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-28 17:26:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f75dec261b488150edf3642aab4bcbf0</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-28 17:26:15</sys_updated_on>
+            <value>buy</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>signal</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sell</label>
+            <language>en</language>
+            <name>x_snc_investor_signal</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-28 17:26:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4d6d68661b488150edf3642aab4bcb70</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-28 17:26:33</sys_updated_on>
+            <value>sell</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

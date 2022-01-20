@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.GetPriceFrameForNotation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Tries to retrieve open, high,low, close prices for the given notation, in the given currency, start and end date. </description>
+        <name>GetPriceFrameForNotation</name>
+        <script><![CDATA[function GetPriceFrameForNotation(strNotationSysId,strCurrencySysId,strDateStart,strDateEnd)
+{
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var CurrencyConversion = x_snc_devtools.CurrencyConversion;
+	
+	var grNotation = GetNotationRecord(strNotationSysId);
+	if (IsValidRecord(grNotation) == false)
+	{
+		return false;
+	}
+	
+	strCurrencySysId = GetStringValue(strCurrencySysId);
+	strDateStart = GetStringValue(strDateStart);
+	strDateEnd = GetStringValue(strDateEnd);
+	
+	var priceframe = false; 
+
+
+	var grPricesDaily = new GlideRecord('x_snc_investor_price_daily');
+	grPricesDaily.addQuery('notation','=',strNotationSysId);
+	grPricesDaily.addQuery('date','>=',strDateStart);
+	grPricesDaily.addQuery('date','<=',strDateEnd);
+	grPricesDaily.query();
+	
+	if (grPricesDaily.getRowCount() == 0)
+	{
+		return false;
+	}
+	
+	while (grPricesDaily.next())
+	{
+		if (priceframe == false)
+		{
+			priceframe = {
+				start_date: strDateStart,
+				end_date:   strDateEnd,
+				open:       GetFloatValue(grPricesDaily.open),
+				open_date:  GetStringValue(grPricesDaily.date),
+				high:       GetFloatValue(grPricesDaily.high),
+				high_date:  GetStringValue(grPricesDaily.date),
+				low:        GetFloatValue(grPricesDaily.low),
+				low_date:   GetStringValue(grPricesDaily.date),
+				close:      GetFloatValue(grPricesDaily.close),
+				close_date: GetStringValue(grPricesDaily.date),
+				currency:   strCurrencySysId
+			};			
+		}
+		else
+		{
+			if (GetStringValue(grPricesDaily.date) < priceframe.open_date)
+			{
+				priceframe.open = GetFloatValue(grPricesDaily.open);
+				priceframe.open_date = GetStringValue(grPricesDaily.date);
+			}
+			if (GetFloatValue(grPricesDaily.high) > priceframe.high)
+			{
+				priceframe.high = GetFloatValue(grPricesDaily.high);
+				priceframe.high_date = GetStringValue(grPricesDaily.date);
+			}
+			if (GetFloatValue(grPricesDaily.low) < priceframe.low)
+			{
+				priceframe.low = GetFloatValue(grPricesDaily.low);
+				priceframe.low_date = GetStringValue(grPricesDaily.date);
+			}
+			if (GetStringValue(grPricesDaily.date) > priceframe.close_date)
+			{
+				priceframe.close = GetFloatValue(grPricesDaily.close);
+				priceframe.close_date = GetStringValue(grPricesDaily.date);
+			}
+		}
+	}
+	
+	if (grNotation.currency != strCurrencySysId)
+	{
+		priceframe.open = CurrencyConversion(grNotation.currency,strCurrencySysId,priceframe.open,priceframe.open_date);
+		priceframe.high = CurrencyConversion(grNotation.currency,strCurrencySysId,priceframe.high,priceframe.high_date);
+		priceframe.low = CurrencyConversion(grNotation.currency,strCurrencySysId,priceframe.low,priceframe.low_date);
+		priceframe.close = CurrencyConversion(grNotation.currency,strCurrencySysId,priceframe.close,priceframe.close_date);
+	}
+	
+	return priceframe;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-04 11:27:50</sys_created_on>
+        <sys_id>c6e49a9cdb9805904647dad1f3961998</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>GetPriceFrameForNotation</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_c6e49a9cdb9805904647dad1f3961998</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-04 12:02:39</sys_updated_on>
+    </sys_script_include>
+</record_update>

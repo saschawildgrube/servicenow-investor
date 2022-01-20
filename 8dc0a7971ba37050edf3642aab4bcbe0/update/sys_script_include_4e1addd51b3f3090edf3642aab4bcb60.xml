@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.ImportTransactionsFromCsv</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ImportTransactionsFromCsv</name>
+        <script><![CDATA[function ImportTransactionsFromCsv(strPortfolioSysId,strCsv)
+{
+	var GetValue = x_snc_devtools.GetValue;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	
+	var aTransactions = x_snc_devtools.ParseCsv(strCsv);
+	
+	if (aTransactions == false)
+	{
+		return false;
+	}
+	
+	for (var nTransaction = 0; nTransaction < aTransactions.length; nTransaction++)
+	{
+		var transaction = aTransactions[nTransaction];
+		
+		var strISIN = GetValue(transaction,'ISIN');
+		
+		if (IsValidISIN(strISIN))
+		{
+			var strInstrumentSysId = '';
+			var grInstrument = new GlideRecord('x_snc_investor_instrument');
+			grInstrument.addQuery('isin','=',strISIN);
+			grInstrument.query();
+			if (grInstrument.next() == false)
+			{
+				var strIssuerName = GetValue(transaction,'NAME');
+				if (strIssuerName != '')
+				{
+					var strIssuerSysId = '';
+					var grIssuer = new GlideRecord('x_snc_investor_issuer');
+					grIssuer.addQuery('name','=',strIssuerName);
+					grIssuer.query();
+					if (grIssuer.next() == false)
+					{
+						grIssuer.initialize();
+						grIssuer.name = strIssuerName;
+						strIssuerSysId = grIssuer.insert();
+					}
+					else
+					{
+						strIssuerSysId = GetStringValue(grIssuer.sys_id);
+					}
+				}
+				grInstrument.initialize();
+				grInstrument.issuer = strIssuerSysId;
+				grInstrument.isin = strISIN;
+				strInstrumentSysId = grInstrument.insert();
+			}
+			else
+			{
+				strInstrumentSysId = GetStringValue(grInstrument.sys_id);
+			}
+			
+			var strStatus = GetValue(transaction,'STATUS');
+
+			var nAmount = GetIntegerValue(GetValue(transaction,'BUY_AMOUNT'));
+			var strDate = GetValue(transaction,'BUY_DATE');
+			var strPrice = GetValue(transaction,'BUY_PRICE').replace('€','');
+			var strCharges = GetValue(transaction,'BUY_CHARGES').replace('€','');
+		
+			
+			if (strStatus == 'CLOSED' || strStatus == 'OPEN')
+			{
+			
+
+				var grTransaction = new GlideRecord('x_snc_investor_transaction');
+				grTransaction.addQuery('portfolio','=',strPortfolioSysId);
+				grTransaction.addQuery('instrument','=',strInstrumentSysId);
+				grTransaction.addQuery('amount','=',nAmount);
+				grTransaction.addQuery('date','=',strDate);
+				grTransaction.addQuery('type','=','buy');
+				grTransaction.query();
+				if (grTransaction.next() == false)
+				{
+					grTransaction.initialize();
+					grTransaction.portfolio = strPortfolioSysId;
+					grTransaction.instrument = strInstrumentSysId;
+					grTransaction.amount = nAmount;
+					grTransaction.date = strDate;
+					grTransaction.price = strPrice;
+					grTransaction.charges = strCharges;
+					grTransaction.type = 'buy';
+					grTransaction.insert();
+
+				}
+			}
+
+			if (strStatus == 'CLOSED')
+			{
+			
+				var strDate = GetValue(transaction,'CUR_DATE');
+				var strPrice = GetValue(transaction,'CUR_PRICE').replace('€','');
+				var strCharges = GetValue(transaction,'SELL_CHARGES').replace('€','');
+
+				var grTransaction = new GlideRecord('x_snc_investor_transaction');
+				grTransaction.addQuery('portfolio','=',strPortfolioSysId);
+				grTransaction.addQuery('instrument','=',strInstrumentSysId);
+				grTransaction.addQuery('amount','=',nAmount);
+				grTransaction.addQuery('date','=',strDate);
+				grTransaction.addQuery('type','=','sell');
+				grTransaction.query();
+				if (grTransaction.next() == false)
+				{
+					grTransaction.initialize();
+					grTransaction.portfolio = strPortfolioSysId;
+					grTransaction.instrument = strInstrumentSysId;
+					grTransaction.amount = nAmount;
+					grTransaction.date = strDate;
+					grTransaction.price = strPrice;
+					grTransaction.charges = strCharges;
+					grTransaction.type = 'sell';
+					grTransaction.insert();
+
+				}
+			}
+			
+			
+		}
+		
+		
+	}
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-12 13:13:50</sys_created_on>
+        <sys_id>4e1addd51b3f3090edf3642aab4bcb60</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>ImportTransactionsFromCsv</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_4e1addd51b3f3090edf3642aab4bcb60</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-12 19:03:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

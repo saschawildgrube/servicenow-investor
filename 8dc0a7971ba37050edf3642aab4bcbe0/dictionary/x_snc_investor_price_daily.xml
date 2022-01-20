@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Prices Daily" max_length="40" name="x_snc_investor_price_daily" sizeclass="498728" type="collection">
+        <element attributes="scale=6" label="Close" max_length="40" name="close" read_only="true" type="float"/>
+        <element label="Close (Adjusted)" max_length="40" name="close_adjusted" read_only="true" type="float"/>
+        <element label="Date" mandatory="true" max_length="40" name="date" read_only="true" type="glide_date"/>
+        <element label="Dividend" max_length="40" name="dividend" read_only="true" type="float"/>
+        <element label="High" max_length="40" name="high" read_only="true" type="float"/>
+        <element label="Low" max_length="40" name="low" read_only="true" type="float"/>
+        <element label="Notation" mandatory="true" max_length="32" name="notation" read_only="true" reference="x_snc_investor_notation" type="reference"/>
+        <element label="Open" max_length="40" name="open" read_only="true" type="float"/>
+        <element label="SMA200" max_length="40" name="sma200" read_only="true" type="float"/>
+        <element label="SMA38" max_length="40" name="sma38" read_only="true" type="float"/>
+        <element label="SMA90" max_length="40" name="sma90" read_only="true" type="float"/>
+        <element label="Split" max_length="40" name="split" read_only="true" type="float"/>
+        <element label="Volume" max_length="40" name="volume" read_only="true" type="integer"/>
+        <index name="index">
+            <element name="notation"/>
+        </index>
+    </element>
+</database>

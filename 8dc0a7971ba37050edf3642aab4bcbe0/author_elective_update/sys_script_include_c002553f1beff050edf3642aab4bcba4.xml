@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_investor.DevTools</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Implements the extension point for DevTools.</description>
+        <name>DevTools</name>
+        <script><![CDATA[var DevTools = Class.create();
+DevTools.prototype = {
+	initialize: function()
+	{	
+	},
+
+	GetParentRecord: function(grRecord)
+	{
+		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		if (IsValidFunction(x_snc_investor.DevToolsGetParentRecord))
+		{
+			return DevToolsGetParentRecord(grRecord);
+		}
+        return false;
+    },	
+
+	GetLinkDirectory: function(linkdirectory)
+	{
+		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		if (IsValidFunction(x_snc_investor.DevToolsGetLinkDirectory))
+		{
+			return DevToolsGetLinkDirectory(linkdirectory);
+		}
+        return linkdirectory;
+	},
+
+	type: 'DevTools'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-07 20:47:10</sys_created_on>
+        <sys_id>c002553f1beff050edf3642aab4bcba4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>DevTools</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_c002553f1beff050edf3642aab4bcba4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-08 08:39:29</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_script_include_c002553f1beff050edf3642aab4bcba4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_snc_investor.DevTools&lt;/api_name&gt;&lt;caller_access&gt;1&lt;/caller_access&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description&gt;Implements the extension point for DevTools.&lt;/description&gt;&lt;name&gt;DevTools&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var DevTools = Class.create();
+DevTools.prototype = {
+	initialize: function()
+	{	
+	},
+
+	GetParentRecord: function(grRecord)
+	{
+		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		if (IsValidFunction(x_snc_investor.DevToolsGetParentRecord))
+		{
+			return DevToolsGetParentRecord(grRecord);
+		}
+        return false;
+    },	
+
+	GetLinkDirectory: function(linkdirectory)
+	{
+		var IsValidFunction = x_snc_devtools.IsValidFunction;
+		if (IsValidFunction(x_snc_investor.DevToolsGetLinkDirectory))
+		{
+			return DevToolsGetLinkDirectory(linkdirectory);
+		}
+        return linkdirectory;
+	},
+
+	type: 'DevTools'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-11-07 20:47:10&lt;/sys_created_on&gt;&lt;sys_id&gt;c002553f1beff050edf3642aab4bcba4&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;DevTools&lt;/sys_name&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_c002553f1beff050edf3642aab4bcba4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-11-08 08:39:29&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-714160478</payload_hash>
+        <record_name>DevTools</record_name>
+        <reverted_from/>
+        <source>f52723971be37050edf3642aab4bcbc2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-08 08:39:29</sys_created_on>
+        <sys_id>2205b337db2374504647dad1f3961970</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17cfeb3d02c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-08 08:39:29</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>2a05b337b4237450566cdcfaa51b656f</update_guid>
+        <update_guid_history>2a05b337b4237450566cdcfaa51b656f:-714160478,55f33fffedef3450fdf82206627fff63:1619376738,4c9415bf6ceff0507611f80b8fb40a8c:1004332422,cc02553f1eeff0501e2566758ff4b8a7:-1500011496</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-08 08:41:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>04b6047084c1443b81a5f52ae6244389</sys_id>
+        <sys_metadata>c002553f1beff050edf3642aab4bcba4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DevTools</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_script_include_c002553f1beff050edf3642aab4bcba4</sys_update_name>
+        <sys_update_version display_value="sys_script_include_c002553f1beff050edf3642aab4bcba4">2205b337db2374504647dad1f3961970</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-08 08:41:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

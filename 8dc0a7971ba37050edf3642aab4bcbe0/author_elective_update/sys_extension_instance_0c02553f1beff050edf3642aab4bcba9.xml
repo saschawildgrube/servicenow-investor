@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_extension_instance">
+    <sys_extension_instance action="DELETE">
+        <active>true</active>
+        <order>100</order>
+        <point>x_snc_devtools.DevTools</point>
+        <script_include/>
+        <sys_class_name>sys_extension_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-07 20:47:10</sys_created_on>
+        <sys_id>0c02553f1beff050edf3642aab4bcba9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_devtools.DevTools</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_extension_instance_0c02553f1beff050edf3642aab4bcba9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-07 20:47:10</sys_updated_on>
+    </sys_extension_instance>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_extension_instance_0c02553f1beff050edf3642aab4bcba9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_extension_instance"><sys_extension_instance action="INSERT_OR_UPDATE"><active>true</active><order>100</order><point>x_snc_devtools.DevTools</point><script_include/><sys_class_name>sys_extension_instance</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-11-07 20:47:10</sys_created_on><sys_id>0c02553f1beff050edf3642aab4bcba9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_snc_devtools.DevTools</sys_name><sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package><sys_policy/><sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope><sys_update_name>sys_extension_instance_0c02553f1beff050edf3642aab4bcba9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-11-07 20:47:10</sys_updated_on></sys_extension_instance></record_update>]]></payload>
+        <payload_hash>795885349</payload_hash>
+        <record_name>x_snc_devtools.DevTools</record_name>
+        <reverted_from/>
+        <source>f52723971be37050edf3642aab4bcbc2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-08 08:41:57</sys_created_on>
+        <sys_id>a695ffb7db2374504647dad1f39619d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17cfeb6130b0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-08 08:41:57</sys_updated_on>
+        <type>Extension Instance</type>
+        <update_guid>e295ffb7b6237450c7abdb1f05332bd6</update_guid>
+        <update_guid_history>e295ffb7b6237450c7abdb1f05332bd6:0,0802553f76eff05011596379b8bae9ab:80152349</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-08 08:42:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_extension_instance">sys_extension_instance</sys_db_object>
+        <sys_id>121506e1d61d4d62b2045c0b688af6c4</sys_id>
+        <sys_metadata>0c02553f1beff050edf3642aab4bcba9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_devtools.DevTools</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_extension_instance_0c02553f1beff050edf3642aab4bcba9</sys_update_name>
+        <sys_update_version display_value="sys_extension_instance_0c02553f1beff050edf3642aab4bcba9">a695ffb7db2374504647dad1f39619d6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-08 08:42:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

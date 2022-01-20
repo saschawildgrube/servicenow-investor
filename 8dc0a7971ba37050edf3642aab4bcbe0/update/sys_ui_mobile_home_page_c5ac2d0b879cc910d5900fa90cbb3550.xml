@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_mobile_home_page">
+    <sys_ui_mobile_home_page action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <header_image/>
+        <page_type>modules</page_type>
+        <roles>x_snc_investor.user</roles>
+        <subtitle/>
+        <sys_class_name>sys_ui_mobile_home_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-12 21:35:30</sys_created_on>
+        <sys_id>c5ac2d0b879cc910d5900fa90cbb3550</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Investor</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_mobile_home_page_c5ac2d0b879cc910d5900fa90cbb3550</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-12 21:43:40</sys_updated_on>
+        <title>Investor</title>
+        <title_position>hidden</title_position>
+    </sys_ui_mobile_home_page>
+</record_update>

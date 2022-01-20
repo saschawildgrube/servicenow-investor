@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculateKeyFiguresForPriceDaily</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculateKeyFiguresForPriceDaily</name>
+        <script><![CDATA[function CalculateKeyFiguresForPriceDaily(strPriceDailySysId, bForceUpdate)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
+
+	strPriceDailySysId = GetStringValue(strPriceDailySysId);
+	var grPriceDaily = GetRecord('x_snc_investor_price_daily',strPriceDailySysId);
+	if (grPriceDaily == false)
+	{
+		return false;
+	}
+	bForceUpdate = GetBoolValue(bForceUpdate);
+	
+	function CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily, nDays)
+	{
+		var fResult = '';
+		var grPriceDailyPast = new GlideRecord('x_snc_investor_price_daily');
+		grPriceDailyPast.addQuery('notation','=',grPriceDaily.notation);
+		grPriceDailyPast.addQuery('date','<=',grPriceDaily.date);
+		grPriceDailyPast.orderByDesc('date');
+		grPriceDailyPast.setLimit(nDays);
+		grPriceDailyPast.query();
+		if (grPriceDailyPast.getRowCount() == nDays)
+		{
+			var aValues = [];
+			while (grPriceDailyPast.next())
+			{
+				aValues.push(GetFloatValue(grPriceDailyPast.close_adjusted));
+			}
+			if (aValues.length == nDays)
+			{
+				fResult = CalculateKeyFigureSimpleMovingAverage(aValues);
+			}
+		}
+		return fResult;
+	}
+
+	if (grPriceDaily.sma38 == 0 || bForceUpdate)
+	{
+		grPriceDaily.sma38 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,38);
+	}
+	if (grPriceDaily.sma90 == 0 || bForceUpdate)
+	{
+		grPriceDaily.sma90 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,90);
+	}
+	if (grPriceDaily.sma200 == 0 || bForceUpdate)
+	{
+		grPriceDaily.sma200 = CalculateKeyFigureSimpleMovingAverageForPriceDaily(grPriceDaily,200);
+	}
+	grPriceDaily.update();
+	
+	return true;
+}
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 13:53:57</sys_created_on>
+        <sys_id>b86bbb9a1bcc4150edf3642aab4bcb22</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>CalculateKeyFiguresForPriceDaily</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_b86bbb9a1bcc4150edf3642aab4bcb22</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-23 17:39:03</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>Investor Task</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>Investor Task</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Task" name="Task">cca7574b87000110d5900fa90cbb35d8</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-09 16:41:12</sys_created_on>
+        <sys_id>dd9c01ca8794c5101d5640c80cbb3594</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Investor Task</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_wizard_answer_dd9c01ca8794c5101d5640c80cbb3594</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-09 16:41:12</sys_updated_on>
+        <table/>
+        <target_url>x_snc_investor_task.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.IssuerInsert</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>IssuerInsert</name>
+        <script><![CDATA[function IssuerInsert(strName)
+{
+	var IsValidSysId = x_snc_devtools.IsValidSysId;
+
+	var grIssuer = new GlideRecord('x_snc_investor_issuer');
+	grIssuer.initialize();
+	grIssuer.name = strName;
+	var strIssuerSysId = grIssuer.insert();
+	if (IsValidSysId(strIssuerSysId) == false)
+	{
+		return false;
+	}
+	return strIssuerSysId;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-10 16:07:01</sys_created_on>
+        <sys_id>fc1eefac1b7bf850edf3642aab4bcb91</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>IssuerInsert</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_fc1eefac1b7bf850edf3642aab4bcb91</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-14 19:54:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

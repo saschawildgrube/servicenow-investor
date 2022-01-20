@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snc_investor_position</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Position - NumberFormat</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var currency = {
+		decimals: 2,
+		postfix: ' '+current.portfolio.currency
+		};
+	
+	var config = {
+		performance: {
+			decimals: 2,
+			postfix: ' %'
+		},
+		amount: { decimals: 0 },
+		value: currency,
+		gain: currency,
+		costbase: currency,
+		price_best: currency,
+		price_avg: currency,
+		gain: currency
+	}
+	
+	x_snc_devtools.ExecuteBusinessRuleNumberFormat(current,config);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-17 15:06:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4aa38eac8720c550d5900fa90cbb35fb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Position - NumberFormat</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_4aa38eac8720c550d5900fa90cbb35fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-17 15:07:50</sys_updated_on>
+        <template/>
+        <when>before_display</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=4aa38eac8720c550d5900fa90cbb35fb"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>sys_script_4aa38eac8720c550d5900fa90cbb35fb</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_snc_investor_position&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Position - NumberFormat&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var currency = {
+		decimals: 2,
+		postfix: ' '+current.portfolio.currency
+		};
+	
+	var config = {
+		performance: {
+			decimals: 2,
+			postfix: ' %'
+		},
+		amount: { decimals: 0 },
+		value: currency,
+		gain: currency,
+		costbase: currency,
+		price_best: currency,
+		price_avg: currency,
+		gain: currency
+	}
+	
+	x_snc_devtools.ExecuteBusinessRuleNumberFormat(current,config);
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-12-17 15:06:38&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;4aa38eac8720c550d5900fa90cbb35fb&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Position - NumberFormat&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_4aa38eac8720c550d5900fa90cbb35fb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-12-17 15:07:50&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before_display&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=4aa38eac8720c550d5900fa90cbb35fb"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>102894346</payload_hash>
+        <record_name>Position - NumberFormat</record_name>
+        <reverted_from display_value="sys_script_4aa38eac8720c550d5900fa90cbb35fb">23e386ec8720c550d5900fa90cbb352a</reverted_from>
+        <source>066e5a7b879c4150d5900fa90cbb353b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-17 15:21:03</sys_created_on>
+        <sys_id>81f64ee48760c550d5900fa90cbb3536</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17dc8fb78ac0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-17 15:21:03</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>8df64ee43060c550218a39997c85fb30</update_guid>
+        <update_guid_history>8df64ee43060c550218a39997c85fb30:102894346,8f26ce644e60c550323b593e5ff238f4:2068643449,a7e386ecc820c550cf021b32e5d55b29:102894346,0ea3ceacd520c55084713fabfcaf3d00:646153324</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-17 19:32:55</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>587c558df38f4e88b43f6f87946b4a90</sys_id>
+        <sys_metadata>4aa38eac8720c550d5900fa90cbb35fb</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Position - NumberFormat</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent display_value="Position">fe9c41ca8794c5101d5640c80cbb3596</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_script_4aa38eac8720c550d5900fa90cbb35fb</sys_update_name>
+        <sys_update_version display_value="sys_script_4aa38eac8720c550d5900fa90cbb35fb">81f64ee48760c550d5900fa90cbb3536</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-17 19:32:55</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

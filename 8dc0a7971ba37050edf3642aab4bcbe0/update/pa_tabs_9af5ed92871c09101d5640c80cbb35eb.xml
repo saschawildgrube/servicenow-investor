@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs">
+    <pa_tabs action="INSERT_OR_UPDATE">
+        <canvas_page display_value="PA Investor - New Tab">96f56d92871c09101d5640c80cbb3562</canvas_page>
+        <name>Investor - New Tab</name>
+        <page display_value="PA Investor - New Tab">52f56d92871c09101d5640c80cbb3561</page>
+        <sys_class_name>pa_tabs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:10:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9af5ed92871c09101d5640c80cbb35eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Investor - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>pa_tabs_9af5ed92871c09101d5640c80cbb35eb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:10:37</sys_updated_on>
+    </pa_tabs>
+</record_update>

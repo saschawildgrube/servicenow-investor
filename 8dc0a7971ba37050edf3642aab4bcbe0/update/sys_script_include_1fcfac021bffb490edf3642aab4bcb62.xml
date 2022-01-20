@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.LoadPricesDailyForNotation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>LoadPricesDailyForNotation</name>
+        <script><![CDATA[function LoadPricesDailyForNotation(grNotation, nFrames, bOverrideInactive)
+{
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetBoolValue = x_snc_devtools.GetBoolValue;
+	var GetIntegerValue = x_snc_devtools.GetIntegerValue;
+	var GetRecord = x_snc_devtools.GetRecord;
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+
+	function Log(strText)
+	{
+		x_snc_investor.Log('LoadPricesDailyForNotation: '+strText);
+	}
+
+	if (IsValidRecord(grNotation) == false)
+	{
+		return false;
+	}
+	nFrames = GetIntegerValue(nFrames); 
+	bOverrideInactive = GetBoolValue(bOverrideInactive);
+	
+	var grPricesDaily = GetRecord('x_snc_investor_prices_daily',grNotation.latest_price_daily);
+	if (grPricesDaily != false)
+	{
+		var gd = new GlideDate();
+		if (gd.getValue() <= grPricesDaily.date)
+		{
+			return true;
+		}
+	}
+	
+	var strSymbol = GetStringValue(grNotation.symbol);
+	
+	var grExchange = GetExchangeRecord(grNotation.exchange);
+	if (grExchange == false)
+	{
+		return false;
+	}
+	
+	
+	if ((IsNotationActive(grNotation) == false) && (bOverrideInactive == false))
+	{
+		return false;
+	}
+
+	var strExchangeSymbol = GetStringValue(grExchange.symbol);
+	if (strExchangeSymbol != '')
+	{
+		strSymbol += '.' + strExchangeSymbol;
+	}
+
+	var bSuccess = false;
+	
+	var alphavantage = new AlphaVantageAPI();
+	//var aPrices = alphavantage.GetAdjustedDailyPricesForSymbol(strSymbol,nFrames); 
+	var aPrices = alphavantage.GetDailyPricesForSymbol(strSymbol,nFrames); 
+
+	if (aPrices != false)
+	{
+		bSuccess = true;
+
+		for (var nPrice = 0; nPrice < aPrices.length; nPrice++)
+		{
+			var price = aPrices[nPrice];
+			
+			RecordQueryOrInsert(
+				'x_snc_investor_price_daily',
+				{
+					notation: grNotation.sys_id,
+					date: price.date
+				},
+				{
+					open: price.open,
+					high: price.high,
+					low: price.low,
+					close: price.close,
+					//close_adjusted: price.close_adjusted,
+					//dividend: price.dividend,
+					//split: price.split,
+					volume: price.volume
+				},
+				true);			
+		}
+	}
+	
+	NotationSetLatestDailyPrice(grNotation);
+
+	return bSuccess;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-14 18:12:08</sys_created_on>
+        <sys_id>1fcfac021bffb490edf3642aab4bcb62</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_name>LoadPricesDailyForNotation</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_1fcfac021bffb490edf3642aab4bcb62</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-01-19 21:52:21</sys_updated_on>
+    </sys_script_include>
+</record_update>

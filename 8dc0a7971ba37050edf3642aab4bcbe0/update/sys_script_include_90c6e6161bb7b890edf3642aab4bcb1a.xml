@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.UpdateNotations</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>UpdateNotations</name>
+        <script><![CDATA[function UpdateNotations()
+{
+	var RecordBulkProcessor = x_snc_devtools.RecordBulkProcessor;
+
+	function CallbackLog(strText)
+	{
+		// no logging
+	}
+	
+	function CallbackRecordProcessor(record)
+	{
+		//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': START');
+		var bSuccess = LoadPricesDailyForNotation(record);
+		//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': LoadPricesDailyForNotation COMPLETED');
+		if (bSuccess == true)
+		{
+			//CalculateKeyFiguresForNotation(record.sys_id,false);
+			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': CalculateKeyFiguresForNotation COMPLETED');
+
+			CreateEventsForNotation(record.sys_id);
+			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': CreateEventsForNotation COMPLETED');
+
+			CreateSignalsForNotation(record.sys_id);
+			//Debug('UpdateNotations: '+record.symbol+': '+record.instrument.name+': CreateSignalsForNotation COMPLETED');
+
+		}
+		Log('UpdateNotations: '+record.instrument.name+': '+record.symbol+': Updated');
+		return bSuccess; 
+	}
+
+	var grNotations = new GlideRecord('x_snc_investor_notation');
+	RecordBulkProcessor(
+		grNotations,
+		CallbackRecordProcessor, // callback function to work on a single record
+		'last_price_daily_load', // the name of the field that stores that date/time of the last processing
+		5, // maximum number of records to be processed
+		290, // maximum number of seconds to run
+		CallbackLog, // Callback function used for logging
+		1, // Produce a status log output every n records
+		false // do NOT use ghost mode
+	);
+	
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-15 21:23:53</sys_created_on>
+        <sys_id>90c6e6161bb7b890edf3642aab4bcb1a</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>UpdateNotations</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_90c6e6161bb7b890edf3642aab4bcb1a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-23 17:42:17</sys_updated_on>
+    </sys_script_include>
+</record_update>

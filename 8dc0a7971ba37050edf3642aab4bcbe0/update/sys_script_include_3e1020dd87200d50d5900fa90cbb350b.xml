@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CreateEvent</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CreateEvent</name>
+        <script><![CDATA[function CreateEvent(strDate, strInstrumentSysId, strEventId, fValue)
+{
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+
+	strDate = GetStringValue(strDate);
+	strInstrumentSysId = GetStringValue(strInstrumentSysId);
+	strEventId = GetStringValue(strEventId);
+	if (   strEventId == 'performance'
+		|| strEventId == 'split')
+	{
+		fValue = GetFloatValue(fValue);
+	}
+	else
+	{
+		fValue = null;
+	}
+	var grInstrument = GetInstrumentRecord(strInstrumentSysId);
+
+	var query = 		
+		{
+			date: strDate,
+			instrument: strInstrumentSysId,
+			event: strEventId,
+		};
+	
+/*
+	if (strTopic == 'position_performance')
+	{
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+			query['active'] = true;
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	else if (strTopic == 'signal')
+	{
+		strShortDescription = 'Trading signal';
+	}
+	else if (strTopic == 'position_performance_since_high')
+	{
+		strShortDescription = 'Position performance after high is BELOW '+fValue+'%';
+		query['active'] = true;
+	}
+	else
+	{
+		strShortDescription = 'Instrument '+grInstrument.isin+' in portfolio "'+grPortfolio.name+'" should be reviewed'; 
+	}
+	*/
+	/*
+	if (strTopic == 'position_rebuy')
+	{
+		if (fValue < 0)
+		{
+			strShortDescription = 'Position performance is BELOW '+fValue+'%';
+		}
+		if (fValue > 0)
+		{
+			strShortDescription = 'Position performance is above '+fValue+'%';
+		}
+	}
+	*/
+	
+
+	
+	return RecordQueryOrInsert(
+		'x_snc_investor_event',
+		query,
+		{
+			value: fValue,
+		},
+		true);	
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-19 15:47:08</sys_created_on>
+        <sys_id>3e1020dd87200d50d5900fa90cbb350b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CreateEvent</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_3e1020dd87200d50d5900fa90cbb350b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-20 16:06:40</sys_updated_on>
+    </sys_script_include>
+</record_update>

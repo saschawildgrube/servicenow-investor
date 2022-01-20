@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs">
+    <pa_m2m_dashboard_tabs action="DELETE">
+        <dashboard display_value="Investor">6fd5ad92871c09101d5640c80cbb35b3</dashboard>
+        <home>false</home>
+        <homepage/>
+        <order>1</order>
+        <sys_class_name>pa_m2m_dashboard_tabs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:10:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d6f5ed92871c09101d5640c80cbb35ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>6fd5ad92871c09101d5640c80cbb35b3</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>pa_m2m_dashboard_tabs_d6f5ed92871c09101d5640c80cbb35ee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:10:37</sys_updated_on>
+        <tab display_value="Investor - New Tab">9af5ed92871c09101d5640c80cbb35eb</tab>
+    </pa_m2m_dashboard_tabs>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>98d501c3dbc405100ae3ac44d49619a6</instance_id>
+        <instance_name>investor</instance_name>
+        <name>pa_m2m_dashboard_tabs_d6f5ed92871c09101d5640c80cbb35ee</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs"><pa_m2m_dashboard_tabs action="INSERT_OR_UPDATE"><dashboard display_value="Investor">6fd5ad92871c09101d5640c80cbb35b3</dashboard><home>false</home><homepage/><order>1</order><sys_class_name>pa_m2m_dashboard_tabs</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2021-12-10 13:10:37</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>d6f5ed92871c09101d5640c80cbb35ee</sys_id><sys_mod_count>0</sys_mod_count><sys_name>6fd5ad92871c09101d5640c80cbb35b3</sys_name><sys_overrides/><sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package><sys_policy/><sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope><sys_update_name>pa_m2m_dashboard_tabs_d6f5ed92871c09101d5640c80cbb35ee</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2021-12-10 13:10:37</sys_updated_on><tab display_value="Investor - New Tab">9af5ed92871c09101d5640c80cbb35eb</tab></pa_m2m_dashboard_tabs></record_update>]]></payload>
+        <payload_hash>1208287822</payload_hash>
+        <record_name>6fd5ad92871c09101d5640c80cbb35b3</record_name>
+        <reverted_from/>
+        <source>3fae858e8794c5101d5640c80cbb3583</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:10:37</sys_created_on>
+        <sys_id>5ef5ed92871c09101d5640c80cbb35f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17da4778a240000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:10:37</sys_updated_on>
+        <type>Dashboard Tab</type>
+        <update_guid>96f5ed92071c0910e293fe2387b2e1f0</update_guid>
+        <update_guid_history>96f5ed92071c0910e293fe2387b2e1f0:1208287822</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">85d72916871c09101d5640c80cbb35de</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-10 13:18:43</sys_created_on>
+        <sys_db_object display_value="" name="pa_m2m_dashboard_tabs">pa_m2m_dashboard_tabs</sys_db_object>
+        <sys_id>59f8ef955e4d4104801b7716252f7310</sys_id>
+        <sys_metadata>d6f5ed92871c09101d5640c80cbb35ee</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>6fd5ad92871c09101d5640c80cbb35b3</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>pa_m2m_dashboard_tabs_d6f5ed92871c09101d5640c80cbb35ee</sys_update_name>
+        <sys_update_version display_value="pa_m2m_dashboard_tabs_d6f5ed92871c09101d5640c80cbb35ee">5ef5ed92871c09101d5640c80cbb35f0</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-10 13:18:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

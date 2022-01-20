@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_snc_investor_manual.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div style="padding-left: 20px;">
+<span style="visibility: hidden;">_CUT_HERE_</span>
+	<g2:no_escape>$[
+		var docapi = new x_snc_devtools.DocumentationAPI('8dc0a7971ba37050edf3642aab4bcbe0');
+		docapi.RenderHeader();
+	]</g2:no_escape>
+	
+	<p>Welcome to Investor - created and maintained by&#160;<a href="mailto:sascha@wildgrube.com">Sascha Wildgrube</a>.</p>
+
+	<h2>Features</h2> 
+	<p>The Investor app enables users to manage their investment portfolios.</p>
+	<p>Prices can be loaded using the market data API provided by Alphavantage. Based on these market prices, the current value and performance of user portfolios are displayed.</p>
+	<p>Special events (like the death cross, golden cross, or significant daily performances) are identified. A limited number of trading signals are derived from such events.</p>
+	<p>Tasks are generated for users on a daily basis which should encourage users to review specific positions in their portfolios.</p>	
+	
+	<h2>Disclaimer</h2>
+	<g2:no_escape>$[docapi.RenderDisclaimer()]</g2:no_escape>	
+	
+	<h2>System Requirements</h2>
+	<ul>
+		<g2:no_escape>$[
+			docapi.RenderSystemRequirements(
+				'Rome',
+				true,
+				AppGetDependencies());
+		]</g2:no_escape>	
+	</ul>
+
+	<h2>Prerequisites</h2>
+	<p>In order to operate the Investor app the following prerequisites are required:</p>
+	<ul>
+		<li>An API key from&#160;<a href="https://www.alphavatage.com" target="_blank">alphavantage</a>&#160;(to load prices)</li>
+		<li>An API key from&#160;<a href="https://www.openfigi.com" target="_blank">openfigi</a>&#160;(to identify notations at an exchange)</li>
+	</ul>
+	
+	<h2>Installation</h2>
+	<ol>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'DevTools',
+				'https://github.com/saschawildgrube/servicenow-devtools');
+		]</g2:no_escape>
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsImportFromSourceControl(
+				'Investor',
+				'https://github.com/saschawildgrube/servicenow-investor');
+		]</g2:no_escape>	
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsAppInstall();
+		]</g2:no_escape>		
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsRunTestSuite('4a8550391b5b8850a89720a8ec4bcbd9');
+		]</g2:no_escape>	
+		<g2:no_escape>$[
+			docapi.RenderInstallationInstructionsRunTestSuite('c8e3f86fdb444d504647dad1f3961920');
+		]</g2:no_escape>	
+		<li>Read access to the fx_currency table must be granted to users with the x_snc_investor.user role</li>
+		<li>The alphavantage api key must be stored in the global system property "investor.marketdata.api.alphavantage.apikey".</li>
+		<li>The openfigi api key must be stored in the global system property "investor.marketdata.api.openfigi.apikey".</li>
+		<li>To enable the Investor app to load prices for an instrument, at least one exchanges at which these instruments are traded must be manually activated. To do this the exchange must be set to active AND the symbol code must be entered.</li>
+		<li>Instruments that users want to add to their portfolios must be manually added to the table. By default users can create issuers and instruments by themselves.</li>
+	</ol>
+
+	<h2>Ideas and Known Issues</h2>
+	<ul>
+		<li>Price data can only be loaded using the alphavantage api. In the future an extension point may allow the support of any market data api of choice.</li>
+		<li>Same applies to the use of the openfigi api to identify instrument symbols at exchanges.</li>
+		<li>The included exchange list does not contain the exchange symbol which is required by the alphavantage api. This requires that the exchange symbol is identified by an admin and must be entered manually - this should be automated.</li>
+		<li>Instruments should be identified and loaded automatically and should not need to be added manually.</li>
+	</ul>
+	
+	<h2>Reference</h2>
+
+	<h3>System Properties</h3>
+	<g2:no_escape>$[docapi.RenderProperties()]</g2:no_escape>
+
+	<h3>UI Actions</h3>
+	<g2:no_escape>$[docapi.RenderUIActions()]</g2:no_escape>		
+	
+<!--	
+	<h3>Script Includes</h3>
+	<g2:no_escape>$[docapi.RenderScriptIncludes()]</g2:no_escape>
+	
+	<h3>UI Scripts</h3>
+	<g2:no_escape>$[docapi.RenderUIScripts()]</g2:no_escape>	
+	
+	<h3>Test step configurations</h3>
+	<p>DevTools contains the following customized test step configurations:</p>
+	<g2:no_escape>$[docapi.RenderTestStepConfigurations()]</g2:no_escape>
+	
+	<h3>Extension Points</h3>
+	<g2:no_escape>$[docapi.RenderExtensionPoints()]</g2:no_escape>		
+
+	<h3>Business Rules</h3>
+	<g2:no_escape>$[docapi.RenderBusinessRules()]</g2:no_escape>	
+-->	
+	<h2>License</h2>
+	<g2:no_escape>$[docapi.RenderCopyright(2022,'Sascha Wildgrube')]</g2:no_escape>
+	<g2:no_escape>$[docapi.RenderLicense()]</g2:no_escape>
+	
+	<h2>Release Notes</h2>
+
+<!--
+	<h3>1.1.0 - 2022-TODO</h3>
+	<ol>
+		<li>TODO: document changes here</li>
+	</ol>
+-->
+
+	<h3>1.0.0 - 2022-01-20</h3>
+	<p>First baselined version</p>
+
+<span style="visibility: hidden;">_CUT_HERE_</span>
+</div>
+</j:jelly>]]></html>
+        <name>manual</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-06 15:14:49</sys_created_on>
+        <sys_id>660cd1411b984d90edf3642aab4bcb88</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>manual</sys_name>
+        <sys_package display_value="Investor" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_page_660cd1411b984d90edf3642aab4bcb88</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-01-20 19:07:01</sys_updated_on>
+    </sys_ui_page>
+</record_update>

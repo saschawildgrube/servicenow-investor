@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.InvestorClientAPI</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>InvestorClientAPI</name>
+        <script><![CDATA[var InvestorClientAPI = Class.create();
+InvestorClientAPI.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	AddIssuer: function()
+	{
+		var strIssuerName = this.getParameter('sysparm_issuer_name');
+		return x_snc_investor.IssuerInsert(strIssuerName);
+	},
+	
+	GetDetailsUrl: function()
+	{
+		var strSysId = this.getParameter('sysparm_sysid');
+		var strTable = this.getParameter('sysparm_table');
+
+		if (strTable.indexOf('.') != -1)
+		{
+			var aTable = strTable.split('.');
+			if (aTable.length == 3)
+			{
+				strTable = aTable[1];
+			}
+		}	
+		
+		var grRecord = x_snc_devtools.GetRecord(strTable,strSysId);
+		if (grRecord == false)
+		{
+			return '';
+		}
+		if (strTable == 'x_snc_investor_instrument')
+		{
+			return GetInstrumentDetailsUrl(grRecord.sys_id);
+		}
+		if (strTable == 'x_snc_investor_notation')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_signal')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_position')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+		if (strTable == 'x_snc_investor_task')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}		
+		if (strTable == 'x_snc_investor_event')
+		{
+			return GetInstrumentDetailsUrl(grRecord.instrument);
+		}
+
+		return '';
+	},	
+	
+
+    type: 'InvestorClientAPI'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-10 16:04:23</sys_created_on>
+        <sys_id>b8bd2f6c1b7bf850edf3642aab4bcb37</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>InvestorClientAPI</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_b8bd2f6c1b7bf850edf3642aab4bcb37</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-19 16:45:44</sys_updated_on>
+    </sys_script_include>
+</record_update>

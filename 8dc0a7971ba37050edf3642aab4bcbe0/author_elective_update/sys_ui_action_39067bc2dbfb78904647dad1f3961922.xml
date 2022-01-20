@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="DELETE">
+        <action_name/>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>true</form_context_menu>
+        <form_link>true</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>true</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>true</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style>unstyled</list_style>
+        <messages/>
+        <name>Details</name>
+        <onclick>onClickPositionDetailsLink()</onclick>
+        <order>100</order>
+        <script><![CDATA[function onClickPositionDetailsLink(e)
+{
+	var strSysId = '';
+	if (typeof g_sysId !== 'undefined')
+	{
+		strSysId = ''+g_sysId;
+	}
+	if (strSysId == '')
+	{
+		strSysId = ''+g_form.getUniqueValue();
+	}
+	var ga = new GlideAjax('InvestorClientAPI');
+	ga.addParam('sysparm_name', 'GetPositionDetailsUrl');
+	ga.addParam('sysparm_sysid', strSysId);
+	ga.getXML(callbackResponse);
+	function callbackResponse(response)
+	{
+		var strUrl = response.responseXML.documentElement.getAttribute("answer");
+		if (strUrl != null)
+		{
+			top.window.open(strUrl, '_blank');	
+		}
+	}
+}]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-15 08:32:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>39067bc2dbfb78904647dad1f3961922</sys_id>
+        <sys_mod_count>55</sys_mod_count>
+        <sys_name>Details</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_ui_action_39067bc2dbfb78904647dad1f3961922</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-15 18:20:03</sys_updated_on>
+        <table>x_snc_investor_position</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>true</ui16_compatible>
+    </sys_ui_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</application>
+        <file_path/>
+        <instance_id>6b513d92dbe2fc100b9d21c4059619eb</instance_id>
+        <instance_name>wildgrubedevparis</instance_name>
+        <name>sys_ui_action_39067bc2dbfb78904647dad1f3961922</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name/&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;false&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;true&lt;/form_context_menu&gt;&lt;form_link&gt;true&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style/&gt;&lt;hint/&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;list_action&gt;true&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;true&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style&gt;unstyled&lt;/list_style&gt;&lt;messages/&gt;&lt;name&gt;Details&lt;/name&gt;&lt;onclick&gt;onClickPositionDetailsLink()&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function onClickPositionDetailsLink(e)
+{
+	var strSysId = '';
+	if (typeof g_sysId !== 'undefined')
+	{
+		strSysId = ''+g_sysId;
+	}
+	if (strSysId == '')
+	{
+		strSysId = ''+g_form.getUniqueValue();
+	}
+	var ga = new GlideAjax('InvestorClientAPI');
+	ga.addParam('sysparm_name', 'GetPositionDetailsUrl');
+	ga.addParam('sysparm_sysid', strSysId);
+	ga.getXML(callbackResponse);
+	function callbackResponse(response)
+	{
+		var strUrl = response.responseXML.documentElement.getAttribute("answer");
+		if (strUrl != null)
+		{
+			top.window.open(strUrl, '_blank');	
+		}
+	}
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;false&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-11-15 08:32:13&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;39067bc2dbfb78904647dad1f3961922&lt;/sys_id&gt;&lt;sys_mod_count&gt;55&lt;/sys_mod_count&gt;&lt;sys_name&gt;Details&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_39067bc2dbfb78904647dad1f3961922&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-11-15 18:20:03&lt;/sys_updated_on&gt;&lt;table&gt;x_snc_investor_position&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;true&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1898801454</payload_hash>
+        <record_name>Details</record_name>
+        <reverted_from/>
+        <source>f52723971be37050edf3642aab4bcbc2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-15 18:20:03</sys_created_on>
+        <sys_id>8f0dbd1a1bbf7890edf3642aab4bcb71</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17d24d3da360000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-15 18:20:03</sys_updated_on>
+        <type>UI Action</type>
+        <update_guid>870dbd1a69bf78902634496a7be7fe71</update_guid>
+        <update_guid_history>870dbd1a69bf78902634496a7be7fe71:-1898801454,c05bf5d2b1bf78905285a3a5ede90aa9:-740444175,8dda31d2dbbf7890f442e007313aefa7:2102398021,3aca31d25dbf78903ab047777b2134a2:-623468748,b7babd9293bf78906372553194228a80:-2048831987,c179319297bf789059212f9d230f5c58:784039482,75b8b1de167f78905b8641d8b1d6ce56:-818349542,2348f51e9d7f78901700f56c1f1af96a:-131854404,5c28b51ef87f789067e69fd43313c081:1462128418,16e7399a8d7f7890ef3d994933f762b3:-368801249,58b7f59ad27f78901d5906b90cbd8690:-685204706,62b6b51af27f7890732e8c7a29c11ab9:1105092388,ce36b9d6c77f7890bc4a08cf82e442ee:-1814188895,d07579d6fa7f7890c64e823fc9c4ea4d:1452301007,da147116977f789006df59a86b48f01b:-1120498316,2db375de333f7890d00092d8cbc3443e:-47983491,5ef231def53f7890eb820b5c589ac368:267223492,e5d2b59e633f7890886ac74e4e29fef8:-938139479,bdb0791e173f789058faaceafbbba781:1037213854,dbbc595a8bf7b890b2770391847664b4:-1953742908,dcaad916fef7b890a3b1dbdc46626bb0:927417433,675a5916f7f7b8901b0e5fcc659b80cd:-815212055,8decdcd2d433b8901ca9522a8bb07636:-1879398616,fd1c94d2fa33b890f0495f3549df0fdf:1461856130,6f0cd8527b33b890dbc9336ad6716a0e:-2089867995,9961909a7fff7890703386db90cbe157:-219790763,e631541a04ff78904e70bf7b9169505e:924243623,88c504d2d0bf78903d91efde191c5fc9:448808452,14a50c924fbf7890bfb6dc708f7e9e0c:1307106532,7055c8122fbf789087d42ca36bc53047:82474339,d925881235bf7890d7fddba28fdafd78:1285224162,9af48cdef57f7890f9e24c0d19f122d0:930262917,f8f4c4de917f78902e6dab7c2530683a:-2032282020,6ea404de2a7f7890775897cdb7539cda:-1988715176,8163cc5ad77f7890d389bfbfb8bd300d:864707210,01234c1acb7f7890f50a9fea5ec89df4:-1575857937,c6c20896597f78908d7a0a9acf509c6e:-1505854574,5f724496897f7890f8b32b57b0808028:391815267,04af7b8a693f78902dd598801245b7d1:-1562795947,c78f3b06713f78909d42ab8c561b8322:482660563,dc4eff062e3f78903283045a98ffdca0:-1068956174,c49dbf82ae3f78906706b4dca27bef1b:299274548,4b2d7f02f33f789090be973ba0b532bc:-605252024,cb8cb78e24fb7890a6d52f6ab34ee928:-1618907048,2b5cbf8a2bfb78908a86545e541beadb:-140046049,e95bf38a76fb7890417f164d1062eb31:257209474,bf6afb4a07fb789089b339343039ed4e:-2003954551,984ab74a52fb7890476844cf4d00b36a:1543461817,ea99f34ab5fb7890e6379d9b45f17921:-692718113,17297f0a00fb789047b69d9310519d88:71550075,7009b70ab5fb78904842dad53d22ef85:452525667,9468370abdfb789050d6479be5c5a04a:1083452258,b9487fc615fb7890ca956ab358374041:-1233823485,88a7bbc6d8fb7890d018565b09637dd4:1867163335,25b6338682fb78905ae478a15f83c9fa:1423411664,d486b746b6fb789051d1e39b807f7ee2:-1865320603</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-28 18:12:48</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_action">sys_ui_action</sys_db_object>
+        <sys_id>c8775a2c8d584cf494f313b92bf49090</sys_id>
+        <sys_metadata>39067bc2dbfb78904647dad1f3961922</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Details</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_parent display_value="Position">98d60d3f1baff050edf3642aab4bcbe8</sys_parent>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>
+        <sys_update_name>sys_ui_action_39067bc2dbfb78904647dad1f3961922</sys_update_name>
+        <sys_update_version display_value="sys_ui_action_39067bc2dbfb78904647dad1f3961922">8f0dbd1a1bbf7890edf3642aab4bcb71</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-28 18:12:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_snc_investor.DevToolsGetFormatConfig</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>The DevToolsGetFormatConfig function is called by the DevTools extension point instance class and returns an object with field formatting information.</description>
+        <name>DevToolsGetFormatConfig</name>
+        <script><![CDATA[function DevToolsGetFormatConfig(grRecord)
+{
+	var strTable = grRecord.getRecordClassName();
+
+	var performance =
+		{
+			decimals: 2,
+			postfix: ' %'
+		};
+	
+	if (strTable == 'x_snc_investor_portfolio')
+	{
+		
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.currency
+			};
+	
+		var formatconfig = {
+			performance: performance,
+			value: currency,
+			gain: currency,
+			cashflow: currency,
+			realized_profit: currency,
+			realized_loss: currency,
+			realized_total: currency
+			};		
+		
+		return formatconfig;
+	}
+	
+	if (strTable == 'x_snc_investor_position')
+	{
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.portfolio.currency
+			};
+	
+		var formatconfig = {
+			performance: performance,
+			amount: { decimals: 0 },
+			value: currency,
+			gain: currency,
+			costbase: currency,
+			price_best: currency,
+			price_avg: currency,
+			gain: currency
+			};
+		
+		return formatconfig;
+	}
+	
+	if (strTable == 'x_snc_investor_transaction')
+	{
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.portfolio.currency
+			};
+	
+		var formatconfig = {
+			total_price: currency,
+			cashflow: currency,
+			price: currency,
+			charges: currency
+			};
+		
+		return formatconfig;
+	}
+
+	if (strTable == 'x_snc_investor_event')
+	{	
+		var formatconfig = {};
+		if (grRecord.event == 'performance')
+		{
+			formatconfig['value'] = performance;
+		}
+		else if (grRecord.event == 'split')
+		{
+			formatconfig['value'] = { decimals: 3 };
+		}	
+		return formatconfig;
+	}	
+	
+	if (strTable == 'x_snc_investor_price_daily')
+	{
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.notation.currency
+			};
+	
+		var formatconfig = {
+			open: currency,
+			high: currency,
+			low: currency,
+			close: currency,
+			close_adjusted: currency,
+			sma38: currency,
+			sma90: currency,
+			sma200: currency,
+			dividend: currency,
+			volume: { decimals: 0 },
+			split: { decimals: 4 }
+			};
+		
+		return formatconfig;
+	}	
+
+	if (strTable == 'x_snc_investor_notation')
+	{
+		var currency = {
+			decimals: 2,
+			postfix: ' '+grRecord.currency
+			};
+	
+		var formatconfig = {
+			'last_price_daily.close': currency
+			};
+		
+		return formatconfig;
+	}	
+	
+	
+	return false;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-17 19:26:08</sys_created_on>
+        <sys_id>d70fb6288728c550d5900fa90cbb3523</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>DevToolsGetFormatConfig</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_d70fb6288728c550d5900fa90cbb3523</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-22 18:23:21</sys_updated_on>
+    </sys_script_include>
+</record_update>

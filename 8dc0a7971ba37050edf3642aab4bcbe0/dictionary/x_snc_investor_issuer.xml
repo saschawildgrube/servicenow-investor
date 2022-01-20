@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="core_company" label="Issuer" max_length="40" name="x_snc_investor_issuer" type="collection"/>
+</database>

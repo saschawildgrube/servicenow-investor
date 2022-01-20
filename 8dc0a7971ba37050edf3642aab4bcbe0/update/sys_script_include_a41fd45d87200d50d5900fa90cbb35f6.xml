@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CreateEventsForNotation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CreateEventsForNotation</name>
+        <script><![CDATA[function CreateEventsForNotation(strNotationSysId, strDateBegin, strDateEnd)
+{
+	// TODO: various events have been commented out because adjusted prices are no longer available!!!!!
+	
+	
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+	var GetFloatValue = x_snc_devtools.GetFloatValue;
+
+
+	
+	var grNotation = GetNotationRecord(strNotationSysId);
+	if (grNotation == false)
+	{
+		return false;
+	}
+
+	strDateBegin = GetStringValue(strDateBegin);
+	strDateEnd = GetStringValue(strDateEnd);
+
+	if (strDateBegin == '')
+	{
+		var gdt = new GlideDateTime();
+		gdt.subtract(1000 * 60 * 60 * 24 * 15);
+		strDateBegin = GetStringValue(gdt.getDate());
+	}
+
+	
+
+	
+	var grPriceDaily = new GlideRecord('x_snc_investor_price_daily');
+	grPriceDaily.addQuery('notation','=',strNotationSysId);
+	if (strDateBegin != '')
+	{
+		grPriceDaily.addQuery('date','>=',strDateBegin);
+	}
+	if (strDateEnd != '')
+	{
+		grPriceDaily.addQuery('date','<=',strDateEnd);
+	}
+	grPriceDaily.orderByDesc('date');
+	grPriceDaily.query();
+	
+	while (grPriceDaily.next())
+	{
+		
+		// New all time high
+		/*
+		var priceframe = GetPriceFrameForNotation(strNotationSysId,grNotation.currency,'2000-01-01',strDateEnd);
+		if (priceframe.high_date == strDateEnd)
+		if (grPriceDaily.sma38 < grPriceDaily.sma200)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.sma38 > grPriceDaily.sma200)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'sma38_below_sma200',
+						'');
+				}
+			}
+		}
+		*/
+	
+		
+/*		
+		// Death Cross: SMA38 cross below SMA200
+		if (grPriceDaily.sma38 < grPriceDaily.sma200)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.sma38 > grPriceDaily.sma200)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'sma38_below_sma200',
+						'');
+				}
+			}
+		}
+		
+
+		// Golden Cross: SMA38 cross above SMA200
+		if (grPriceDaily.sma38 > grPriceDaily.sma200)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.sma38 < grPriceDaily.sma200)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'sma38_above_sma200',
+						'');
+				}
+			}
+		}
+
+		// Close crosses below SMA38
+		if (grPriceDaily.close < grPriceDaily.sma38)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.close > grPriceDaily.sma38)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'close_below_sma38',
+						'');
+					
+				}
+			}
+		}
+
+		// Close crosses above SMA200
+		if (grPriceDaily.close > grPriceDaily.sma200)
+		{
+			var grPriceDailyPrev = new GlideRecord('x_snc_investor_price_daily');
+			grPriceDailyPrev.setLimit(1);
+			grPriceDailyPrev.orderByDesc('date');
+			grPriceDailyPrev.addQuery('notation','=',strNotationSysId);
+			grPriceDailyPrev.addQuery('date','<',grPriceDaily.date);
+			grPriceDailyPrev.query();
+			if (grPriceDailyPrev.next())
+			{
+				if (grPriceDailyPrev.close < grPriceDaily.sma200)
+				{
+					CreateEvent(
+						GetStringValue(grPriceDaily.date),
+						grNotation.instrument.sys_id,
+						'close_above_sma200',
+						'');
+				}
+			}
+		}
+	*/	
+		
+		// Perforamnce: Daily performance above or below threshold
+		var fDailyPerformance = CalculatePerformance(grPriceDaily.open,grPriceDaily.close)
+		
+		if (Math.abs(fDailyPerformance) >= 10)
+		{
+			CreateEvent(
+				GetStringValue(grPriceDaily.date),
+				grNotation.instrument.sys_id,
+				'performance',
+				fDailyPerformance);		
+		}
+		
+/*		
+		// Split
+		var fSplit = GetFloatValue(grPriceDaily.split);
+		if (fSplit != 1 && fSplit != 0)
+		{
+			CreateEvent(
+				GetStringValue(grPriceDaily.date),
+				grNotation.instrument.sys_id,
+				'split',
+				fSplit);				
+		}
+*/
+		
+	}
+		
+	
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-19 15:42:37</sys_created_on>
+        <sys_id>a41fd45d87200d50d5900fa90cbb35f6</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>CreateEventsForNotation</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_a41fd45d87200d50d5900fa90cbb35f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-23 18:01:34</sys_updated_on>
+    </sys_script_include>
+</record_update>

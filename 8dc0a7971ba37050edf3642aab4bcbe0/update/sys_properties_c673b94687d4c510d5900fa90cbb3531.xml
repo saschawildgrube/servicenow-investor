@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_snc_investor.exchange_list</name>
+        <read_roles/>
+        <suffix>exchange_list</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-09 19:32:01</sys_created_on>
+        <sys_id>c673b94687d4c510d5900fa90cbb3531</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_investor.exchange_list</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_properties_c673b94687d4c510d5900fa90cbb3531</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-09 19:32:01</sys_updated_on>
+        <type>string</type>
+        <value>"Bloomberg Exchange Code","Bloomberg Composite Code","Country","Description","ISO MIC","Google Prefix","EOD code","# of Stocks"&#13;
+"AF","AR","Argentina","Bolsa de Comercio de Buenos Aires","XBUE","","BA","12"&#13;
+"AO","AU","Australia","National Stock Exchange of Australia","XNEC","","","1"&#13;
+"AT","AU","Australia","Asx - All Markets","XASX","ASX","AU","877"&#13;
+"AV","","Austria","Wiener Boerse Ag","XWBO","VIE","VI","38"&#13;
+"BI","","Bahrain","Bahrain Bourse","XBAH","","","4"&#13;
+"BD","","Bangladesh","Dhaka Stock Exchange Ltd","XDHA","","","18"&#13;
+"BB","","Belgium","Nyse Euronext - Euronext Brussels","XBRU","EBR","BR","75"&#13;
+"BS","BZ","Brazil","XBSP","BVMF","BVMF","SA","370"&#13;
+"CF","CN","Canada","Canadian Securities Exchange","XCNQ","","CN","65"&#13;
+"CT","CN","Canada","Toronto Stock Exchange","XTSE","TSE","TO","534"&#13;
+"CV","CN","Canada","TSX Venture Exchange","XTSX","","V","145"&#13;
+"QF","CN","Canada","NEO Exchange","NEOE","","NEO","3"&#13;
+"CC","CI","Chile","Santiago Stock Exchange","XSGO","","SN","67"&#13;
+"CG","CH","China","Shanghai Stock Exchange","XSHG","SHA","SHG","1,248"&#13;
+"CS","CH","China","Shenzhen Stock Exchange","XSHE","SHE","SHE","1,781"&#13;
+"CX","CB","Colombia","Bolsa De Valores De Colombia","XBOG","","","33"&#13;
+"ZA","CZ","Croatia","Zagreb Stock Exchange","XZAG","","","1"&#13;
+"CY","","Cyprus","Cyprus Stock Exchange","XCYS","","","1"&#13;
+"CK","CP","Czech Republic","Prague Stock Exchange","XPRA","PRG","","10"&#13;
+"DC","","Denmark","Omx Nordic Exchange Copenhagen A/S","XCSE","CPH","CO","67"&#13;
+"EC","EY","Egypt","Egyptian Exchange","XCAI","CAI","","33"&#13;
+"FH","","Finland","Nasdaq Omx Helsinki Ltd.","XHEL","HEL","HE","78"&#13;
+"FP","","France","Euronext Paris","XPAR","EPA","PA","242"&#13;
+"BQ","GR","Germany","Equiduct Trading","XEQT","","","3"&#13;
+"GB","GR","Germany","Boerse Berlin","XBER","FRA","BE","3"&#13;
+"GD","GR","Germany","Dusseldorf Stock Exchange","XDUS","","DU","1"&#13;
+"GF","GR","Germany","Frankfurt Stock Exchange","XFRA","FRA","F","167"&#13;
+"GM","GR","Germany","Munich Stock Exchange","XMUN","","MU","1"&#13;
+"GS","GR","Germany","Stuttgart Stock Exchange","XSTU","","STU","1"&#13;
+"GY","GR","Germany","Deutsche Boerse Xetra","XETR","ETR","XETRA","226"&#13;
+"QT","GR","Germany","QUOTRIX","XQTX","","","1"&#13;
+"GA","","Greece","Athens Exchange S.A. Cash Market","XATH","ATH","AT","28"&#13;
+"HK","","Hong Kong","Hong Kong Exchange","XHKG","HKG","HK","1,897"&#13;
+"HB","","Hungary","Budapest Stock Exchange","XBUD","BDP","BUD","5"&#13;
+"RF","","Iceland","First North Iceland","XICE","","","1"&#13;
+"IB","IN","India","BSE LTD","XBOM","BOM","BSE","440"&#13;
+"IS","IN","India","National Stock Exchange Of India","XNSE","NSE","NSE","644"&#13;
+"IJ","","Indonesia","Indonesia Stock Exchange","XIDX","JAK","JK","130"&#13;
+"ID","","Ireland","Irish Stock Exchange - All Market","XDUB","IRE","IR","35"&#13;
+"IT","","Israel","Tel Aviv Stock Exchange","XTAE","TLV","TA","167"&#13;
+"IM","","Italy","Borsa Italiana S.P.A.","MTAA","BIT","MI","147"&#13;
+"JT","JP","Japan","Tokyo Stock Exchange","XTKS","TYO","TSE","1,740"&#13;
+"JR","","Jordan","Amman Stock Exchange","XAMM","","","5"&#13;
+"KN","","Kenya","Nairobi Stock Exchange","XNAI","","","5"&#13;
+"KK","","Kuwait","Kuwait Stock Exchange","XKUW","","","33"&#13;
+"LX","","Luxembourg","Luxembourg Stock Exchange","XLUX","","","1"&#13;
+"MK","","Malaysia","Bursa Malaysia","XKLS","KUL","KLSE","253"&#13;
+"MM","","Mexico","Bolsa Mexicana De Valores (Mexican Stock Exchange)","XMEX","BMV","MX","91"&#13;
+"MC","","Morocco","Casablanca Stock Exchange","XCAS","","","12"&#13;
+"NZ","","New Zealand","New Zealand Exchange Ltd","XNZE","NZE","NZ","55"&#13;
+"NL","","Nigeria","Nigerian Stock Exchange","XNSA","","","12"&#13;
+"NO","","Norway","Oslo Bors Asa","XOSL","","OL","123"&#13;
+"NS","","Norway","Norwegian OTC Market","NOTC","","","1"&#13;
+"OM","","Oman","Muscat Securities Market","XMUS","","","9"&#13;
+"PK","PA","Pakistan","Karachi Stock Exchange (Guarantee) Limited","XKAR","KAR","KAR","41"&#13;
+"PE","","Peru","Bolsa De Valores De Lima","XLIM","","","24"&#13;
+"PM","","Philippines","Philippine Stock Exchange Inc.","XPHS","PSE","PSE","71"&#13;
+"PW","","Poland","Warsaw Stock Exchange/Equities/Main Market","XWAR","WSE","WAR","66"&#13;
+"PL","","Portugal","Nyse Euronext - Euronext Lisbon","XLIS","ELI","LS","19"&#13;
+"QD","","Qatar","Qatar Exchange","DSMD","","","35"&#13;
+"RE","RO","Romania","Spot Regulated Market - Bvb","XBSE","","","8"&#13;
+"RX","RM","Russia","Standard-Classica-Forts","MISX","MCX","MCX","68"&#13;
+"AB","","Saudi Arabia","Saudi Stock Exchange","XSAU","","SR","133"&#13;
+"BC","","Senegal","","XBRV","","","1"&#13;
+"SP","","Singapore","Singapore Exchange","XSES","SGX","SG","252"&#13;
+"SV","","Slovenia","Ljubljana Stock Exchange (Official Market)","XLJU","","","3"&#13;
+"SJ","","South Africa","Johannesburg Stock Exchange","XJSE","JNB","JSE","171"&#13;
+"KP","KS","South Korea","Korea Exchange (Stock Market)","XKRX","KRX","KO","446"&#13;
+"KQ","KS","South Korea","Korea Exchange (Kosdaq)","XKOS","KOSDAQ","KQ","273"&#13;
+"SM","","Spain","Bolsa De Madrid","XMAD","BME","MC","126"&#13;
+"SL","","Sri Lanka","Colombo Stock Exchange","XCOL","","","4"&#13;
+"NG","","Sweden","Nordic Growth Market","XNGM","","","1"&#13;
+"SS","","Sweden","Nasdaq Omx Nordic","XSTO","STO","ST","339"&#13;
+"SE","SW","Switzerland","Six Swiss Exchange","XSWX","SWX","SW","127"&#13;
+"VX","SW","Switzerland","Six Swiss - Blue Chips Segment","XVTX","VTX","VX","31"&#13;
+"SY","","Syria","Damascus Securities Exchange","XDSE","","","1"&#13;
+"TG","","Taiwan","Tapei Exchange","ROCO","","TWO","70"&#13;
+"TT","","Taiwan","Taiwan Stock Exchange","XTAI","TPE","TW","569"&#13;
+"TB","","Thailand","Stock Exchange Of Thailand","XBKK","BAK","BK","376"&#13;
+"MT","","The Netherlands","TOM MTF","TOMX","","","1"&#13;
+"NA","","The Netherlands","Nyse Euronext - Euronext Amsterdam","XAMS","AMS","AS","85"&#13;
+"TI","","Turkey","Istanbul Stock Exchange","XIST","IST","IS","92"&#13;
+"DB","UH","United Arab Emirates","Dubai Financial Market","XDFM","DFM","","18"&#13;
+"DH","UH","United Arab Emirates","Nasdaq Dubai","DIFX","","","7"&#13;
+"DU","UH","United Arab Emirates","Abu Dhabi Securities Exchange","XADS","","","16"&#13;
+"EB","","United Kingdom","BATS Trading Europe","BATE","","","2"&#13;
+"IX","","United Kingdom","Chi-X Eruope","CHIX","","","2"&#13;
+"LI","","United Kingdom","London Stock Exchange International","","LON","IL","39"&#13;
+"LN","","United Kingdom","London Stock Exchange","XLON","LON","LSE","610"&#13;
+"PO","","United Kingdom","ITG Posit","XPOS","","","1"&#13;
+"TQ","","United Kingdom","Turquoise","TRQX","","","3"&#13;
+"XB","","United Kingdom","Cinnober BOAT","BOAT","","","1"&#13;
+"UA","US","USA","NYSE American","XASE","NYSEAMERICAN","US","261"&#13;
+"UF","US","USA","CBOE BATS BZX","BATS","BATS","US","1"&#13;
+"UN","US","USA","New York Stock Exchange","XNYS","NYSE","US","3,247"&#13;
+"UP","US","USA","NYSE Arca","ARCX","NYSEARCA","US","8"&#13;
+"UQ","US","USA","NASDAQ Global Market","XNMS","NASDAQ","US","821"&#13;
+"UR","US","USA","NASDAQ Capital Market","XNCM","NASDAQ","US","2,234"&#13;
+"UV","US","USA","OTC markets","OOTC","OTCMKTS","US","2,506"&#13;
+"UW","US","USA","NASDAQ Global Select","XNGS","NASDAQ","US","1,805"&#13;
+"VH","VN","Vietnam","Hanoi Stock Exchange","HSTC","","","4"&#13;
+"VM","VN","Vietnam","Hochiminh Stock Exchange","XSTC","","VN","42"</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=c673b94687d4c510d5900fa90cbb3531"/>
+</record_update>

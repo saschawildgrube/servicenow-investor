@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+    <sys_ui_action_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_ui_action_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-23 17:52:45</sys_created_on>
+        <sys_id>4b23e9ae872c0590d5900fa90cbb3564</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Latest Price (Daily).x_snc_investor.admin</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_ui_action display_value="Set Latest Price (Daily)">405d475f87188d10d5900fa90cbb3542</sys_ui_action>
+        <sys_update_name>sys_ui_action_role_4b23e9ae872c0590d5900fa90cbb3564</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-23 17:52:45</sys_updated_on>
+        <sys_user_role display_value="x_snc_investor.admin" name="x_snc_investor.admin">4d496f5b1be37050edf3642aab4bcbb7</sys_user_role>
+    </sys_ui_action_role>
+</record_update>

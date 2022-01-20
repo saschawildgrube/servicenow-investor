@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Portfolio" max_length="40" name="x_snc_investor_portfolio" type="collection">
+        <element label="Cash Flow" max_length="40" name="cashflow" read_only="true" type="float"/>
+        <element label="Currency" mandatory="true" max_length="32" name="currency" reference="fx_currency" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <element label="Gain" max_length="40" name="gain" read_only="true" type="float"/>
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element label="Performance" max_length="40" name="performance" read_only="true" type="float"/>
+        <element label="Realized Loss" max_length="20" name="realized_loss" read_only="true" type="decimal"/>
+        <element label="Realized Profit" max_length="20" name="realized_profit" read_only="true" type="decimal"/>
+        <element label="Realized Total" max_length="20" name="realized_total" read_only="true" type="decimal"/>
+        <element label="Value" max_length="40" name="value" read_only="true" type="float"/>
+        <index name="index">
+            <element name="owner"/>
+        </index>
+        <index name="index2">
+            <element name="currency"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_investor.CalculatePositions</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>CalculatePositions</name>
+        <script><![CDATA[function CalculatePositions(strPortfolioSysId)
+{
+	var GetRecord = x_snc_devtools.GetRecord;
+	var IsValidRecord = x_snc_devtools.IsValidRecord;
+	var GetValue = x_snc_devtools.GetValue;
+	var GetKeys = x_snc_devtools.GetKeys;
+	var RenderValue = x_snc_devtools.RenderValue;
+	var RecordQueryOrInsert = x_snc_devtools.RecordQueryOrInsert;
+	var GetStringValue = x_snc_devtools.GetStringValue;
+
+	strPortfolioSysId = GetStringValue(strPortfolioSysId);
+	
+	var grPortfolio = GetRecord('x_snc_investor_portfolio',strPortfolioSysId);
+	if (IsValidRecord(grPortfolio) == false)
+	{
+		return false;
+	}
+	
+	var positions = {};
+	
+	var fRealizedProfit = 0;
+	var fRealizedLoss = 0;
+	var fRealizedTotal = 0;
+	
+	var grTransaction = new GlideRecord('x_snc_investor_transaction');
+	grTransaction.addQuery('portfolio','=',strPortfolioSysId);
+	grTransaction.orderBy('date');
+	grTransaction.query();
+	while (grTransaction.next())
+	{
+		//Debug(RenderValue(grTransaction));
+		var strInstrumentSysId = GetStringValue(grTransaction.instrument.sys_id);
+		var strType = grTransaction.type;
+		var nAmount = grTransaction.amount;
+		var fPrice = grTransaction.price;
+		var fCharges = grTransaction.charges;
+		var strDate = GetStringValue(grTransaction.date);
+		var instrument = GetValue(positions,strInstrumentSysId);
+		if (instrument == null)
+		{
+			positions[strInstrumentSysId] = {
+				amount: 0,
+				price_avg: 0,
+				charges: 0,
+				start_date: ''
+			};
+		}
+		
+		if (strType == 'buy')
+		{
+			var strStartDate = positions[strInstrumentSysId]['start_date'];
+			var nOldAmount = positions[strInstrumentSysId]['amount'];
+			var nNewAmount = nOldAmount + nAmount;
+			var fOldPriceAvg = positions[strInstrumentSysId]['price_avg'];
+			var fOldCharges = positions[strInstrumentSysId]['charges'];
+			var fNewPriceAvg = 
+				(
+					(fOldPriceAvg * nOldAmount)
+					+ (nAmount * fPrice)
+				) / nNewAmount;
+			var strPriceAvgDate = strDate;
+			if (nOldAmount == 0)
+			{
+				strStartDate = strDate;
+			}
+			positions[strInstrumentSysId]['price_avg'] = fNewPriceAvg;
+			positions[strInstrumentSysId]['price_avg_date'] = strPriceAvgDate;
+			positions[strInstrumentSysId]['amount'] = nNewAmount;
+			positions[strInstrumentSysId]['charges'] = fOldCharges + fCharges;
+			positions[strInstrumentSysId]['start_date'] = strStartDate;
+		}
+		if (strType == 'sell')
+		{
+			var nNewAmount = positions[strInstrumentSysId]['amount'] - nAmount;
+			var fPriceAvg = positions[strInstrumentSysId]['price_avg'];
+			var fOldCharges = positions[strInstrumentSysId]['charges'];
+			
+			var fNewCharges = fOldCharges + fCharges;
+					
+			var fRealizedTransaction = (nAmount * (fPrice - fPriceAvg)) - fNewCharges; 
+			
+			fRealizedTotal += fRealizedTransaction;
+			if (fRealizedTransaction > 0)
+			{
+				fRealizedProfit += fRealizedTransaction;
+			}
+			else
+			{
+				fRealizedLoss += fRealizedTransaction;
+			}
+				
+			
+			if (nNewAmount <= 0)
+			{
+				nNewAmount = 0;
+				fPriceAvg = 0;
+				positions[strInstrumentSysId]['start_date'] = '';
+				positions[strInstrumentSysId]['price_avg_date'] = '';
+			}
+			positions[strInstrumentSysId]['amount'] = nNewAmount;
+			positions[strInstrumentSysId]['price_avg'] = fPriceAvg;
+			positions[strInstrumentSysId]['charges'] = 0;
+		}
+		if (strType == 'dividend')
+		{
+			fRealizedTransaction = fPrice - fCharges;
+			fRealizedTotal += fRealizedTransaction;
+			if (fRealizedTransaction > 0)
+			{
+				fRealizedProfit += fRealizedTransaction;
+			}
+			else
+			{
+				fRealizedLoss += fRealizedTransaction;
+			}
+			
+		}
+	}
+
+	//Debug(RenderValue(positions));
+	
+	var aInstruments = GetKeys(positions);
+	
+	for (var nInstrument = 0; nInstrument < aInstruments.length; nInstrument++)
+	{
+		var strInstrumentSysId = aInstruments[nInstrument];
+		var position = positions[strInstrumentSysId];
+		var nAmount = position.amount;
+		if (nAmount > 0)
+		{
+
+			var fValue = 0;
+			var fBestPrice = 0;
+			var strBestPrice = '';
+			var strBestPriceDate = '';
+			var fCostbase = position.amount * position.price_avg
+			var bestprice = GetBestPriceForInstrument(strInstrumentSysId,grPortfolio.currency);
+			
+			if (bestprice != false)
+			{
+				fBestPrice = bestprice.price;
+				strBestPriceDate = bestprice.date;
+			}
+			
+			if (fBestPrice == 0)
+			{
+				fBestPrice = position.price_avg;
+				strBestPriceDate = '';
+				fValue = fCostbase;
+			}
+			else
+			{
+				fValue = fBestPrice * position.amount;
+			}
+			
+			var fPerformance = ((fValue / fCostbase) * 100) - 100;
+			var fGain = fValue - fCostbase;
+				
+			RecordQueryOrInsert(
+				'x_snc_investor_position',
+				{
+					portfolio: strPortfolioSysId,
+					instrument: strInstrumentSysId
+				},
+				{
+					start_date: position.start_date,
+					amount: position.amount,
+					price_avg: position.price_avg,
+					price_avg_date: position.price_avg_date,
+					costbase: fCostbase,
+					value: fValue,
+					gain: fGain,
+					performance: fPerformance,
+					price_best: fBestPrice,
+					price_best_date: strBestPriceDate
+				},
+				true);
+
+		}
+		else
+		{
+			var grPosition = new GlideRecord('x_snc_investor_position');
+			grPosition.addQuery('portfolio','=',strPortfolioSysId);
+			grPosition.addQuery('instrument','=',strInstrumentSysId);
+			grPosition.query();
+			grPosition.deleteMultiple();
+
+		}
+	}
+	
+	grPortfolio.realized_profit = fRealizedProfit;
+	grPortfolio.realized_loss = fRealizedLoss;
+	grPortfolio.realized_total = fRealizedTotal;
+	grPortfolio.update();
+	
+	return true;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-12-04 13:42:56</sys_created_on>
+        <sys_id>85d33a90db1045904647dad1f39619a3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CalculatePositions</sys_name>
+        <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
+        <sys_update_name>sys_script_include_85d33a90db1045904647dad1f39619a3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-12-04 13:43:32</sys_updated_on>
+    </sys_script_include>
+</record_update>

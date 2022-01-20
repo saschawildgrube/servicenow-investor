@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Position" max_length="40" name="x_snc_investor_position" sizeclass="42" type="collection">
+        <element label="Amount" max_length="40" name="amount" read_only="true" type="integer"/>
+        <element function_definition="if ()" label="Cost Base" max_length="40" name="costbase" read_only="true" type="float"/>
+        <element label="Gain" max_length="40" name="gain" read_only="true" type="float"/>
+        <element display="true" label="Instrument" mandatory="true" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
+        <element label="Performance" max_length="20" name="performance" read_only="true" type="decimal"/>
+        <element label="Portfolio" mandatory="true" max_length="32" name="portfolio" read_only="true" reference="x_snc_investor_portfolio" type="reference"/>
+        <element label="Average Price" max_length="40" name="price_avg" read_only="true" type="float"/>
+        <element label="Average Price Date" max_length="40" name="price_avg_date" read_only="true" type="glide_date"/>
+        <element label="Best Price" max_length="40" name="price_best" read_only="true" type="float"/>
+        <element label="Best Price Date" max_length="40" name="price_best_date" read_only="true" type="glide_date"/>
+        <element label="High" max_length="40" name="price_high" read_only="true" type="float"/>
+        <element label="Start Date" max_length="40" name="start_date" read_only="true" type="glide_date"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';&#10;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" type="glide_action_list" virtual="true"/>
+        <element label="Value" max_length="40" name="value" read_only="true" type="float"/>
+        <index name="index">
+            <element name="portfolio"/>
+        </index>
+        <index name="index2">
+            <element name="instrument"/>
+        </index>
+    </element>
+</database>
