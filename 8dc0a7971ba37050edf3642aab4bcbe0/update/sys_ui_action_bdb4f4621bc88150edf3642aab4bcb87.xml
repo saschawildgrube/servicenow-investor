@@ -15,6 +15,7 @@
         <form_link>true</form_link>
         <form_menu_button_v2>false</form_menu_button_v2>
         <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
         <hint/>
         <isolate_script>true</isolate_script>
         <list_action>true</list_action>
@@ -31,9 +32,9 @@
         <order>100</order>
         <script><![CDATA[function onClickDetailsLink(e)
 {
-	var strSysId = '';
-	var strTable = '';
-	if (typeof g_sysId !== 'undefined')
+	var strSysId = GetCurrentRecordSysId();
+	var strTable = GetCurrentRecordTableName();
+/*	if (typeof g_sysId !== 'undefined')
 	{
 		strSysId = ''+g_sysId;
 		strTable = ''+g_list.getListName();
@@ -42,7 +43,7 @@
 	{
 		strSysId = ''+g_form.getUniqueValue();
 		strTable = ''+g_form.getTableName();
-	}
+	}*/
 	//console.log(strTable);
 	//console.log(strSysId);
 	var ga = new GlideAjax('InvestorClientAPI');
@@ -55,7 +56,7 @@
 		var strUrl = response.responseXML.documentElement.getAttribute("answer");
 		if (strUrl != null)
 		{
-			top.window.open(strUrl, '_blank');	
+			RedirectToUrl(strUrl, true);	
 		}
 	}
 }]]></script>
@@ -69,7 +70,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>bdb4f4621bc88150edf3642aab4bcb87</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Details</sys_name>
         <sys_overrides/>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
@@ -77,7 +78,7 @@
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_ui_action_bdb4f4621bc88150edf3642aab4bcb87</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-01-20 18:22:51</sys_updated_on>
+        <sys_updated_on>2022-12-08 19:00:19</sys_updated_on>
         <table>global</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>
