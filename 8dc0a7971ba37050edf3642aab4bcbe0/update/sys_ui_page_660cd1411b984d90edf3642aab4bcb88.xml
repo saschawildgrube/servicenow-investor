@@ -29,7 +29,7 @@
 	<ul>
 		<g2:no_escape>$[
 			docapi.RenderSystemRequirements(
-				'Rome',
+				'San Diego',
 				true,
 				AppGetDependencies());
 		]</g2:no_escape>	
@@ -111,6 +111,9 @@
 
 	<h3>1.1.0 - 2022-TODO</h3>
 	<ol>
+		<li>DevTools 1.49.0 is now required.</li>
+		<li>San Diego is now supported.</li>
+		<li>Rome is no longer actively supported.</li>
 		<li>The position amount is now a floating point number which allows the display of fractions of pieces hold in a portfolio - as can be the case if a fixed sum is invested periodically in an ETF.</li>
 		<li>If the transaction type is "Dividend" the "Reason" and the "amount" fields are no longer displayed.</li>
 	</ol>
@@ -127,13 +130,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-06 15:14:49</sys_created_on>
         <sys_id>660cd1411b984d90edf3642aab4bcb88</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>manual</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_ui_page_660cd1411b984d90edf3642aab4bcb88</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-02-20 17:51:07</sys_updated_on>
+        <sys_updated_on>2022-12-08 19:10:44</sys_updated_on>
     </sys_ui_page>
 </record_update>
