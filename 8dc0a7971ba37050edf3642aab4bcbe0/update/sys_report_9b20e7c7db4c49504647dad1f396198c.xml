@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report">
     <sys_report action="INSERT_OR_UPDATE">
+        <active>false</active>
         <additional_groupby/>
         <aggregate>SUM</aggregate>
         <aggregation_source>no_override</aggregation_source>
@@ -47,7 +48,7 @@
         <exp_report_attrs>true</exp_report_attrs>
         <field>instrument.type</field>
         <field_list>amount,instrument,portfolio,tasks</field_list>
-        <filter table="x_snc_investor_position">portfolio=045b23df1be37050edf3642aab4bcbdb<item display_table="x_snc_investor_portfolio" display_value="Sascha Postbank" endquery="false" field="portfolio" goto="false" newquery="false" operator="=" or="false" value="045b23df1be37050edf3642aab4bcbdb"/>
+        <filter table="x_snc_investor_position">portfolio=045b23df1be37050edf3642aab4bcbdb<item endquery="false" field="portfolio" goto="false" newquery="false" operator="=" or="false" value="045b23df1be37050edf3642aab4bcbdb"/>
         </filter>
         <formatting_configuration/>
         <from/>
@@ -72,6 +73,7 @@
         <lower_limit/>
         <map display_value="World">93b8a3a2d7101200bd4a4ebfae61033a</map>
         <map_source/>
+        <no_bulk_migration>false</no_bulk_migration>
         <orderby_list/>
         <other_threshold>-2</other_threshold>
         <others>true</others>

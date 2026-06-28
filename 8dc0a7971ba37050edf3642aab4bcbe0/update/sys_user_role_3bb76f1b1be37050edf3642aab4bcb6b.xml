@@ -4,10 +4,10 @@
         <can_delegate>true</can_delegate>
         <description>A user that can manage their own portfolio using the Investor app</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id/>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_investor.user</name>
-        <requires_subscription>-1</requires_subscription>
         <scoped_admin>false</scoped_admin>
         <suffix>user</suffix>
         <sys_class_name>sys_user_role</sys_class_name>

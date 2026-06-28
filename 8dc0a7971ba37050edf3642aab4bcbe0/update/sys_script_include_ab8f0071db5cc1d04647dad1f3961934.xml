@@ -6,7 +6,9 @@
         <caller_access/>
         <client_callable>false</client_callable>
         <description/>
+        <mobile_callable>false</mobile_callable>
         <name>CreateInvestorTasksForUser</name>
+        <sandbox_callable>false</sandbox_callable>
         <script><![CDATA[function CreateInvestorTasksForUser(strUserSysId)
 {
 	var RenderValue = x_snc_devtools.RenderValue;
@@ -168,5 +170,6 @@
         <sys_update_name>sys_script_include_ab8f0071db5cc1d04647dad1f3961934</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2022-01-20 18:57:27</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

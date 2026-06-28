@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Signal" max_length="40" name="x_snc_investor_signal" sizeclass="391" type="collection">
+    <element db_object_id="54bf7ab0c3b543104b4f311f0501316f" label="Signal" max_length="40" name="x_snc_investor_signal" type="collection">
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#10;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" read_only="true" type="glide_action_list" virtual="true"/>
         <element label="Date" max_length="40" name="date" type="glide_date"/>
-        <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="Instrument" max_length="32" name="instrument" read_only="true" reference="x_snc_investor_instrument" type="reference"/>
         <element choice="1" label="Signal" max_length="40" name="signal" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Buy" value="buy"/>
                 <element inactive_on_update="false" label="Sell" value="sell"/>
+                <element inactive_on_update="false" label="Buy" value="buy"/>
             </choice>
         </element>
-        <element calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;return 'bdb4f4621bc88150edf3642aab4bcb87';  &#10;&#10;})(current);" label="Tasks" max_length="4000" name="tasks" read_only="true" type="glide_action_list" virtual="true"/>
         <index name="index">
             <element name="instrument"/>
         </index>

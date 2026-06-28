@@ -103,7 +103,7 @@
 })(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-12-17 15:06:38&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;4aa38eac8720c550d5900fa90cbb35fb&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Position - NumberFormat&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Investor WORK IN PROGRESS"&gt;8dc0a7971ba37050edf3642aab4bcbe0&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_4aa38eac8720c550d5900fa90cbb35fb&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-12-17 15:07:50&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before_display&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=4aa38eac8720c550d5900fa90cbb35fb"/&gt;&lt;/record_update&gt;</payload>
         <payload_hash>102894346</payload_hash>
         <record_name>Position - NumberFormat</record_name>
-        <reverted_from display_value="sys_script_4aa38eac8720c550d5900fa90cbb35fb">23e386ec8720c550d5900fa90cbb352a</reverted_from>
+        <reverted_from display_value="">23e386ec8720c550d5900fa90cbb352a</reverted_from>
         <source>066e5a7b879c4150d5900fa90cbb353b</source>
         <source_table>sys_update_set</source_table>
         <state>previous</state>
@@ -129,7 +129,7 @@
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Position - NumberFormat</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
-        <sys_parent display_value="Position">fe9c41ca8794c5101d5640c80cbb3596</sys_parent>
+        <sys_parent display_value="">fe9c41ca8794c5101d5640c80cbb3596</sys_parent>
         <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_scope_delete display_value="">40edf66b06de404eb14842c9296dcff1</sys_scope_delete>

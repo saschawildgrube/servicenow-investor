@@ -3,6 +3,8 @@
         <cleared>false</cleared>
         <disabled>ignore</disabled>
         <field>total_price</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -17,7 +19,10 @@
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-11-27 18:49:23</sys_updated_on>
         <table>x_snc_investor_transaction</table>
-        <ui_policy display_value="Dividend">8a5d0d431bb730d0edf3642aab4bcb71</ui_policy>
+        <ui_policy display_value="Transaction - Dividend">8a5d0d431bb730d0edf3642aab4bcb71</ui_policy>
+        <value/>
+        <value_action/>
         <visible>false</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=2dc6b38a1b4ccd10edf3642aab4bcb00"/>
 </record_update>

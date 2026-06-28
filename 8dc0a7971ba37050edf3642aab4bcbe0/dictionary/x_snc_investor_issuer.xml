@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="core_company" label="Issuer" max_length="40" name="x_snc_investor_issuer" type="collection"/>
+    <element db_object_id="80bf3ab0c3b543104b4f311f05013197" extends="core_company" label="Issuer" max_length="40" name="x_snc_investor_issuer" type="collection"/>
 </database>

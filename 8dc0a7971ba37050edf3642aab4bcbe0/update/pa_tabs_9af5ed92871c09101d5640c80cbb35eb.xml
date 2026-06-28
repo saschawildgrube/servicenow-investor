@@ -2,7 +2,7 @@
     <pa_tabs action="INSERT_OR_UPDATE">
         <canvas_page display_value="PA Investor - New Tab">96f56d92871c09101d5640c80cbb3562</canvas_page>
         <name>Investor - New Tab</name>
-        <page display_value="PA Investor - New Tab">52f56d92871c09101d5640c80cbb3561</page>
+        <page display_value="">52f56d92871c09101d5640c80cbb3561</page>
         <sys_class_name>pa_tabs</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-10 13:10:37</sys_created_on>

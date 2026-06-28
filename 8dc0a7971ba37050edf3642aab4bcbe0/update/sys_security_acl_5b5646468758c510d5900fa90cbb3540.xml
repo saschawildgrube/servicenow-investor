@@ -3,11 +3,16 @@
         <active>true</active>
         <admin_overrides>true</admin_overrides>
         <advanced>false</advanced>
+        <applies_to/>
         <condition/>
+        <controlled_by_refs/>
+        <decision_type>allow</decision_type>
         <description>Allow write for owner in x_snc_investor_portfolio, for users with role x_snc_investor.admin.</description>
+        <local_or_existing/>
         <name>x_snc_investor_portfolio.owner</name>
         <operation display_value="write">write</operation>
         <script/>
+        <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-09 20:54:20</sys_created_on>

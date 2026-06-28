@@ -16,6 +16,7 @@
         <sys_update_name>sys_ui_style_68efe80c1b8c09d0edf3642aab4bcb67</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2021-11-24 09:01:16</sys_updated_on>
+        <themed_style/>
         <value>javascript: (current.performance &lt; 0)</value>
     </sys_ui_style>
     <sys_translated_text action="delete_multiple" query="documentkey=68efe80c1b8c09d0edf3642aab4bcb67"/>

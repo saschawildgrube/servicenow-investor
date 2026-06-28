@@ -3,6 +3,8 @@
         <cleared>true</cleared>
         <disabled>ignore</disabled>
         <field>amount</field>
+        <field_message/>
+        <field_message_type/>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -18,6 +20,9 @@
         <sys_updated_on>2022-02-20 17:49:33</sys_updated_on>
         <table>x_snc_investor_transaction</table>
         <ui_policy display_value="Transaction - Dividend">8a5d0d431bb730d0edf3642aab4bcb71</ui_policy>
+        <value/>
+        <value_action/>
         <visible>false</visible>
     </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=aa389d651bfd4d10826c86e5604bcb44"/>
 </record_update>
