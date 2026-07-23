@@ -98,14 +98,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-12-04 11:27:50</sys_created_on>
         <sys_id>c6e49a9cdb9805904647dad1f3961998</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>GetPriceFrameForNotation</sys_name>
         <sys_package display_value="Investor WORK IN PROGRESS" source="x_snc_investor">8dc0a7971ba37050edf3642aab4bcbe0</sys_package>
-        <sys_policy>read</sys_policy>
+        <sys_policy/>
         <sys_scope display_value="Investor WORK IN PROGRESS">8dc0a7971ba37050edf3642aab4bcbe0</sys_scope>
         <sys_update_name>sys_script_include_c6e49a9cdb9805904647dad1f3961998</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-12-04 12:02:39</sys_updated_on>
+        <sys_updated_on>2026-07-23 09:13:01</sys_updated_on>
         <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

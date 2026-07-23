@@ -4,7 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>A user that can administer the Investor application</description>
         <elevated_privilege>false</elevated_privilege>
-        <federated_id/>
+        <federated_id>3NGya8oR04hWiJkDz7u5cN5g+ao/gWA7AwjTCVFlzeU=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_investor.admin</name>
